@@ -14,6 +14,9 @@ body {
 body, html {
   font-family: 'Rubik', Roboto !important;
 }
+footer#page-footer {
+  background-color: black !important;
+}
 /* SLIDER */
 ::-webkit-scrollbar {
   width: 0.75rem;
@@ -69,7 +72,7 @@ a.dropdown-item:hover, a.dropdown-item:active {
 a#action-menu-toggle-1 .userbutton .avatars {
   margin-left: 1rem !important;  
 }
-/* BUTTONS AND LINKS */
+/* BUTTONS AND LINKS / SELECT */
 button.nav-link.float-sm-left.bg-gray {
   background-color: transparent !important;
 }
@@ -88,6 +91,11 @@ button:hover, button:focus, a:hover, a:focus {
 button:disabled ,a:disabled, button.page-link, a.page-link {
   background-color: transparent !important;
 }
+select {
+  background-color: var(--dark-0) !important;
+  padding: 0.5rem 2rem !important;
+  border-radius: 0.75rem !important;
+}
 .aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance>a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance>a:focus {
   box-shadow: none !important;
   background-color: transparent !important;
@@ -96,6 +104,7 @@ button:disabled ,a:disabled, button.page-link, a.page-link {
   background-color: var(--dark-1) !important;
   border: 0.1rem solid var(--dark-2) !important;
   box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
+  border-radius: 0.5rem !important;
 }
 p, h1, h2, h3, h4, h5, h6, span, div {
   color: var(--text-secondary) !important;
@@ -105,11 +114,36 @@ div#goto-top-link > a {
   background-color: var(--dark-1);
 }
 /* INPUT / SEARCH / SUBMIT */
+input {
+  background-color: var(--dark-0) !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+}
 input.form-control {
   background-color: var(--dark-0) !important;
 }
 button.btn-submit {
   background-color: transparent !important;
+}
+input.btn {
+  background-color: var(--dark-2) !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: bold !important;
+}
+input.btn.btn-primary {
+  background-color: hsl(210, 100%, 40%) !important;
+}
+input.btn.btn-secondary {
+  color: var(--text-secondary);
+}
+
+
+/* TEXT EDITOR */
+div.editor_atto_wrap {
+  background-color: var(--dark-0) !important;
+  padding: 0.5rem 0.5rem !important;
+  border-radius: 0.5rem !important;
 }
 
 /* RECENTLY ADDED COURSES */
@@ -117,6 +151,16 @@ div.block-recentlyaccessedcourses div.one-row > div {
   overflow: hidden !important;
   border-radius: 0.5rem !important;
 }
+
+
+/* LOGIN */
+button#loginbtn {
+  background-color: var(--dark-2) !important;
+}
+button#loginbtn:hover {
+  background-color: var(--dark-3) !important;
+}
+
 
 /* TABLE OF SUBJECTS */
 
@@ -157,8 +201,8 @@ table.course-box {
   border-style: solid !important;
   border-color: hsl(0, 0%, 10%) !important;
   border-width: 0.1rem !important;
-  filter: hue-rotate(-20deg) !important;
-  opacity: 0.85 !important;
+  filter: hue-rotate(-15deg) !important;
+  opacity: 0.8 !important;
 }
 .progressbar td.cm:last-child {
   background-color: var(--dark-2) !important;
@@ -180,13 +224,28 @@ div#region-main-box > section#region-main {
 }
 
 /* DIALOGUE / POPUP */
-div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal {
+div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.modal-dialog {
   background-color: var(--dark-1) !important;
   padding: 1rem !important;
   border-radius: 0.5rem !important;
   border: 0.1rem solid var(--dark-2) !important;
 }
 
+
+/* UPLOAD FILE FORM */
+
+
+div.fp-upload-form input, div.fp-upload-form button {
+  background-color: var(--dark-0) !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+}
+div.fp-upload-form button.fp-upload-btn {
+  background-color: var(--dark-2) !important;
+}
+div.fp-upload-form button.fp-upload-btn:hover {
+  background-color: var(--dark-3) !important;
+}
 /* SUBMISSION TABLES / SUBJECT PAGE / TESTS / FEEDBACK */
 div.submissionsummarytable table, div.feedback table {
   background-color: var(--dark-0) !important;
@@ -215,11 +274,7 @@ div.quizattempt button:hover {
   background-color: var(--dark-3) !important;
 }
 /* JUMP TO ACTIVITY */
-select#jump-to-activity, select.custom-select {
-  background-color: var(--dark-0) !important;
-  padding: 0.5rem 2rem !important;
-  border-radius: 0.75rem !important;
-}
+
 /* SUBMIT */
 div.submissionaction button {
   background-color: var(--dark-2) !important;
