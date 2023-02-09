@@ -112,6 +112,11 @@ button.btn-submit {
   background-color: transparent !important;
 }
 
+/* RECENTLY ADDED COURSES */
+div.block-recentlyaccessedcourses div.one-row > div {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
 
 /* TABLE OF SUBJECTS */
 
@@ -147,17 +152,19 @@ table.course-box {
   padding: 1rem !important;
   background-color: transparent !important;
 }
-/* CELLS */
+/* CELL */
 .progressbar td.cm {
   border-style: solid !important;
   border-color: hsl(0, 0%, 10%) !important;
   border-width: 0.1rem !important;
-  filter: saturate(0.8) !important;
-  filter: brightness(75%) !important;
+  filter: hue-rotate(-20deg) !important;
+  opacity: 0.85 !important;
+}
+.progressbar td.cm:last-child {
+  background-color: var(--dark-2) !important;
 }
 .progressbar td.cm:hover, .progressbar td.cm:active {
-  filter: brightness(125%);
-  translate: 0 -0.1rem;
+  translate: 0 -0.15rem !important;
 }
 .progressbar tbody tr span {
   display: none;
@@ -220,5 +227,33 @@ div.submissionaction button {
 }
 div.submissionaction button:hover {
   background-color: var(--dark-3) !important;
+}
+
+
+/* MESSENGER */
+
+
+div.message-app {
+  background-color: transparent !important;
+  border-width: 0 !important;
+}
+div.message-app * {
+  border-width: 0 !important;
+}
+div.message-app textarea {
+  background-color: var(--dark-0) !important;
+}
+div.message-app .bg-white {
+  background-color: transparent !important;
+}
+/* EACH MESSAGE IN CHAT*/
+div.message-app div.content-message-container > div {
+  background-color: var(--dark-0) !important;
+  border-radius: 0.5rem !important;
+  border: 0.1rem solid var(--dark-2) !important;
+  margin-top: 0.5rem !important;
+}
+div.message-app div.content-message-container > div > h6 {
+  margin-top: 1rem !important;
 }
 
