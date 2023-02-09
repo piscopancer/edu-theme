@@ -1,0 +1,132 @@
+body {
+  --dark: hsl(260, 15%, 10%);
+  --accent-color: hsl(210, 80%, 70%);
+  --text-primary: hsl(260, 10%, 75%);
+  --text-secondary: hsl(260, 5%, 50%);
+  
+  background-color: var(--dark) !important;
+}
+/* APPLY FONT SO ICONS DO NOT BREAK */
+body, html {
+  font-family: 'Rubik' !important;
+}
+*, *:active, *:focus {
+  border-width: 0 !important;
+  border: none !important;
+  outline-width: 0 !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important; 
+  transition: all 0.1s;
+}
+header#page-header {
+  display: none !important;
+}
+section.block, .course-box {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+/* DROPDOWN MENUS */
+div.dropdown-menu.show, div.popover-region-container {
+  background-color: var(--dark) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+}
+a.dropdown-item {
+  background-color: transparent !important;
+}
+a.dropdown-item:hover, a.dropdown-item:active {
+  filter: brightness(125%) !important;
+}
+/* NAVBAR */
+#page-wrapper > nav.navbar.fixed-top, .bg-white {
+  background-color: hsla(0, 0%, 100%, 0) !important;
+  position: relative !important;
+  display: flex !important;
+  padding: 4rem 2rem 1rem 2rem;
+  box-shadow: none;
+}
+/* PROFILE BUTTON */
+a#action-menu-toggle-1 .userbutton .avatars {
+  margin-left: 1rem !important;  
+}
+/* BUTTONS AND LINKS */
+button.nav-link.float-sm-left.bg-gray {
+  background-color: transparent !important;
+}
+button.nav-link.float-sm-left.bg-gray:hover {
+  filter: brightness(125%);
+}
+button, a {
+  color: var(--text-primary) !important;
+  border-radius: 0.5rem !important;
+}
+button:hover, button:focus, a:hover, a:focus {
+  background-color: hsla(0, 0%, 100%, 0.05);
+  text-decoration: none !important;
+}
+button,a:disabled, button,a.page-link {
+  background-color: transparent !important;
+}
+.aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance>a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance>a:focus {
+  box-shadow: none !important;
+}
+
+.card {
+  background-color: hsla(0, 0%, 100%, 0.05) !important;
+}
+p, h1, h2, h3, h4, h5, h6, span, div {
+  color: var(--text-secondary) !important;
+  background-color: transparent !important;
+}
+div#goto-top-link > a {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+
+/* TABLE OF SUBJECTS */
+
+
+.card-text.content > .customtitle, .card-text.content > .legend-box {
+  display: inline-block !important;
+}
+/* each table of a subject */
+.card-text.content > div:nth-child(n+4) {
+  margin-top: 3rem !important;
+}
+.card-text.content > div:nth-child(n+4) > h3 {
+  padding: 0.5rem !important;
+  
+}
+.card-text.content > div:nth-child(n+4) > h3:hover {
+  filter: brightness(125%);
+  
+}
+.card-text.content > div:nth-child(n+4) > h3 > a:hover {
+  background-color: transparent !important;
+}
+/* CELLS BACKGROUND */
+.card-text.content .course-box > tbody {
+  background-color: hsla(260, 10%, 10%, 0.8) !important;;
+  width: auto !important;
+}
+.card-text.content .course-box > tbody > tr > td {
+  padding: 1rem !important;
+  background-color: transparent !important;
+}
+/* CELLS */
+.progressbar td.cm {
+  border-style: solid !important;
+  border-color: hsl(0, 0%, 10%) !important;
+  border-width: 0.1rem !important;
+  filter: saturate(0.8) !important;
+  filter: brightness(75%) !important;
+
+  /* filter: contrast(70%) !important; */
+}
+.progressbar td.cm:hover, .progressbar td.cm:active {
+  filter: brightness(125%);
+  translate: 0 -0.1rem;
+}
+.progressbar tbody tr span {
+  display: none;
+}

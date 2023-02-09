@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "EDU Pretty Theme",
+  "description": "Make your EDU website look modern and responsive",
+  "version": "1.0",
+  "icons": {
+    "64": "images/icon-64.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "64": "images/icon-64.png"
+    }
+  },
+  "content_scripts": [{
+    "matches": ["https://edu.pgu.ru/*"],
+    "css": ["/style.css"],
+    "js": ["/index.js"]
+  }]
+}
