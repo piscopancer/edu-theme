@@ -180,17 +180,23 @@ div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal {
   border: 0.1rem solid var(--dark-2) !important;
 }
 
-/* SUBMISSION TABLES / SUBJECT PAGE / TESTS */
-div.submissionsummarytable table.generaltable {
+/* SUBMISSION TABLES / SUBJECT PAGE / TESTS / FEEDBACK */
+div.submissionsummarytable table, div.feedback table {
   background-color: var(--dark-0) !important;
   border-radius: 0.5rem !important;
 }
-div.submissionsummarytable table.generaltable * {
+div.submissionsummarytable table *, div.feedback table * {
   background-color: transparent !important;
   color: var(--text-secondary) !important;
 }
+/* NOT GRADED */
 div.submissionsummarytable table td.submissionnotgraded {
   color: var(--text-primary) !important;
+  font-weight: bold !important;
+}
+/* GRADED */
+div.submissionsummarytable table td.submissiongraded {
+  color: hsl(80, 100%, 40%) !important;
   font-weight: bold !important;
 }
 /* QUIZ */
@@ -204,13 +210,13 @@ div.quizattempt button:hover {
 /* JUMP TO ACTIVITY */
 select#jump-to-activity, select.custom-select {
   background-color: var(--dark-0) !important;
-  padding: 1rem 2rem !important;
-  border-radius: 0.5rem !important;
+  padding: 0.5rem 2rem !important;
+  border-radius: 0.75rem !important;
 }
 /* SUBMIT */
 div.submissionaction button {
   background-color: var(--dark-2) !important;
-  padding: 1rem 2rem !important;
+  padding: 0.75rem 2rem !important;
 }
 div.submissionaction button:hover {
   background-color: var(--dark-3) !important;
