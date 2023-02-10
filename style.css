@@ -423,3 +423,22 @@ div.message-app div.content-message-container > div > h6 {
   margin-top: 1rem !important;
 }
 
+/* TESTS / ATTEMPTS */
+div.qn_buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+a.qnbutton.answersaved {
+  background-color: var(--dark-3) !important;
+}
+table.quizsummaryofattempt, table.quizreviewsummary, table.quizattemptsummary {
+  background-color: var(--dark-0) !important;
+  border-radius: 0.5rem !important;
+}
+table.quizsummaryofattempt *, table.quizreviewsummary *, table.quizattemptsummary * {
+  background-color: transparent !important;
+  color: var(--text-secondary) !important;
+}
+table.quizsummaryofattempt th, table.quizsummaryofattempt td, table.quizreviewsummary th, table.quizreviewsummary td, table.quizattemptsummary th, table.quizattemptsummary td {
+  padding: 0.5rem !important;
+}
