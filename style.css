@@ -61,13 +61,76 @@ a.dropdown-item:hover, a.dropdown-item:active {
   filter: brightness(125%) !important;
 }
 /* NAVBAR */
-#page-wrapper > nav.navbar.fixed-top, .bg-white {
+#page-wrapper > nav.navbar.fixed-top {
   background-color: transparent !important;
   position: relative !important;
   display: flex !important;
   padding: 4rem 2rem 1rem 2rem;
   box-shadow: none;
 }
+
+
+/* POPUP NAV LEFT / COMPACT NAVBAR */
+#page-wrapper > #nav-drawer {
+  background-color: var(--dark-0) !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
+/* POPUP MESSENGER / COMPACT MESSENGER */
+/* BACKGROUND */
+[data-origin^=message-drawer-toggle].bg-white {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: hsla(0, 0%, 0%, 0.50) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 1031 !important;
+}
+/* MESSAGE APP */
+[data-origin^=message-drawer-toggle] .message-app {
+  margin: 10% !important;
+  background-color: var(--dark-1) !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+  max-width: 70vw !important;
+  display: flex !important;
+  padding: 0.5rem !important;
+}
+[data-origin^=message-drawer-toggle] .closewidget {
+  display: flex !important;
+  justify-content: flex-end !important;
+  background-color: transparent !important;
+}
+/* CLOSE POPUP MESSENGER BUTTON */
+[data-origin^=message-drawer-toggle] .closewidget a {
+  align-self: flex-end !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  height: 2rem !important;
+  width: 2rem !important;
+}
+[data-origin^=message-drawer-toggle] .closewidget a i {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+}
+/* CLOSE POPUP MESSENGER X ICON*/
+[data-origin^=message-drawer-toggle] .closewidget a i::before {
+  content: '\2573' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  translate: -50% -50% !important;
+  color: var(--text-secondary) !important;
+}
+
 /* PROFILE BUTTON */
 a#action-menu-toggle-1 .userbutton .avatars {
   margin-left: 1rem !important;  
@@ -113,6 +176,28 @@ p, h1, h2, h3, h4, h5, h6, span, div {
 div#goto-top-link > a {
   background-color: var(--dark-1);
 }
+
+
+/* REPORTS IN PROFILE */
+table.reportlog {
+  background-color: var(--dark-0) !important;
+  border-radius: 0.5rem !important;
+}
+table.reportlog th, table.reportlog td {
+  padding: 0.75rem !important;
+}
+table.reportlog * {
+  background-color: transparent !important;
+  color: var(--text-secondary) !important;
+}
+table.reportlog a {
+  color: var(--text-primary) !important;
+}
+table.reportlog a:hover {
+  color: var(--text-secondary) !important;
+}
+
+
 /* INPUT / SEARCH / SUBMIT */
 input {
   background-color: var(--dark-0) !important;
@@ -136,6 +221,35 @@ input.btn.btn-primary {
 }
 input.btn.btn-secondary {
   color: var(--text-secondary);
+}
+textarea, textarea.bg-light {
+  background-color: var(--dark-0) !important;
+  border-radius: 0.5rem !important;
+}
+
+
+/* PROFILE TREE / ABOUT */
+div.profile_tree a {
+  padding: 0.5rem 0.5rem !important;
+}
+div.profile_tree ul {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.1rem !important;
+}
+div.profile_tree ul li {
+  display: flex !important;
+}
+div.profile_tree ul li span {
+  display: flex !important;
+}
+div.profile_tree ul li span a:hover {
+  color: var(--text-primary) !important;
+}
+div.profile_tree ul.inline-list {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
 }
 
 
@@ -294,9 +408,6 @@ div.message-app {
 }
 div.message-app * {
   border-width: 0 !important;
-}
-div.message-app textarea {
-  background-color: var(--dark-0) !important;
 }
 div.message-app .bg-white {
   background-color: transparent !important;
