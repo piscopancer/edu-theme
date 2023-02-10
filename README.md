@@ -1,4 +1,4 @@
-# *EDU DARK THEME*
+# EDU DARK THEME
 ### Тёмная тема для https://edu.pgu.ru/
 &nbsp;
 ## `Главная`
