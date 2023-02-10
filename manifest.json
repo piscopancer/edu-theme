@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "EDU Pretty Theme",
-  "description": "Make your EDU website look modern and responsive",
+  "name": "EDU PGU Dark",
+  "description": "ЕДУ ПГУ | Тёмная тема",
   "version": "1.0",
   "icons": {
-    "64": "images/icon-64.png"
+    "128": "images/icon-128.png"
   },
   "page_action": {
     "default_icon": {
-      "64": "images/icon-64.png"
+      "128": "images/icon-128.png"
     }
   },
   "content_scripts": [{
