@@ -1,3 +1,5 @@
+<img src='https://imgur.com/Bdsm415.png' width=350>
+
 # EDU DARK THEME 😎
 
 * Тёмная тема для https://edu.pgu.ru/ 📚
