@@ -1,4 +1,4 @@
-<img src='https://imgur.com/Bdsm415.png' width=350>
+<img src='https://imgur.com/q1Gbkvo.png' width='100%'>
 
 # EDU DARK THEME 😎
 
