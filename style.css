@@ -72,7 +72,7 @@ a.dropdown-item {
   background-color: transparent !important;
 }
 a.dropdown-item:hover, a.dropdown-item:active {
-  filter: brightness(125%) !important;
+  filter: brightness(120%) !important;
 }
 /* NAVBAR */
 #page-wrapper > nav.navbar.fixed-top {
@@ -154,7 +154,7 @@ button.nav-link.float-sm-left.bg-gray {
   background-color: transparent !important;
 }
 button.nav-link.float-sm-left.bg-gray:hover {
-  filter: brightness(125%);
+  filter: brightness(120%) !important;
 }
 button, a {
   background-color: transparent !important;
@@ -229,6 +229,9 @@ input.btn {
   padding: 0.75rem 2rem !important;
   border-radius: 0.5rem !important;
   font-weight: bold !important;
+}
+input.btn:hover {
+  filter: brightness(120%) !important;  
 }
 input.btn.btn-primary {
   background-color: hsl(210, 100%, 40%) !important;
@@ -306,7 +309,7 @@ button#loginbtn:hover {
 }
 /* SUBJECT NAME */
 .card-text.content > div:nth-child(n+4) > h3:hover {
-  filter: brightness(125%);
+  filter: brightness(120%);
 }
 .card-text.content > div:nth-child(n+4) > h3 > a:hover {
   background-color: transparent !important;
@@ -437,12 +440,38 @@ div.message-app div.content-message-container > div > h6 {
   margin-top: 1rem !important;
 }
 
-/* TESTS / ATTEMPTS */
+/* TESTS / ATTEMPTS / QUESTION BUTTONS / FINISH TEST */
 div.qn_buttons {
   display: flex !important;
   flex-wrap: wrap !important;
 }
+div.othernav a.endtestlink {
+  width: fit-content !important;
+  padding: 0.5rem !important;
+}
+a.qnbutton {
+  background-color: var(--dark-0) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+a.qnbutton:hover {
+  filter: brightness(120%) !important;
+}
+a.qnbutton.thispage {
+  outline: 0.1rem solid var(--dark-3) !important;
+}
 a.qnbutton.answersaved {
+  background-color: var(--dark-3) !important;
+}
+a.qnbutton.incorrect {
+  border: 0.1rem solid hsl(20, 100%, 40%) !important;
+}
+/* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
+div.submitbtns button {
+  padding: 0.75rem 2rem !important;
+  background-color: var(--dark-2) !important;
+}
+div.submitbtns button:hover {
   background-color: var(--dark-3) !important;
 }
 table.quizsummaryofattempt, table.quizreviewsummary, table.quizattemptsummary {
@@ -455,4 +484,33 @@ table.quizsummaryofattempt *, table.quizreviewsummary *, table.quizattemptsummar
 }
 table.quizsummaryofattempt th, table.quizsummaryofattempt td, table.quizreviewsummary th, table.quizreviewsummary td, table.quizattemptsummary th, table.quizattemptsummary td {
   padding: 0.5rem !important;
+}
+/* CONFIRM TEST */
+body#page-mod-quiz-summary div.moodle-dialogue {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  translate: -50% -50% !important;
+}
+body#page-mod-quiz-summary div.moodle-dialogue, body#page-mod-quiz-summary div.confirmation-dialogue {
+  display: flex !important;
+  flex-direction: column !important;
+  width: fit-content !important;
+}
+body#page-mod-quiz-summary div.confirmation-buttons {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  gap: 1rem !important;
+  align-self: flex-end  !important;
+  width: auto !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+body#page-mod-quiz-summary div.confirmation-dialogue {
+  align-items: center !important;
+  gap: 1rem !important;
+}
+body#page-mod-quiz-summary div.confirmation-dialogue div.confirmation-buttons input {
+  width: fit-content !important;
+  padding: 0.75rem 2rem !important;  
 }
