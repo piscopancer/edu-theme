@@ -72,8 +72,12 @@ div.dropdown-menu.show, ul.dropdown-menu.show {
 }
 
 div.popover-region-container {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  background-color: hsl(260deg, 13%, 10%) !important;
   padding: 0.5rem !important;
 }
 
@@ -100,6 +104,13 @@ a.dropdown-item:hover, a.dropdown-item:active {
   display: flex !important;
   padding: 4rem 2rem 1rem 2rem;
   box-shadow: none;
+}
+#page-wrapper > nav.navbar.fixed-top a.navbar-brand, #page-wrapper > nav.navbar.fixed-top span.site-name, #page-wrapper > nav.navbar.fixed-top ul li a {
+  color: hsl(260deg, 10%, 70%) !important;
+}
+#page-wrapper > nav.navbar.fixed-top a.navbar-brand:hover, #page-wrapper > nav.navbar.fixed-top a.navbar-brand:active, #page-wrapper > nav.navbar.fixed-top span.site-name:hover, #page-wrapper > nav.navbar.fixed-top span.site-name:active, #page-wrapper > nav.navbar.fixed-top ul li a:hover, #page-wrapper > nav.navbar.fixed-top ul li a:active {
+  background-color: transparent !important;
+  color: hsl(260deg, 5%, 50%) !important;
 }
 
 /* POPUP MESSENGER / COMPACT MESSENGER */

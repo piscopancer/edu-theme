@@ -84,8 +84,9 @@ div.dropdown-menu, ul.dropdown-menu {
   }
 }
 div.popover-region-container {
+  @include useCard;
+  @include useShadow;
   background-color: $dark-0 !important;
-  border-radius: 0.5rem !important;
   padding: 0.5rem !important;
 }
 a.dropdown-item {
@@ -99,7 +100,6 @@ a.dropdown-item {
   background: 
     radial-gradient(70vw circle at -20vw -40vw,hsla(270, 100%, 70%, 0.6) 0%, transparent 100%),
     radial-gradient(60vw circle at 60vw -30vw,hsla(290, 100%, 70%, 0.2) 0%, transparent 100%);
-
   /* POPUP NAV LEFT / COMPACT NAVBAR */
   & > #nav-drawer {
     background-color: $dark-0 !important;
@@ -113,6 +113,15 @@ a.dropdown-item {
     display: flex !important;
     padding: 4rem 2rem 1rem 2rem;
     box-shadow: none;
+
+    a.navbar-brand, span.site-name, ul li a {
+      color: $text-primary !important;
+      
+      &:hover, &:active {
+        background-color: transparent !important;
+        color: $text-secondary !important;
+      }
+    }
   }
 }
 
