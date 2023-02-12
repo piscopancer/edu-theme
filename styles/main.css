@@ -103,10 +103,10 @@ a.dropdown-item:hover, a.dropdown-item:active {
 
 /* POPUP MESSENGER / COMPACT MESSENGER */
 /* BACKGROUND */
-[data-origin^=message-drawer-toggle] {
+[data-origin^=message-drawer-toggle], [data-origin^=message-user-button] {
   /* MESSAGE APP */
 }
-[data-origin^=message-drawer-toggle].bg-white {
+[data-origin^=message-drawer-toggle].bg-white, [data-origin^=message-user-button].bg-white {
   position: fixed !important;
   top: 0 !important;
   right: 0 !important;
@@ -120,7 +120,7 @@ a.dropdown-item:hover, a.dropdown-item:active {
   align-items: center !important;
   z-index: 1031 !important;
 }
-[data-origin^=message-drawer-toggle] .message-app {
+[data-origin^=message-drawer-toggle] .message-app, [data-origin^=message-user-button] .message-app {
   margin: 10% !important;
   background-color: hsl(260deg, 10%, 13%) !important;
   border-radius: 0.5rem !important;
@@ -129,26 +129,26 @@ a.dropdown-item:hover, a.dropdown-item:active {
   display: flex !important;
   padding: 0.5rem !important;
 }
-[data-origin^=message-drawer-toggle] .closewidget {
+[data-origin^=message-drawer-toggle] .closewidget, [data-origin^=message-user-button] .closewidget {
   display: flex !important;
   justify-content: flex-end !important;
   background-color: transparent !important;
   /* CLOSE POPUP MESSENGER BUTTON */
 }
-[data-origin^=message-drawer-toggle] .closewidget a {
+[data-origin^=message-drawer-toggle] .closewidget a, [data-origin^=message-user-button] .closewidget a {
   align-self: flex-end !important;
   margin: 0 !important;
   background-color: transparent !important;
   height: 2rem !important;
   width: 2rem !important;
 }
-[data-origin^=message-drawer-toggle] .closewidget a i {
+[data-origin^=message-drawer-toggle] .closewidget a i, [data-origin^=message-user-button] .closewidget a i {
   width: 100% !important;
   height: 100% !important;
   position: relative !important;
   /* CLOSE POPUP MESSENGER X ICON*/
 }
-[data-origin^=message-drawer-toggle] .closewidget a i::before {
+[data-origin^=message-drawer-toggle] .closewidget a i::before, [data-origin^=message-user-button] .closewidget a i::before {
   content: "╳" !important;
   position: absolute !important;
   top: 50% !important;
@@ -160,6 +160,21 @@ a.dropdown-item:hover, a.dropdown-item:active {
 /* PROFILE BUTTON */
 a#action-menu-toggle-1 .userbutton .avatars {
   margin-left: 1rem !important;
+}
+
+div[data-table-region^=user-index-participants] {
+  background-color: hsl(260deg, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  padding: 1rem !important;
+}
+div[data-table-region^=user-index-participants] .border-radius.bg-white {
+  border: none !important;
+  background-color: hsl(260deg, 8%, 18%) !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
 }
 
 /* BUTTONS AND LINKS / SELECT */
@@ -199,6 +214,7 @@ select {
   background-color: hsl(260deg, 10%, 13%) !important;
   outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
   border-radius: 0.5rem !important;
+  border: none !important;
 }
 
 p, h1, h2, h3, h4, h5, h6, span, div {
@@ -211,21 +227,21 @@ div#goto-top-link > a {
 }
 
 /* REPORTS IN PROFILE */
-table.reportlog {
+table.generaltable:not(.course-box) {
   background-color: hsl(260deg, 13%, 10%) !important;
   border-radius: 0.5rem !important;
 }
-table.reportlog th, table.reportlog td {
+table.generaltable:not(.course-box) th, table.generaltable:not(.course-box) td {
   padding: 0.75rem !important;
 }
-table.reportlog * {
+table.generaltable:not(.course-box) * {
   background-color: transparent !important;
   color: hsl(260deg, 5%, 50%) !important;
 }
-table.reportlog a {
+table.generaltable:not(.course-box) a {
   color: hsl(260deg, 10%, 70%) !important;
 }
-table.reportlog a:hover {
+table.generaltable:not(.course-box) a:hover {
   color: hsl(260deg, 5%, 50%) !important;
 }
 
@@ -398,16 +414,6 @@ div.fp-upload-form button.fp-upload-btn:hover {
   background-color: hsl(260deg, 8%, 22%) !important;
 }
 
-/* SUBMISSION TABLES / SUBJECT PAGE / TESTS / FEEDBACK */
-div.submissionsummarytable table, div.feedback table {
-  background-color: hsl(260deg, 13%, 10%) !important;
-  border-radius: 0.5rem !important;
-}
-div.submissionsummarytable table *, div.feedback table * {
-  background-color: transparent !important;
-  color: hsl(260deg, 5%, 50%) !important;
-}
-
 div.submissionsummarytable table td {
   /* NOT GRADED */
   /* GRADED */
@@ -509,17 +515,6 @@ div.submitbtns button:hover, div.submitbtns a:hover {
   background-color: hsl(260deg, 8%, 22%) !important;
 }
 
-table.quizsummaryofattempt, table.quizreviewsummary, table.quizattemptsummary {
-  background-color: hsl(260deg, 13%, 10%) !important;
-  border-radius: 0.5rem !important;
-}
-table.quizsummaryofattempt *, table.quizreviewsummary *, table.quizattemptsummary * {
-  background-color: transparent !important;
-  color: hsl(260deg, 5%, 50%) !important;
-}
-table.quizsummaryofattempt th, table.quizsummaryofattempt td, table.quizreviewsummary th, table.quizreviewsummary td, table.quizattemptsummary th, table.quizattemptsummary td {
-  padding: 0.5rem !important;
-}
 table.quizattemptsummary a[title^=Просмотр] {
   background-color: hsl(260deg, 8%, 18%) !important;
   color: hsl(260deg, 10%, 70%) !important;
