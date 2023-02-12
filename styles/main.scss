@@ -21,7 +21,6 @@ $cell-green: hsl(275, 75%, 60%);
 }
 
 body {
-  
   background-color: $dark-0 !important;
 }
 /* APPLY FONT SO ICONS DO NOT BREAK */
@@ -345,11 +344,25 @@ div.block-recentlyaccessedcourses div.one-row > div {
 
 
 /* LOGIN */
-button#loginbtn {
-  background-color: $dark-2 !important;
+body#page-login-index {
 
-  &:hover {
-    background-color: $dark-3 !important;
+  section#region-main {
+    background: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    
+    .card {
+      background: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+  button#loginbtn {
+    background-color: $dark-2 !important;
+  
+    &:hover {
+      background-color: $dark-3 !important;
+    }
   }
 }
 
@@ -511,7 +524,7 @@ button#loginbtn {
 
 /* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */
 
-div#region-main-box > section#region-main {
+body:not(#page-login-index) div#region-main-box > section#region-main {
   @include useShadow;
   background-color: $dark-1 !important;
   outline: 0.1rem solid $dark-2 !important;
