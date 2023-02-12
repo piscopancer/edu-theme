@@ -396,7 +396,7 @@ button#loginbtn {
           [style*="#F7FE2E"] {
             background-color: $cell-yellow !important;
             position: relative !important;
-            animation: anim 1.5s infinite alternate ease-out;
+            animation: anim 2s infinite alternate ease-in-out;
     
             @keyframes anim {
               0% {

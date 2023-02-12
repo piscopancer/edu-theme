@@ -368,7 +368,7 @@ button#loginbtn:hover {
 .card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#F7FE2E"] {
   background-color: hsl(270deg, 50%, 45%) !important;
   position: relative !important;
-  animation: anim 1.5s infinite alternate ease-out;
+  animation: anim 2s infinite alternate ease-in-out;
 }
 @keyframes anim {
   0% {
