@@ -1,10 +1,14 @@
 $dark-0: hsl(260, 13%, 10%);
-$dark-1: hsl(260, 10%, 13%);
-$dark-2: hsl(260, 8%, 18%);
-$dark-3: hsl(260, 8%, 22%);
+$dark-1: hsl(260, 13%, 13%);
+$dark-2: hsl(260, 13%, 18%);
+$dark-3: hsl(260, 13%, 22%);
 $hightlight: hsla(260, 20%, 100%, 0.05);
 $text-primary: hsl(260, 10%, 70%);
 $text-secondary: hsl(260, 5%, 50%);
+
+$cell-red: hsl(265, 50%, 20%);
+$cell-yellow: hsl(270, 50%, 45%);
+$cell-green: hsl(275, 75%, 65%);
 
 @mixin useShadow {
   box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
@@ -93,6 +97,9 @@ a.dropdown-item {
   }
 }
 #page-wrapper {
+  background: 
+    radial-gradient(70vw circle at -20vw -40vw,hsla(270, 100%, 70%, 0.6) 0%, transparent 100%),
+    radial-gradient(60vw circle at 60vw -30vw,hsla(290, 100%, 70%, 0.2) 0%, transparent 100%);
 
   /* POPUP NAV LEFT / COMPACT NAVBAR */
   & > #nav-drawer {
@@ -355,7 +362,7 @@ button#loginbtn {
   & > .customtitle, & > .legend-box {
     display: inline-block !important;
   }
-  /* each table of a subject */
+  /* each subject */
   & > div:nth-child(n+4) {
     margin-top: 3rem !important;
 
@@ -370,43 +377,100 @@ button#loginbtn {
         background-color: transparent !important;
       }
     }
-  }
-  & .course-box > tbody {
-    background-color: hsla(260, 10%, 10%, 0.8) !important;
-    width: auto !important;
-
-    /* CELLS BACKGROUND */
-    & > tr > td {
-      padding: 1rem !important;
-      background-color: transparent !important;
-    }
-  }
-
-}
-table.course-box {
-  overflow: hidden !important;
-  border-radius: 0.5rem !important;
-}
-/* CELL */
-.progressbar {
-
-  & td.cm {
-    border-style: solid !important;
-    border-color: hsl(0, 0%, 10%) !important;
-    border-width: 0.1rem !important;
-    filter: hue-rotate(-15deg) !important;
-    opacity: 0.8 !important;
+    & .course-box {
+      overflow: hidden !important;
+      border-radius: 0.5rem !important;
   
-    &:last-child {
-      background-color: $dark-2 !important;
-    }
-    &:hover, &:active {
-      translate: 0 -0.15rem !important;
+      & > tbody {
+        background-color: hsla(260, 10%, 10%, 0.8) !important;
+        width: auto !important;
+    
+        /* CELLS BACKGROUND */
+        & > tr > td {
+          padding: 1rem !important;
+          background-color: transparent !important;
+    
+          [style*="#FF3300"] {
+            background-color: $cell-red !important;
+          }
+          [style*="#F7FE2E"] {
+            background-color: $cell-yellow !important;
+            position: relative !important;
+            animation: anim 1.5s infinite alternate ease-out;
+    
+            @keyframes anim {
+              0% {
+                filter: opacity(0.4);
+              }
+              100% {
+                filter: opacity(1);
+              }
+            }
+          }
+          [style*="#33CC00"] {
+            background-color: $cell-green !important;
+          }
+          [style*="#CCCCCC"] {
+            background-color: $dark-2 !important;
+          }
+          a {
+            border-radius: 0 !important;
+          }
+        }
+        .progressbox {
+    
+          .progressbar {
+            
+            /* CELL */
+            & td.cm {
+              border-style: solid !important;
+              border-color: hsl(0, 0%, 10%) !important;
+              border-width: 0.1rem !important;
+              opacity: 0.85 !important;
+            
+              &:hover, &:active {
+                translate: 0 -0.15rem !important;
+              }
+            }
+            & tbody tr span {
+              display: none;
+            }
+          }
+          // GO TO TEST / TASK / FORUM
+          .cminfobox {
+            margin-top: 0.5rem !important;
+
+            span.cminfoboxcontent {
+              display: flex !important;
+              width: fit-content !important;
+              height: fit-content !important;
+              padding: 0.25rem 0.5rem !important;
+              background-color: $dark-2 !important;
+              border-radius: 0.5rem !important;
+              
+              &:hover {
+                background-color: $dark-3 !important;
+              }
+              a {
+                font-size: 0.75rem !important;
+                
+                &:hover {
+                  background-color: transparent !important;
+                }
+                
+              }
+            }
+            a.closeinfobox {
+              text-align: center !important;
+              height: 1.5rem !important;
+              aspect-ratio: 1 !important;
+            }
+          }
+        }
+      }
     }
   }
-  & tbody tr span {
-    display: none;
-  }
+  
 }
 
 /* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */

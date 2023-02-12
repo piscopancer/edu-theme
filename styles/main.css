@@ -20,7 +20,7 @@ footer#page-footer {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(260deg, 8%, 18%);
+  background-color: hsl(260deg, 13%, 18%);
   border-radius: 0.5rem;
 }
 
@@ -53,7 +53,7 @@ section.block_mycourses {
 /* DROPDOWN MENUS */
 div.dropdown-menu, ul.dropdown-menu {
   background-color: hsl(260deg, 13%, 10%) !important;
-  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
   padding: 0.5rem !important;
 }
@@ -85,6 +85,7 @@ a.dropdown-item:hover, a.dropdown-item:active {
 }
 
 #page-wrapper {
+  background: radial-gradient(70vw circle at -20vw -40vw, hsla(270deg, 100%, 70%, 0.6) 0%, transparent 100%), radial-gradient(60vw circle at 60vw -30vw, hsla(290deg, 100%, 70%, 0.2) 0%, transparent 100%);
   /* POPUP NAV LEFT / COMPACT NAVBAR */
   /* NAVBAR */
 }
@@ -122,7 +123,7 @@ a.dropdown-item:hover, a.dropdown-item:active {
 }
 [data-origin^=message-drawer-toggle] .message-app, [data-origin^=message-user-button] .message-app {
   margin: 10% !important;
-  background-color: hsl(260deg, 10%, 13%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
   border-radius: 0.5rem !important;
   width: 100% !important;
   max-width: 70vw !important;
@@ -163,8 +164,8 @@ a#action-menu-toggle-1 .userbutton .avatars {
 }
 
 div[data-table-region^=user-index-participants] {
-  background-color: hsl(260deg, 10%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
@@ -172,7 +173,7 @@ div[data-table-region^=user-index-participants] {
 }
 div[data-table-region^=user-index-participants] .border-radius.bg-white {
   border: none !important;
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
   padding: 1rem !important;
 }
@@ -211,8 +212,8 @@ select {
 
 .card {
   box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
-  background-color: hsl(260deg, 10%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
 }
@@ -223,7 +224,7 @@ p, h1, h2, h3, h4, h5, h6, span, div {
 }
 
 div#goto-top-link > a {
-  background-color: hsl(260deg, 10%, 13%);
+  background-color: hsl(260deg, 13%, 13%);
 }
 
 /* REPORTS IN PROFILE */
@@ -255,7 +256,7 @@ input.form-control {
   background-color: hsl(260deg, 13%, 10%) !important;
 }
 input.btn {
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
   padding: 0.75rem 2rem !important;
   border-radius: 0.5rem !important;
   font-weight: bold !important;
@@ -322,15 +323,15 @@ div.block-recentlyaccessedcourses div.one-row > div {
 
 /* LOGIN */
 button#loginbtn {
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
 }
 button#loginbtn:hover {
-  background-color: hsl(260deg, 8%, 22%) !important;
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 /* TABLE OF SUBJECTS */
 .card-text.content {
-  /* each table of a subject */
+  /* each subject */
 }
 .card-text.content > .customtitle, .card-text.content > .legend-box {
   display: inline-block !important;
@@ -348,44 +349,92 @@ button#loginbtn:hover {
 .card-text.content > div:nth-child(n+4) > h3 > a:hover {
   background-color: transparent !important;
 }
-.card-text.content .course-box > tbody {
+.card-text.content > div:nth-child(n+4) .course-box {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody {
   background-color: hsla(260deg, 10%, 10%, 0.8) !important;
   width: auto !important;
   /* CELLS BACKGROUND */
 }
-.card-text.content .course-box > tbody > tr > td {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td {
   padding: 1rem !important;
   background-color: transparent !important;
 }
-
-table.course-box {
-  overflow: hidden !important;
-  border-radius: 0.5rem !important;
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#FF3300"] {
+  background-color: hsl(265deg, 50%, 20%) !important;
 }
-
-/* CELL */
-.progressbar td.cm {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#F7FE2E"] {
+  background-color: hsl(270deg, 50%, 45%) !important;
+  position: relative !important;
+  animation: anim 1.5s infinite alternate ease-out;
+}
+@keyframes anim {
+  0% {
+    filter: opacity(0.4);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#33CC00"] {
+  background-color: hsl(275deg, 75%, 65%) !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#CCCCCC"] {
+  background-color: hsl(260deg, 13%, 18%) !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td a {
+  border-radius: 0 !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar {
+  /* CELL */
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm {
   border-style: solid !important;
   border-color: hsl(0deg, 0%, 10%) !important;
   border-width: 0.1rem !important;
-  filter: hue-rotate(-15deg) !important;
-  opacity: 0.8 !important;
+  opacity: 0.85 !important;
 }
-.progressbar td.cm:last-child {
-  background-color: hsl(260deg, 8%, 18%) !important;
-}
-.progressbar td.cm:hover, .progressbar td.cm:active {
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm:hover, .card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm:active {
   translate: 0 -0.15rem !important;
 }
-.progressbar tbody tr span {
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar tbody tr span {
   display: none;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox {
+  margin-top: 0.5rem !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent {
+  display: flex !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  padding: 0.25rem 0.5rem !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent:hover {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent a {
+  font-size: 0.75rem !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent a:hover {
+  background-color: transparent !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox a.closeinfobox {
+  text-align: center !important;
+  height: 1.5rem !important;
+  aspect-ratio: 1 !important;
 }
 
 /* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */
 div#region-main-box > section#region-main {
   box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
-  background-color: hsl(260deg, 10%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
 }
 div#region-main-box > section#region-main span#maincontent {
@@ -394,10 +443,10 @@ div#region-main-box > section#region-main span#maincontent {
 
 /* DIALOGUE / POPUP */
 div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.modal-dialog {
-  background-color: hsl(260deg, 10%, 13%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
   padding: 1rem !important;
   border-radius: 0.5rem !important;
-  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
 }
 
 /* UPLOAD FILE FORM */
@@ -408,10 +457,10 @@ div.fp-upload-form input, div.fp-upload-form button {
 }
 
 div.fp-upload-form button.fp-upload-btn {
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
 }
 div.fp-upload-form button.fp-upload-btn:hover {
-  background-color: hsl(260deg, 8%, 22%) !important;
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 div.submissionsummarytable table td {
@@ -429,21 +478,21 @@ div.submissionsummarytable table td.submissiongraded {
 
 /* QUIZ */
 div.quizattempt button {
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
   padding: 1rem 4rem !important;
 }
 div.quizattempt button:hover {
-  background-color: hsl(260deg, 8%, 22%) !important;
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 /* JUMP TO ACTIVITY */
 /* SUBMIT */
 div.submissionaction button {
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
   padding: 0.75rem 2rem !important;
 }
 div.submissionaction button:hover {
-  background-color: hsl(260deg, 8%, 22%) !important;
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 /* MESSENGER */
@@ -461,7 +510,7 @@ div.message-app .bg-white {
 div.message-app div.content-message-container > div {
   background-color: hsl(260deg, 13%, 10%) !important;
   border-radius: 0.5rem !important;
-  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   margin-top: 0.5rem !important;
 }
 div.message-app div.content-message-container > div > h6 {
@@ -489,10 +538,10 @@ a.qnbutton:hover {
   filter: brightness(120%) !important;
 }
 a.qnbutton.thispage {
-  outline: 0.1rem solid hsl(260deg, 8%, 22%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 22%) !important;
 }
 a.qnbutton.answersaved {
-  background-color: hsl(260deg, 8%, 22%) !important;
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 a.qnbutton.incorrect {
   outline: 0.1rem solid hsl(20deg, 100%, 40%) !important;
@@ -509,19 +558,19 @@ div.submitbtns {
 }
 div.submitbtns button, div.submitbtns a {
   padding: 0.75rem 2rem !important;
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
 }
 div.submitbtns button:hover, div.submitbtns a:hover {
-  background-color: hsl(260deg, 8%, 22%) !important;
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 table.quizattemptsummary a[title^=Просмотр] {
-  background-color: hsl(260deg, 8%, 18%) !important;
+  background-color: hsl(260deg, 13%, 18%) !important;
   color: hsl(260deg, 10%, 70%) !important;
   padding: 0.5rem !important;
 }
 table.quizattemptsummary a[title^=Просмотр]:hover, table.quizattemptsummary a[title^=Просмотр]:active {
-  background-color: hsl(260deg, 8%, 22%) !important;
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 /* CONFIRM TEST */
