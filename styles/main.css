@@ -334,7 +334,7 @@ button#loginbtn:hover {
   /* each subject */
 }
 .card-text.content > .customtitle, .card-text.content > .legend-box {
-  display: inline-block !important;
+  display: none !important;
 }
 .card-text.content > div:nth-child(n+4) {
   margin-top: 3rem !important;
@@ -356,7 +356,6 @@ button#loginbtn:hover {
 .card-text.content > div:nth-child(n+4) .course-box > tbody {
   background-color: hsla(260deg, 10%, 10%, 0.8) !important;
   width: auto !important;
-  /* CELLS BACKGROUND */
 }
 .card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td {
   padding: 1rem !important;
@@ -366,20 +365,48 @@ button#loginbtn:hover {
   background-color: hsl(265deg, 50%, 20%) !important;
 }
 .card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#F7FE2E"] {
-  background-color: hsl(270deg, 50%, 45%) !important;
+  background-color: hsl(265deg, 50%, 20%) !important;
   position: relative !important;
-  animation: anim 2s infinite alternate ease-in-out;
 }
-@keyframes anim {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#F7FE2E"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 15%;
+  pointer-events: none;
+  animation: yellowCell 2s infinite alternate ease-in-out;
+  background-color: hsl(270deg, 50%, 45%);
+}
+@keyframes yellowCell {
   0% {
-    filter: opacity(0.4);
+    filter: opacity(0.3);
   }
   100% {
     filter: opacity(1);
   }
 }
 .card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#33CC00"] {
-  background-color: hsl(275deg, 75%, 65%) !important;
+  position: relative !important;
+  background-color: hsl(275deg, 75%, 60%) !important;
+  background-image: none !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*=up]::after {
+  content: "👍";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*=down]::after {
+  content: "👎";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
 }
 .card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#CCCCCC"] {
   background-color: hsl(260deg, 13%, 18%) !important;

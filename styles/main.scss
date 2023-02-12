@@ -8,7 +8,7 @@ $text-secondary: hsl(260, 5%, 50%);
 
 $cell-red: hsl(265, 50%, 20%);
 $cell-yellow: hsl(270, 50%, 45%);
-$cell-green: hsl(275, 75%, 65%);
+$cell-green: hsl(275, 75%, 60%);
 
 @mixin useShadow {
   box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
@@ -360,7 +360,7 @@ button#loginbtn {
 .card-text.content {
 
   & > .customtitle, & > .legend-box {
-    display: inline-block !important;
+    display: none !important;
   }
   /* each subject */
   & > div:nth-child(n+4) {
@@ -385,31 +385,67 @@ button#loginbtn {
         background-color: hsla(260, 10%, 10%, 0.8) !important;
         width: auto !important;
     
-        /* CELLS BACKGROUND */
+        // CELLS BACKGROUND
         & > tr > td {
           padding: 1rem !important;
           background-color: transparent !important;
-    
+          // RED
           [style*="#FF3300"] {
             background-color: $cell-red !important;
           }
+          // YELLOW
           [style*="#F7FE2E"] {
-            background-color: $cell-yellow !important;
+            background-color: $cell-red !important;
             position: relative !important;
-            animation: anim 2s infinite alternate ease-in-out;
-    
-            @keyframes anim {
-              0% {
-                filter: opacity(0.4);
-              }
-              100% {
-                filter: opacity(1);
+            
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 15%;
+              pointer-events: none;
+              animation: yellowCell 2s infinite alternate ease-in-out;
+              background-color: $cell-yellow;
+              
+              @keyframes yellowCell {
+                0% {
+                  filter: opacity(0.3);
+                }
+                100% {
+                  filter: opacity(1);
+                }
               }
             }
           }
+          // GREEN
           [style*="#33CC00"] {
+            position: relative !important;
             background-color: $cell-green !important;
+            background-image: none !important;
           }
+          [style*="up"] {
+            &::after {
+              content: '👍';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              translate: -50% -50%;
+              pointer-events: none;
+            }
+          }
+          [style*="down"] {
+            &::after {
+              content: '👎';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              translate: -50% -50%;
+              pointer-events: none;
+            }
+          }
+          // GRAY / FORUMS
           [style*="#CCCCCC"] {
             background-color: $dark-2 !important;
           }
