@@ -1,0 +1,570 @@
+@charset "UTF-8";
+body {
+  background-color: hsl(260deg, 13%, 10%) !important;
+}
+
+/* APPLY FONT SO ICONS DO NOT BREAK */
+body, html {
+  font-family: "Rubik", Roboto !important;
+}
+
+footer#page-footer {
+  background-color: black !important;
+}
+
+/* SLIDER */
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(260deg, 8%, 18%);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+*, *:active, *:focus {
+  border-width: 0 !important;
+  border: none !important;
+  outline-width: 0 !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  transition: all 0.1s !important;
+}
+
+header#page-header {
+  display: none !important;
+}
+
+section.block {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+
+section.block_mycourses {
+  outline: none !important;
+}
+
+/* DROPDOWN MENUS */
+div.dropdown-menu, ul.dropdown-menu {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+}
+div.dropdown-menu li a, ul.dropdown-menu li a {
+  border-radius: 0.5rem !important;
+  padding: 0.25rem !important;
+}
+div.dropdown-menu li a:hover, ul.dropdown-menu li a:hover {
+  color: hsl(260deg, 5%, 50%) !important;
+  background-color: transparent !important;
+}
+div.dropdown-menu.show, ul.dropdown-menu.show {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+}
+
+div.popover-region-container {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+}
+
+a.dropdown-item {
+  background-color: transparent !important;
+}
+a.dropdown-item:hover, a.dropdown-item:active {
+  filter: brightness(120%) !important;
+}
+
+#page-wrapper {
+  /* POPUP NAV LEFT / COMPACT NAVBAR */
+  /* NAVBAR */
+}
+#page-wrapper > #nav-drawer {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}
+#page-wrapper > nav.navbar.fixed-top {
+  background-color: transparent !important;
+  position: relative !important;
+  display: flex !important;
+  padding: 4rem 2rem 1rem 2rem;
+  box-shadow: none;
+}
+
+/* POPUP MESSENGER / COMPACT MESSENGER */
+/* BACKGROUND */
+[data-origin^=message-drawer-toggle] {
+  /* MESSAGE APP */
+}
+[data-origin^=message-drawer-toggle].bg-white {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: hsla(0deg, 0%, 0%, 0.5) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 1031 !important;
+}
+[data-origin^=message-drawer-toggle] .message-app {
+  margin: 10% !important;
+  background-color: hsl(260deg, 10%, 13%) !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+  max-width: 70vw !important;
+  display: flex !important;
+  padding: 0.5rem !important;
+}
+[data-origin^=message-drawer-toggle] .closewidget {
+  display: flex !important;
+  justify-content: flex-end !important;
+  background-color: transparent !important;
+  /* CLOSE POPUP MESSENGER BUTTON */
+}
+[data-origin^=message-drawer-toggle] .closewidget a {
+  align-self: flex-end !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  height: 2rem !important;
+  width: 2rem !important;
+}
+[data-origin^=message-drawer-toggle] .closewidget a i {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  /* CLOSE POPUP MESSENGER X ICON*/
+}
+[data-origin^=message-drawer-toggle] .closewidget a i::before {
+  content: "╳" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  translate: -50% -50% !important;
+  color: hsl(260deg, 5%, 50%) !important;
+}
+
+/* PROFILE BUTTON */
+a#action-menu-toggle-1 .userbutton .avatars {
+  margin-left: 1rem !important;
+}
+
+/* BUTTONS AND LINKS / SELECT */
+button.nav-link.float-sm-left.bg-gray {
+  background-color: transparent !important;
+}
+button.nav-link.float-sm-left.bg-gray:hover {
+  filter: brightness(120%) !important;
+}
+
+button, a {
+  background-color: transparent !important;
+  color: hsl(260deg, 10%, 70%) !important;
+  border-radius: 0.5rem !important;
+}
+button:hover, button:focus, a:hover, a:focus {
+  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  text-decoration: none !important;
+}
+button:disabled, button.page-link, a:disabled, a.page-link {
+  background-color: transparent !important;
+}
+
+select {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  padding: 0.5rem 2rem !important;
+  border-radius: 0.75rem !important;
+}
+
+.aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance > a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance > a:focus {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.card {
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  background-color: hsl(260deg, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  border-radius: 0.5rem !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, div {
+  color: hsl(260deg, 5%, 50%) !important;
+  background-color: transparent !important;
+}
+
+div#goto-top-link > a {
+  background-color: hsl(260deg, 10%, 13%);
+}
+
+/* REPORTS IN PROFILE */
+table.reportlog {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+}
+table.reportlog th, table.reportlog td {
+  padding: 0.75rem !important;
+}
+table.reportlog * {
+  background-color: transparent !important;
+  color: hsl(260deg, 5%, 50%) !important;
+}
+table.reportlog a {
+  color: hsl(260deg, 10%, 70%) !important;
+}
+table.reportlog a:hover {
+  color: hsl(260deg, 5%, 50%) !important;
+}
+
+/* INPUT / SEARCH / SUBMIT */
+input {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+}
+input.form-control {
+  background-color: hsl(260deg, 13%, 10%) !important;
+}
+input.btn {
+  background-color: hsl(260deg, 8%, 18%) !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: bold !important;
+}
+input.btn:hover {
+  filter: brightness(120%) !important;
+}
+input.btn.btn-primary {
+  background-color: hsl(210deg, 100%, 40%) !important;
+}
+input.btn.btn-secondary {
+  color: hsl(260deg, 5%, 50%);
+}
+
+button.btn-submit {
+  background-color: transparent !important;
+}
+
+textarea {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+}
+textarea.bg-light {
+  background-color: inherit !important;
+  border-color: inherit !important;
+}
+
+/* PROFILE TREE / ABOUT */
+div.profile_tree a {
+  padding: 0.5rem 0.5rem !important;
+}
+div.profile_tree ul {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.1rem !important;
+}
+div.profile_tree ul.inline-list {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+div.profile_tree ul li {
+  display: flex !important;
+}
+div.profile_tree ul li span {
+  display: flex !important;
+}
+div.profile_tree ul li span a:hover {
+  color: hsl(260deg, 10%, 70%) !important;
+}
+
+/* TEXT EDITOR */
+div.editor_atto_wrap {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  padding: 0.5rem 0.5rem !important;
+  border-radius: 0.5rem !important;
+}
+
+/* RECENTLY ADDED COURSES */
+div.block-recentlyaccessedcourses div.one-row > div {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+
+/* LOGIN */
+button#loginbtn {
+  background-color: hsl(260deg, 8%, 18%) !important;
+}
+button#loginbtn:hover {
+  background-color: hsl(260deg, 8%, 22%) !important;
+}
+
+/* TABLE OF SUBJECTS */
+.card-text.content {
+  /* each table of a subject */
+}
+.card-text.content > .customtitle, .card-text.content > .legend-box {
+  display: inline-block !important;
+}
+.card-text.content > div:nth-child(n+4) {
+  margin-top: 3rem !important;
+  /* SUBJECT NAME */
+}
+.card-text.content > div:nth-child(n+4) > h3 {
+  padding: 0.5rem !important;
+}
+.card-text.content > div:nth-child(n+4) > h3:hover {
+  filter: brightness(120%);
+}
+.card-text.content > div:nth-child(n+4) > h3 > a:hover {
+  background-color: transparent !important;
+}
+.card-text.content .course-box > tbody {
+  background-color: hsla(260deg, 10%, 10%, 0.8) !important;
+  width: auto !important;
+  /* CELLS BACKGROUND */
+}
+.card-text.content .course-box > tbody > tr > td {
+  padding: 1rem !important;
+  background-color: transparent !important;
+}
+
+table.course-box {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+
+/* CELL */
+.progressbar td.cm {
+  border-style: solid !important;
+  border-color: hsl(0deg, 0%, 10%) !important;
+  border-width: 0.1rem !important;
+  filter: hue-rotate(-15deg) !important;
+  opacity: 0.8 !important;
+}
+.progressbar td.cm:last-child {
+  background-color: hsl(260deg, 8%, 18%) !important;
+}
+.progressbar td.cm:hover, .progressbar td.cm:active {
+  translate: 0 -0.15rem !important;
+}
+.progressbar tbody tr span {
+  display: none;
+}
+
+/* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */
+div#region-main-box > section#region-main {
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  background-color: hsl(260deg, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  border-radius: 0.5rem !important;
+}
+div#region-main-box > section#region-main span#maincontent {
+  display: none !important;
+}
+
+/* DIALOGUE / POPUP */
+div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.modal-dialog {
+  background-color: hsl(260deg, 10%, 13%) !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+}
+
+/* UPLOAD FILE FORM */
+div.fp-upload-form input, div.fp-upload-form button {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+}
+
+div.fp-upload-form button.fp-upload-btn {
+  background-color: hsl(260deg, 8%, 18%) !important;
+}
+div.fp-upload-form button.fp-upload-btn:hover {
+  background-color: hsl(260deg, 8%, 22%) !important;
+}
+
+/* SUBMISSION TABLES / SUBJECT PAGE / TESTS / FEEDBACK */
+div.submissionsummarytable table, div.feedback table {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+}
+div.submissionsummarytable table *, div.feedback table * {
+  background-color: transparent !important;
+  color: hsl(260deg, 5%, 50%) !important;
+}
+
+div.submissionsummarytable table td {
+  /* NOT GRADED */
+  /* GRADED */
+}
+div.submissionsummarytable table td.submissionnotgraded {
+  color: hsl(260deg, 10%, 70%) !important;
+  font-weight: bold !important;
+}
+div.submissionsummarytable table td.submissiongraded {
+  color: hsl(80deg, 100%, 40%) !important;
+  font-weight: bold !important;
+}
+
+/* QUIZ */
+div.quizattempt button {
+  background-color: hsl(260deg, 8%, 18%) !important;
+  padding: 1rem 4rem !important;
+}
+div.quizattempt button:hover {
+  background-color: hsl(260deg, 8%, 22%) !important;
+}
+
+/* JUMP TO ACTIVITY */
+/* SUBMIT */
+div.submissionaction button {
+  background-color: hsl(260deg, 8%, 18%) !important;
+  padding: 0.75rem 2rem !important;
+}
+div.submissionaction button:hover {
+  background-color: hsl(260deg, 8%, 22%) !important;
+}
+
+/* MESSENGER */
+div.message-app {
+  background-color: transparent !important;
+  border-width: 0 !important;
+  /* EACH MESSAGE IN CHAT*/
+}
+div.message-app * {
+  border-width: 0 !important;
+}
+div.message-app .bg-white {
+  background-color: transparent !important;
+}
+div.message-app div.content-message-container > div {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+  outline: 0.1rem solid hsl(260deg, 8%, 18%) !important;
+  margin-top: 0.5rem !important;
+}
+div.message-app div.content-message-container > div > h6 {
+  margin-top: 1rem !important;
+}
+
+/* TESTS / ATTEMPTS / QUESTION BUTTONS / FINISH TEST */
+div.qn_buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+div.othernav a.endtestlink {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding: 0.5rem !important;
+}
+
+a.qnbutton {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+a.qnbutton:hover {
+  filter: brightness(120%) !important;
+}
+a.qnbutton.thispage {
+  outline: 0.1rem solid hsl(260deg, 8%, 22%) !important;
+}
+a.qnbutton.answersaved {
+  background-color: hsl(260deg, 8%, 22%) !important;
+}
+a.qnbutton.incorrect {
+  outline: 0.1rem solid hsl(20deg, 100%, 40%) !important;
+}
+
+/* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
+div.submitbtns {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  gap: 1rem !important;
+  height: auto !important;
+  width: auto !important;
+}
+div.submitbtns button, div.submitbtns a {
+  padding: 0.75rem 2rem !important;
+  background-color: hsl(260deg, 8%, 18%) !important;
+}
+div.submitbtns button:hover, div.submitbtns a:hover {
+  background-color: hsl(260deg, 8%, 22%) !important;
+}
+
+table.quizsummaryofattempt, table.quizreviewsummary, table.quizattemptsummary {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+}
+table.quizsummaryofattempt *, table.quizreviewsummary *, table.quizattemptsummary * {
+  background-color: transparent !important;
+  color: hsl(260deg, 5%, 50%) !important;
+}
+table.quizsummaryofattempt th, table.quizsummaryofattempt td, table.quizreviewsummary th, table.quizreviewsummary td, table.quizattemptsummary th, table.quizattemptsummary td {
+  padding: 0.5rem !important;
+}
+table.quizattemptsummary a[title^=Просмотр] {
+  background-color: hsl(260deg, 8%, 18%) !important;
+  color: hsl(260deg, 10%, 70%) !important;
+  padding: 0.5rem !important;
+}
+table.quizattemptsummary a[title^=Просмотр]:hover, table.quizattemptsummary a[title^=Просмотр]:active {
+  background-color: hsl(260deg, 8%, 22%) !important;
+}
+
+/* CONFIRM TEST */
+body#page-mod-quiz-summary div.moodle-dialogue {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  translate: -50% -50% !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd div.confirmation-dialogue {
+  display: flex !important;
+  flex-direction: column !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd div.confirmation-dialogue div.confirmation-buttons {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  gap: 1rem !important;
+  align-self: flex-end !important;
+  width: auto !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd div.confirmation-dialogue div.confirmation-buttons input {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding: 0.75rem 2rem !important;
+}/*# sourceMappingURL=main.css.map */

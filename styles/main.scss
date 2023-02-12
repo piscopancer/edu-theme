@@ -1,0 +1,616 @@
+$dark-0: hsl(260, 13%, 10%);
+$dark-1: hsl(260, 10%, 13%);
+$dark-2: hsl(260, 8%, 18%);
+$dark-3: hsl(260, 8%, 22%);
+$hightlight: hsla(260, 20%, 100%, 0.05);
+$text-primary: hsl(260, 10%, 70%);
+$text-secondary: hsl(260, 5%, 50%);
+
+@mixin useShadow {
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
+}
+
+body {
+  
+  background-color: $dark-0 !important;
+}
+/* APPLY FONT SO ICONS DO NOT BREAK */
+body, html {
+  font-family: 'Rubik', Roboto !important;
+}
+footer#page-footer {
+  background-color: black !important;
+}
+/* SLIDER */
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $dark-2;
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-corner {
+  display: none;
+}
+*, *:active, *:focus {
+  border-width: 0 !important;
+  border: none !important;
+  outline-width: 0 !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important; 
+  transition: all 0.1s !important;
+}
+header#page-header {
+  display: none !important;
+}
+section.block {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+section.block_mycourses {
+  outline: none !important;
+}
+/* DROPDOWN MENUS */
+div.dropdown-menu, ul.dropdown-menu {
+  background-color: $dark-0 !important;
+  outline: 0.1rem solid $dark-2 !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+
+  & li a {
+    border-radius: 0.5rem !important;
+    padding: 0.25rem !important;
+
+    &:hover {
+      color: $text-secondary !important;
+      background-color: transparent !important;
+    }
+  }
+  &.show {
+    background-color: $dark-0 !important;
+    border-radius: 0.5rem !important;
+    padding: 0.5rem !important;
+  }
+}
+div.popover-region-container {
+  background-color: $dark-0 !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+}
+a.dropdown-item {
+  background-color: transparent !important;
+
+  &:hover, &:active {
+    filter: brightness(120%) !important;
+  }
+}
+#page-wrapper {
+
+  /* POPUP NAV LEFT / COMPACT NAVBAR */
+  & > #nav-drawer {
+    background-color: $dark-0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+  }
+  /* NAVBAR */
+  & > nav.navbar.fixed-top {
+    background-color: transparent !important;
+    position: relative !important;
+    display: flex !important;
+    padding: 4rem 2rem 1rem 2rem;
+    box-shadow: none;
+  }
+}
+
+/* POPUP MESSENGER / COMPACT MESSENGER */
+/* BACKGROUND */
+[data-origin^=message-drawer-toggle] {
+  
+  &.bg-white {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: hsla(0, 0%, 0%, 0.50) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 1031 !important;
+  }
+  /* MESSAGE APP */
+  & .message-app {
+    margin: 10% !important;
+    background-color: $dark-1 !important;
+    border-radius: 0.5rem !important;
+    width: 100% !important;
+    max-width: 70vw !important;
+    display: flex !important;
+    padding: 0.5rem !important;
+  }
+  & .closewidget {
+    display: flex !important;
+    justify-content: flex-end !important;
+    background-color: transparent !important;
+    
+    /* CLOSE POPUP MESSENGER BUTTON */
+    & a {
+      align-self: flex-end !important;
+      margin: 0 !important;
+      background-color: transparent !important;
+      height: 2rem !important;
+      width: 2rem !important;
+
+      & i {
+        width: 100% !important;
+        height: 100% !important;
+        position: relative !important;
+
+        /* CLOSE POPUP MESSENGER X ICON*/
+        &::before {
+          content: '\2573' !important;
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          translate: -50% -50% !important;
+          color: $text-secondary !important;
+        }
+      }
+    }
+  }
+}
+
+/* PROFILE BUTTON */
+a#action-menu-toggle-1 .userbutton .avatars {
+  margin-left: 1rem !important;  
+}
+/* BUTTONS AND LINKS / SELECT */
+button.nav-link.float-sm-left.bg-gray {
+  background-color: transparent !important;
+
+  &:hover {
+    filter: brightness(120%) !important;
+  }
+}
+button, a {
+  background-color: transparent !important;
+  color: $text-primary !important;
+  border-radius: 0.5rem !important;
+
+  &:hover, &:focus {
+    background-color: $hightlight !important;
+    text-decoration: none !important;
+  }
+  &:disabled, &.page-link {
+    background-color: transparent !important;
+  }
+}
+select {
+  background-color: $dark-0 !important;
+  padding: 0.5rem 2rem !important;
+  border-radius: 0.75rem !important;
+}
+.aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance>a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance>a:focus {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.card {
+  @include useShadow;
+  background-color: $dark-1 !important;
+  outline: 0.1rem solid $dark-2 !important;
+  border-radius: 0.5rem !important;
+}
+p, h1, h2, h3, h4, h5, h6, span, div {
+  color: $text-secondary !important;
+  background-color: transparent !important;
+}
+div#goto-top-link > a {
+  background-color: $dark-1;
+}
+
+
+/* REPORTS IN PROFILE */
+table.reportlog {
+  background-color: $dark-0 !important;
+  border-radius: 0.5rem !important;
+  
+  & th, & td {
+    padding: 0.75rem !important;
+  }
+  & * {
+    background-color: transparent !important;
+    color: $text-secondary !important;
+  }
+  & a {
+    color: $text-primary !important;
+
+    &:hover {
+      color: $text-secondary !important;
+    }
+  }
+}
+
+
+/* INPUT / SEARCH / SUBMIT */
+input {
+  background-color: $dark-0 !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+
+  &.form-control {
+    background-color: $dark-0 !important;
+  }
+  &.btn {
+    background-color: $dark-2 !important;
+    padding: 0.75rem 2rem !important;
+    border-radius: 0.5rem !important;
+    font-weight: bold !important;
+
+    &:hover {
+      filter: brightness(120%) !important;  
+    }
+    &.btn-primary {
+      background-color: hsl(210, 100%, 40%) !important;
+    }
+    &.btn-secondary {
+      color: $text-secondary;
+    }
+  }
+
+}
+button.btn-submit {
+  background-color: transparent !important;
+}
+textarea {
+  background-color: $dark-0 !important;
+  border-radius: 0.5rem !important;
+
+  &.bg-light {
+    background-color: inherit !important;
+    border-color: inherit !important;
+  }
+}
+
+
+/* PROFILE TREE / ABOUT */
+div.profile_tree {
+
+  & a {
+    padding: 0.5rem 0.5rem !important;
+  }
+  & ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.1rem !important;
+    
+    &.inline-list {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+    }
+    & li {
+      display: flex !important;
+
+      & span {
+        display: flex !important;
+
+        & a:hover {
+          color: $text-primary !important;
+        }
+      }
+    }
+  }
+}
+
+/* TEXT EDITOR */
+div.editor_atto_wrap {
+  background-color: $dark-0 !important;
+  padding: 0.5rem 0.5rem !important;
+  border-radius: 0.5rem !important;
+}
+
+/* RECENTLY ADDED COURSES */
+div.block-recentlyaccessedcourses div.one-row > div {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+
+
+/* LOGIN */
+button#loginbtn {
+  background-color: $dark-2 !important;
+
+  &:hover {
+    background-color: $dark-3 !important;
+  }
+}
+
+
+/* TABLE OF SUBJECTS */
+
+
+.card-text.content {
+
+  & > .customtitle, & > .legend-box {
+    display: inline-block !important;
+  }
+  /* each table of a subject */
+  & > div:nth-child(n+4) {
+    margin-top: 3rem !important;
+
+    /* SUBJECT NAME */
+    & > h3 {
+      padding: 0.5rem !important;
+
+      &:hover {
+        filter: brightness(120%);
+      }
+      & > a:hover {
+        background-color: transparent !important;
+      }
+    }
+  }
+  & .course-box > tbody {
+    background-color: hsla(260, 10%, 10%, 0.8) !important;
+    width: auto !important;
+
+    /* CELLS BACKGROUND */
+    & > tr > td {
+      padding: 1rem !important;
+      background-color: transparent !important;
+    }
+  }
+
+}
+table.course-box {
+  overflow: hidden !important;
+  border-radius: 0.5rem !important;
+}
+/* CELL */
+.progressbar {
+
+  & td.cm {
+    border-style: solid !important;
+    border-color: hsl(0, 0%, 10%) !important;
+    border-width: 0.1rem !important;
+    filter: hue-rotate(-15deg) !important;
+    opacity: 0.8 !important;
+  
+    &:last-child {
+      background-color: $dark-2 !important;
+    }
+    &:hover, &:active {
+      translate: 0 -0.15rem !important;
+    }
+  }
+  & tbody tr span {
+    display: none;
+  }
+}
+
+/* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */
+
+div#region-main-box > section#region-main {
+  @include useShadow;
+  background-color: $dark-1 !important;
+  outline: 0.1rem solid $dark-2 !important;
+  border-radius: 0.5rem !important;
+
+  & span#maincontent {
+    display: none !important;
+  } 
+}
+
+/* DIALOGUE / POPUP */
+div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.modal-dialog {
+  background-color: $dark-1 !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  outline: 0.1rem solid $dark-2 !important;
+}
+
+
+/* UPLOAD FILE FORM */
+
+
+div.fp-upload-form input, div.fp-upload-form button {
+  background-color: $dark-0 !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+}
+div.fp-upload-form button.fp-upload-btn {
+  background-color: $dark-2 !important;
+
+  &:hover {
+    background-color: $dark-3 !important;
+  }
+}
+/* SUBMISSION TABLES / SUBJECT PAGE / TESTS / FEEDBACK */
+div.submissionsummarytable table, div.feedback table {
+  background-color: $dark-0 !important;
+  border-radius: 0.5rem !important;
+
+  & * {
+    background-color: transparent !important;
+    color: $text-secondary !important;
+  }
+}
+div.submissionsummarytable table td {
+  
+  /* NOT GRADED */
+  &.submissionnotgraded {
+    color: $text-primary !important;
+    font-weight: bold !important;
+  }
+  /* GRADED */
+  &.submissiongraded {
+    color: hsl(80, 100%, 40%) !important;
+    font-weight: bold !important;
+  }
+}
+/* QUIZ */
+div.quizattempt button {
+  background-color: $dark-2 !important;
+  padding: 1rem 4rem !important;
+
+  &:hover {
+    background-color: $dark-3 !important;
+  }
+}
+/* JUMP TO ACTIVITY */
+
+/* SUBMIT */
+div.submissionaction button {
+  background-color: $dark-2 !important;
+  padding: 0.75rem 2rem !important;
+
+  &:hover {
+    background-color: $dark-3 !important;
+  }
+}
+
+
+/* MESSENGER */
+
+
+div.message-app {
+  background-color: transparent !important;
+  border-width: 0 !important;
+
+  & * {
+    border-width: 0 !important;
+  }
+  & .bg-white {
+    background-color: transparent !important;
+  }
+  /* EACH MESSAGE IN CHAT*/
+  & div.content-message-container > div {
+    background-color: $dark-0 !important;
+    border-radius: 0.5rem !important;
+    outline: 0.1rem solid $dark-2 !important;
+    margin-top: 0.5rem !important;
+
+    & > h6 {
+      margin-top: 1rem !important;
+    }
+  }
+}
+
+/* TESTS / ATTEMPTS / QUESTION BUTTONS / FINISH TEST */
+div.qn_buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+div.othernav a.endtestlink {
+  width: fit-content !important;
+  padding: 0.5rem !important;
+}
+a.qnbutton {
+  background-color: $dark-0 !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+
+  &:hover {
+    filter: brightness(120%) !important;
+  }
+  &.thispage {
+    outline: 0.1rem solid $dark-3 !important;
+  }
+  &.answersaved {
+    background-color: $dark-3 !important;
+  }
+  &.incorrect {
+    outline: 0.1rem solid hsl(20, 100%, 40%) !important;
+  }
+}
+/* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
+div.submitbtns {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  gap: 1rem !important;
+  height: auto !important;
+  width: auto !important;
+
+  button, a {
+    padding: 0.75rem 2rem !important;
+    background-color: $dark-2 !important;
+  
+    &:hover {
+      background-color: $dark-3 !important;
+    }
+  }
+}
+table {
+  
+  &.quizsummaryofattempt, &.quizreviewsummary, &.quizattemptsummary {
+    background-color: $dark-0 !important;
+    border-radius: 0.5rem !important;
+
+    & * {
+      background-color: transparent !important;
+      color: $text-secondary !important;
+    }
+    & th, & td {
+      padding: 0.5rem !important;
+    }
+  }
+  &.quizattemptsummary {
+    
+    a[title^="Просмотр"] {
+      background-color: $dark-2 !important;
+      color: $text-primary !important;
+      padding: 0.5rem !important;
+
+      &:hover, &:active {
+        background-color: $dark-3 !important;
+      }
+    }
+  }
+}
+/* CONFIRM TEST */
+body#page-mod-quiz-summary {
+
+  & div.moodle-dialogue {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    translate: -50% -50% !important;
+    width: fit-content !important;
+    
+    & div.moodle-dialogue-wrap {
+      width: fit-content !important;
+
+      & .moodle-dialogue-bd {
+        width: fit-content !important;
+        
+        & div.confirmation-dialogue {
+          display: flex !important;
+          flex-direction: column !important;
+          width: fit-content !important;
+          align-items: center !important;
+          gap: 1rem !important;
+      
+          & div.confirmation-buttons {
+            display: flex !important;
+            flex-direction: row-reverse !important;
+            gap: 1rem !important;
+            align-self: flex-end  !important;
+            width: auto !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+        
+            & input {
+              width: fit-content !important;
+              padding: 0.75rem 2rem !important;  
+            }
+          }
+        }
+      }
+    }
+  }
+}

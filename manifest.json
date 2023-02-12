@@ -13,7 +13,7 @@
   },
   "content_scripts": [{
     "matches": ["https://edu.pgu.ru/*"],
-    "css": ["/style.css"],
+    "css": ["/styles/main.css"],
     "js": ["/index.js"]
   }]
 }
