@@ -35,21 +35,34 @@
 
 &nbsp;
 
-## `Главная`
+## Главная
+<img src="https://imgur.com/IyMMSE1.png" width="600">
 
-<img src="https://imgur.com/M9K9sDv.png" width="700">
+## Задания
+<img src="https://imgur.com/Jm0Ivas.png" width="600">
 
-## `Мессенджер`
+## Задание ожидает проверки (жёлтая клетка)
+<img src="https://imgur.com/awchB9O.png" width="600">
 
-<img src="https://imgur.com/rsVWs2b.png" width="700">
+## Всплывающие окна
+<img src="https://imgur.com/klTfahy.png" width="600">
+<img src="https://imgur.com/CkNrbCr.png" width="600">
 
-## `Состояние ответа`
+## Тест
+<img src="https://imgur.com/GD53uzX.png" width="600">
 
-<img src="https://imgur.com/buvMClZ.png" width="700">
+## Прикрепление файла
+<img src="https://imgur.com/Sj383yu.png" width="600">
+<img src="https://imgur.com/HAz0GD2.png" width="600">
 
-## `Прикрепление файла`
+## Состояние ответа
+<img src="https://imgur.com/WlQtmOI.png" width="600">
 
-<img src="https://imgur.com/SxbIwmj.png" width="700">
+## Мессенджер
+<img src="https://imgur.com/nAFrr9D.png" width="600">
+
+## Календарь
+<img src="https://imgur.com/gHz3veL.png" width="600">
 
 &nbsp;
 ### Автор: https://vk.com/piscopancer
