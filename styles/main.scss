@@ -19,6 +19,36 @@ $cell-green: hsl(275, 75%, 60%);
   border-radius: 0.5rem !important;
   border: none !important;
 }
+@mixin useSmoothAppear($move: true) {
+  animation: smoothAppear 0.1s ease-in-out;
+
+  @keyframes smoothAppear {
+    0% {
+      opacity: 0;
+      @if #{$move} {
+        translate: 0 -1rem;
+      }
+    }
+    100% {
+      opacity: 1;
+      @if #{$move} {
+        translate: 0 0;
+      }
+    }
+  }
+}
+@mixin usePulseAnim {
+  animation: pulse 1s infinite alternate ease-in-out;
+
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
 
 body {
   background-color: $dark-0 !important;
@@ -63,12 +93,11 @@ section.block_mycourses {
 }
 /* DROPDOWN MENUS */
 div.dropdown-menu, ul.dropdown-menu {
-  background-color: $dark-0 !important;
-  outline: 0.1rem solid $dark-2 !important;
-  border-radius: 0.5rem !important;
-  padding: 0.5rem !important;
+  @include useCard;
+  @include useShadow;
+  @include useSmoothAppear;
 
-  & li a {
+  li a {
     border-radius: 0.5rem !important;
     padding: 0.25rem !important;
 
@@ -77,23 +106,36 @@ div.dropdown-menu, ul.dropdown-menu {
       background-color: transparent !important;
     }
   }
-  &.show {
+  .show {
     background-color: $dark-0 !important;
     border-radius: 0.5rem !important;
     padding: 0.5rem !important;
+  }
+  a.dropdown-item {
+    background-color: transparent !important;
+  
+    &:hover, &:active {
+      filter: brightness(120%) !important;
+    }
   }
 }
 div.popover-region-container {
   @include useCard;
   @include useShadow;
+  @include useSmoothAppear;
   background-color: $dark-0 !important;
   padding: 0.5rem !important;
 }
-a.dropdown-item {
-  background-color: transparent !important;
+// BELL BUTTON / ICON
+div.popover-region-toggle.nav-link {
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
 
-  &:hover, &:active {
-    filter: brightness(120%) !important;
+  &:focus {
+    @include usePulseAnim;
+  }
+  &::after, &::before {
+    display: none !important;
   }
 }
 #page-wrapper {
@@ -128,7 +170,8 @@ a.dropdown-item {
 /* POPUP MESSENGER / COMPACT MESSENGER */
 /* BACKGROUND */
 [data-origin^=message-drawer-toggle], [data-origin^=message-user-button] {
-  
+  transition: transform 0s !important;
+
   &.bg-white {
     position: fixed !important;
     top: 0 !important;
@@ -142,13 +185,14 @@ a.dropdown-item {
     justify-content: center !important;
     align-items: center !important;
     z-index: 1031 !important;
+    @include useSmoothAppear;
   }
-  /* MESSAGE APP */
+  /* MESSAGE APP AS POPUP ON DARK BACKGROUND*/
   & .message-app {
-    margin: 10% !important;
     background-color: $dark-1 !important;
     border-radius: 0.5rem !important;
-    width: 100% !important;
+    height: 80% !important;
+    width: 80% !important;
     max-width: 70vw !important;
     display: flex !important;
     padding: 0.5rem !important;
@@ -214,10 +258,14 @@ button, a {
   background-color: transparent !important;
   color: $text-primary !important;
   border-radius: 0.5rem !important;
+  box-shadow: none !important; // DESTROY NATIVE EDU OULINE 
 
-  &:hover, &:focus {
+  &:hover, &:active, &:focus {
     background-color: $hightlight !important;
     text-decoration: none !important;
+  }
+  &:focus {
+    @include usePulseAnim;
   }
   &:disabled, &.page-link {
     background-color: transparent !important;
@@ -227,6 +275,11 @@ select {
   background-color: $dark-0 !important;
   padding: 0.5rem 2rem !important;
   border-radius: 0.75rem !important;
+  box-shadow: none !important;
+
+  &:focus {
+    outline: 0.2rem solid $hightlight !important;
+  }
 }
 .aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance>a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance>a:focus {
   box-shadow: none !important;
@@ -249,7 +302,7 @@ div#goto-top-link > a {
 table.generaltable:not(.course-box) {
   background-color: $dark-0 !important;
   border-radius: 0.5rem !important;
-  
+
   & th, & td {
     padding: 0.75rem !important;
   }
@@ -272,7 +325,11 @@ input {
   background-color: $dark-0 !important;
   padding: 0.75rem 2rem !important;
   border-radius: 0.5rem !important;
-
+  box-shadow: none !important;
+  
+  &:focus {
+    outline: 0.2rem solid $hightlight !important;
+  }
   &.form-control {
     background-color: $dark-0 !important;
   }
@@ -375,6 +432,36 @@ body#page-login-index {
   }
 }
 
+// POPOVER (CALENDER)
+
+div.popover {
+  @include useCard;
+  @include useShadow;
+  @include useSmoothAppear;  
+  transition: transform 0s !important;
+
+  div::after, div::before {
+    display: none !important;
+  }
+}
+
+
+// CALENDER
+
+td.hasevent {
+  background-color: $dark-2 !important;
+  &:hover, &:active, &:focus {
+    background-color: $dark-3 !important;
+  }
+  
+  a {
+    border-radius: 0 !important;
+    
+    &:hover, &:active, &:focus {
+      background-color: transparent !important;
+    }
+  }
+}
 
 /* TABLE OF SUBJECTS */
 
@@ -485,7 +572,8 @@ body#page-login-index {
               border-color: hsl(0, 0%, 10%) !important;
               border-width: 0.1rem !important;
               opacity: 0.85 !important;
-            
+              transition: translate 0.1s !important;
+
               &:hover, &:active {
                 translate: 0 -0.15rem !important;
               }
@@ -505,7 +593,8 @@ body#page-login-index {
               padding: 0.25rem 0.5rem !important;
               background-color: $dark-2 !important;
               border-radius: 0.5rem !important;
-              
+              @include useSmoothAppear(false);
+
               &:hover {
                 background-color: $dark-3 !important;
               }
@@ -553,21 +642,115 @@ div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.moda
 }
 
 
-/* UPLOAD FILE FORM */
+// UPLOAD FILE FORM BLOCK
 
+div.filemanager {
+  @include useCard;
+  @include useShadow;
+  padding: 1rem !important;
+  display: flex !important;
+  flex-flow: column !important;
+  gap: 1rem !important;
+  
+  .filemanager-container, .card {
+    outline: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
 
-div.fp-upload-form input, div.fp-upload-form button {
-  background-color: $dark-0 !important;
-  padding: 0.75rem 2rem !important;
-  border-radius: 0.5rem !important;
-}
-div.fp-upload-form button.fp-upload-btn {
-  background-color: $dark-2 !important;
-
-  &:hover {
-    background-color: $dark-3 !important;
+    .fm-empty-container {
+      @include useCard;
+      background-color: $dark-0 !important;
+      position: relative !important;
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      padding: 1rem !important;
+  
+      .dndupload-message {
+        height: 30rem !important;
+  
+        .dndupload-arrow {
+          background-image: url(https://imgur.com/cYYJ8OG.png) !important;
+          background-size: contain !important;
+          animation: file 1s infinite alternate ease-in-out;
+          position: relative !important;
+          top: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          left: 0 !important;
+          margin-block: 1rem !important;
+          
+          @keyframes file {
+            from {
+              translate: 0 0;
+              opacity: 1;
+            }
+            to {
+              translate: 0 0.5rem;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+    .fp-upload-form {
+  
+      input, div {
+  
+        background-color: $dark-0 !important;
+        padding: 0.75rem 2rem !important;
+        border-radius: 0.5rem !important;
+      }
+    }
   }
 }
+
+// UPLOAD FILE POPUP
+
+.moodle-dialogue.filepicker {
+  @include useShadow;
+  @include useSmoothAppear;
+  transition: transform 0s !important;
+  height: fit-content !important;
+  width: fit-content !important;
+
+  div.fp-repo-items {
+    padding: 0.5rem !important;
+  
+    .card {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    // CHOOSE FILE INPUT
+    .fp-file div:nth-child(2) {
+      padding: 0 !important;
+
+      input {
+        width: 100% !important;
+        padding: 1rem !important;
+        @include usePulseAnim;
+
+        &::-webkit-file-upload-button {
+          display: none !important;
+        }
+        &:hover {
+          cursor: pointer !important;
+        }
+      }
+    }
+    .fp-upload-btn {
+      background-color: $dark-2 !important;
+      padding: 0.75rem 2rem !important;
+  
+      &:hover {
+        background-color: $dark-3 !important;
+      }
+    }
+  }
+}
+
+// GRADES
 div.submissionsummarytable table td {
   
   /* NOT GRADED */
@@ -609,6 +792,11 @@ div.submissionaction button {
 div.message-app {
   background-color: transparent !important;
   border-width: 0 !important;
+
+  .card {
+    box-shadow: none !important;
+    outline: none !important;
+  }
 
   & * {
     border-width: 0 !important;
@@ -695,6 +883,7 @@ body#page-mod-quiz-summary {
     left: 50% !important;
     translate: -50% -50% !important;
     width: fit-content !important;
+    height: fit-content !important;
     
     & div.moodle-dialogue-wrap {
       width: fit-content !important;

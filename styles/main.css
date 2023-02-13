@@ -52,10 +52,22 @@ section.block_mycourses {
 
 /* DROPDOWN MENUS */
 div.dropdown-menu, ul.dropdown-menu {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
-  padding: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  animation: smoothAppear 0.1s ease-in-out;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 div.dropdown-menu li a, ul.dropdown-menu li a {
   border-radius: 0.5rem !important;
@@ -65,10 +77,16 @@ div.dropdown-menu li a:hover, ul.dropdown-menu li a:hover {
   color: hsl(260deg, 5%, 50%) !important;
   background-color: transparent !important;
 }
-div.dropdown-menu.show, ul.dropdown-menu.show {
+div.dropdown-menu .show, ul.dropdown-menu .show {
   background-color: hsl(260deg, 13%, 10%) !important;
   border-radius: 0.5rem !important;
   padding: 0.5rem !important;
+}
+div.dropdown-menu a.dropdown-item, ul.dropdown-menu a.dropdown-item {
+  background-color: transparent !important;
+}
+div.dropdown-menu a.dropdown-item:hover, div.dropdown-menu a.dropdown-item:active, ul.dropdown-menu a.dropdown-item:hover, ul.dropdown-menu a.dropdown-item:active {
+  filter: brightness(120%) !important;
 }
 
 div.popover-region-container {
@@ -77,15 +95,38 @@ div.popover-region-container {
   border-radius: 0.5rem !important;
   border: none !important;
   box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  animation: smoothAppear 0.1s ease-in-out;
   background-color: hsl(260deg, 13%, 10%) !important;
   padding: 0.5rem !important;
 }
-
-a.dropdown-item {
-  background-color: transparent !important;
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
-a.dropdown-item:hover, a.dropdown-item:active {
-  filter: brightness(120%) !important;
+
+div.popover-region-toggle.nav-link {
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+div.popover-region-toggle.nav-link:focus {
+  animation: pulse 1s infinite alternate ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::before {
+  display: none !important;
 }
 
 #page-wrapper {
@@ -116,7 +157,8 @@ a.dropdown-item:hover, a.dropdown-item:active {
 /* POPUP MESSENGER / COMPACT MESSENGER */
 /* BACKGROUND */
 [data-origin^=message-drawer-toggle], [data-origin^=message-user-button] {
-  /* MESSAGE APP */
+  transition: transform 0s !important;
+  /* MESSAGE APP AS POPUP ON DARK BACKGROUND*/
 }
 [data-origin^=message-drawer-toggle].bg-white, [data-origin^=message-user-button].bg-white {
   position: fixed !important;
@@ -131,12 +173,23 @@ a.dropdown-item:hover, a.dropdown-item:active {
   justify-content: center !important;
   align-items: center !important;
   z-index: 1031 !important;
+  animation: smoothAppear 0.1s ease-in-out;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 [data-origin^=message-drawer-toggle] .message-app, [data-origin^=message-user-button] .message-app {
-  margin: 10% !important;
   background-color: hsl(260deg, 13%, 13%) !important;
   border-radius: 0.5rem !important;
-  width: 100% !important;
+  height: 80% !important;
+  width: 80% !important;
   max-width: 70vw !important;
   display: flex !important;
   padding: 0.5rem !important;
@@ -201,10 +254,22 @@ button, a {
   background-color: transparent !important;
   color: hsl(260deg, 10%, 70%) !important;
   border-radius: 0.5rem !important;
+  box-shadow: none !important;
 }
-button:hover, button:focus, a:hover, a:focus {
+button:hover, button:active, button:focus, a:hover, a:active, a:focus {
   background-color: hsla(260deg, 20%, 100%, 0.05) !important;
   text-decoration: none !important;
+}
+button:focus, a:focus {
+  animation: pulse 1s infinite alternate ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 button:disabled, button.page-link, a:disabled, a.page-link {
   background-color: transparent !important;
@@ -214,6 +279,10 @@ select {
   background-color: hsl(260deg, 13%, 10%) !important;
   padding: 0.5rem 2rem !important;
   border-radius: 0.75rem !important;
+  box-shadow: none !important;
+}
+select:focus {
+  outline: 0.2rem solid hsla(260deg, 20%, 100%, 0.05) !important;
 }
 
 .aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance > a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance > a:focus {
@@ -262,6 +331,10 @@ input {
   background-color: hsl(260deg, 13%, 10%) !important;
   padding: 0.75rem 2rem !important;
   border-radius: 0.5rem !important;
+  box-shadow: none !important;
+}
+input:focus {
+  outline: 0.2rem solid hsla(260deg, 20%, 100%, 0.05) !important;
 }
 input.form-control {
   background-color: hsl(260deg, 13%, 10%) !important;
@@ -348,6 +421,42 @@ body#page-login-index button#loginbtn {
 }
 body#page-login-index button#loginbtn:hover {
   background-color: hsl(260deg, 13%, 22%) !important;
+}
+
+div.popover {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  animation: smoothAppear 0.1s ease-in-out;
+  transition: transform 0s !important;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+div.popover div::after, div.popover div::before {
+  display: none !important;
+}
+
+td.hasevent {
+  background-color: hsl(260deg, 13%, 18%) !important;
+}
+td.hasevent:hover, td.hasevent:active, td.hasevent:focus {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+td.hasevent a {
+  border-radius: 0 !important;
+}
+td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
+  background-color: transparent !important;
 }
 
 /* TABLE OF SUBJECTS */
@@ -443,6 +552,7 @@ body#page-login-index button#loginbtn:hover {
   border-color: hsl(0deg, 0%, 10%) !important;
   border-width: 0.1rem !important;
   opacity: 0.85 !important;
+  transition: translate 0.1s !important;
 }
 .card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm:hover, .card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm:active {
   translate: 0 -0.15rem !important;
@@ -462,6 +572,17 @@ body#page-login-index button#loginbtn:hover {
   padding: 0.25rem 0.5rem !important;
   background-color: hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
+  animation: smoothAppear 0.1s ease-in-out;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 .card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent:hover {
   background-color: hsl(260deg, 13%, 22%) !important;
@@ -497,17 +618,118 @@ div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.moda
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
 }
 
-/* UPLOAD FILE FORM */
-div.fp-upload-form input, div.fp-upload-form button {
+div.filemanager {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  padding: 1rem !important;
+  display: flex !important;
+  flex-flow: column !important;
+  gap: 1rem !important;
+}
+div.filemanager .filemanager-container, div.filemanager .card {
+  outline: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+div.filemanager .filemanager-container .fm-empty-container, div.filemanager .card .fm-empty-container {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsl(260deg, 13%, 10%) !important;
+  position: relative !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  padding: 1rem !important;
+}
+div.filemanager .filemanager-container .fm-empty-container .dndupload-message, div.filemanager .card .fm-empty-container .dndupload-message {
+  height: 30rem !important;
+}
+div.filemanager .filemanager-container .fm-empty-container .dndupload-message .dndupload-arrow, div.filemanager .card .fm-empty-container .dndupload-message .dndupload-arrow {
+  background-image: url(https://imgur.com/cYYJ8OG.png) !important;
+  background-size: contain !important;
+  animation: file 1s infinite alternate ease-in-out;
+  position: relative !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  margin-block: 1rem !important;
+}
+@keyframes file {
+  from {
+    translate: 0 0;
+    opacity: 1;
+  }
+  to {
+    translate: 0 0.5rem;
+    opacity: 0.5;
+  }
+}
+div.filemanager .filemanager-container .fp-upload-form input, div.filemanager .filemanager-container .fp-upload-form div, div.filemanager .card .fp-upload-form input, div.filemanager .card .fp-upload-form div {
   background-color: hsl(260deg, 13%, 10%) !important;
   padding: 0.75rem 2rem !important;
   border-radius: 0.5rem !important;
 }
 
-div.fp-upload-form button.fp-upload-btn {
-  background-color: hsl(260deg, 13%, 18%) !important;
+.moodle-dialogue.filepicker {
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  animation: smoothAppear 0.1s ease-in-out;
+  transition: transform 0s !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
-div.fp-upload-form button.fp-upload-btn:hover {
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.moodle-dialogue.filepicker div.fp-repo-items {
+  padding: 0.5rem !important;
+}
+.moodle-dialogue.filepicker div.fp-repo-items .card {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.moodle-dialogue.filepicker div.fp-repo-items .fp-file div:nth-child(2) {
+  padding: 0 !important;
+}
+.moodle-dialogue.filepicker div.fp-repo-items .fp-file div:nth-child(2) input {
+  width: 100% !important;
+  padding: 1rem !important;
+  animation: pulse 1s infinite alternate ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.moodle-dialogue.filepicker div.fp-repo-items .fp-file div:nth-child(2) input::-webkit-file-upload-button {
+  display: none !important;
+}
+.moodle-dialogue.filepicker div.fp-repo-items .fp-file div:nth-child(2) input:hover {
+  cursor: pointer !important;
+}
+.moodle-dialogue.filepicker div.fp-repo-items .fp-upload-btn {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  padding: 0.75rem 2rem !important;
+}
+.moodle-dialogue.filepicker div.fp-repo-items .fp-upload-btn:hover {
   background-color: hsl(260deg, 13%, 22%) !important;
 }
 
@@ -548,6 +770,10 @@ div.message-app {
   background-color: transparent !important;
   border-width: 0 !important;
   /* EACH MESSAGE IN CHAT*/
+}
+div.message-app .card {
+  box-shadow: none !important;
+  outline: none !important;
 }
 div.message-app * {
   border-width: 0 !important;
@@ -629,6 +855,8 @@ body#page-mod-quiz-summary div.moodle-dialogue {
   translate: -50% -50% !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
 }
 body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap {
   width: -moz-fit-content !important;
