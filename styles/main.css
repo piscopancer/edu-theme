@@ -153,6 +153,11 @@ div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::b
   background-color: transparent !important;
   color: hsl(260deg, 5%, 50%) !important;
 }
+@media (max-width: 1140px) {
+  #page-wrapper > nav.navbar.fixed-top ul:nth-child(3) {
+    display: none !important;
+  }
+}
 
 /* POPUP MESSENGER / COMPACT MESSENGER */
 /* BACKGROUND */
@@ -222,8 +227,10 @@ div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::b
   color: hsl(260deg, 5%, 50%) !important;
 }
 
-/* PROFILE BUTTON */
-a#action-menu-toggle-1 .userbutton .avatars {
+.nav.usernav {
+  flex-wrap: nowrap !important;
+}
+.nav.usernav a#action-menu-toggle-1 .userbutton .avatars {
   margin-left: 1rem !important;
 }
 
@@ -349,7 +356,9 @@ input.btn:hover {
   filter: brightness(120%) !important;
 }
 input.btn.btn-primary {
-  background-color: hsl(210deg, 100%, 40%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+  background-color: hsl(270deg, 50%, 45%) !important;
 }
 input.btn.btn-secondary {
   color: hsl(260deg, 5%, 50%);
@@ -369,6 +378,14 @@ textarea.bg-light {
 }
 
 /* PROFILE TREE / ABOUT */
+div.profile_tree a[href*="user/edit"] {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+}
+div.profile_tree a[href*="user/edit"]:hover, div.profile_tree a[href*="user/edit"]:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
 div.profile_tree a {
   padding: 0.5rem 0.5rem !important;
 }
@@ -610,12 +627,38 @@ body:not(#page-login-index) div#region-main-box > section#region-main span#mainc
   display: none !important;
 }
 
-/* DIALOGUE / POPUP */
-div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.modal-dialog {
+.yui3-widget.yui3-panel, .moodle-dialogue, .yui3-widget-modal, .modal-dialog {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  transition: transform 0s !important;
+  animation: smoothAppear 0.1s ease-in-out;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  translate: -50% -50% !important;
+  width: calc(100vw - 2rem) !important;
+  max-width: -moz-fit-content !important;
+  max-width: fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
   background-color: hsl(260deg, 13%, 13%) !important;
   padding: 1rem !important;
-  border-radius: 0.5rem !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.yui3-widget.yui3-panel .moodle-dialogue-bd, .moodle-dialogue .moodle-dialogue-bd, .yui3-widget-modal .moodle-dialogue-bd, .modal-dialog .moodle-dialogue-bd {
+  overflow: auto !important;
 }
 
 div.filemanager {
@@ -660,6 +703,7 @@ div.filemanager .filemanager-container .fm-empty-container .dndupload-message .d
   bottom: 0 !important;
   left: 0 !important;
   margin-block: 1rem !important;
+  cursor: pointer !important;
 }
 @keyframes file {
   from {
@@ -677,23 +721,9 @@ div.filemanager .filemanager-container .fp-upload-form input, div.filemanager .f
   border-radius: 0.5rem !important;
 }
 
-.moodle-dialogue.filepicker {
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
-  animation: smoothAppear 0.1s ease-in-out;
-  transition: transform 0s !important;
-  height: -moz-fit-content !important;
-  height: fit-content !important;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-}
-@keyframes smoothAppear {
-  0% {
-    opacity: 0;
-    translate: 0 -1rem;
-  }
-  100% {
-    opacity: 1;
-    translate: 0 0;
+@media (max-width: 768px) {
+  .moodle-dialogue.filepicker {
+    min-width: calc(100vw - 2rem) !important;
   }
 }
 .moodle-dialogue.filepicker div.fp-repo-items {
@@ -746,22 +776,13 @@ div.submissionsummarytable table td.submissiongraded {
   font-weight: bold !important;
 }
 
-/* QUIZ */
-div.quizattempt button {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  padding: 1rem 4rem !important;
-}
-div.quizattempt button:hover {
-  background-color: hsl(260deg, 13%, 22%) !important;
-}
-
 /* JUMP TO ACTIVITY */
-/* SUBMIT */
 div.submissionaction button {
   background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-div.submissionaction button:hover {
+div.submissionaction button:hover, div.submissionaction button:active {
   background-color: hsl(260deg, 13%, 22%) !important;
 }
 
@@ -791,7 +812,6 @@ div.message-app div.content-message-container > div > h6 {
   margin-top: 1rem !important;
 }
 
-/* TESTS / ATTEMPTS / QUESTION BUTTONS / FINISH TEST */
 div.qn_buttons {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -821,6 +841,60 @@ a.qnbutton.incorrect {
   outline: 0.1rem solid hsl(20deg, 100%, 40%) !important;
 }
 
+div.quizattempt button {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+}
+div.quizattempt button:hover, div.quizattempt button:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+
+form#mod_quiz_preflight_form {
+  padding: 1rem !important;
+}
+form#mod_quiz_preflight_form fieldset[id=id_honestycheckheader] {
+  margin: 0 !important;
+}
+form#mod_quiz_preflight_form fieldset[id=id_honestycheckheader] > :nth-child(1) {
+  padding: 0 !important;
+}
+form#mod_quiz_preflight_form div[id=fitem_id_honestycheckmessage] {
+  margin: 0 !important;
+}
+form#mod_quiz_preflight_form div[id=fitem_id_honestycheckmessage] > div:nth-child(1) {
+  display: none !important;
+}
+form#mod_quiz_preflight_form div[id=fitem_id_honestycheckmessage] > div:nth-child(2) {
+  padding: 0 !important;
+  max-width: unset !important;
+  flex: unset !important;
+}
+form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  padding: 0 !important;
+  margin-top: 2rem !important;
+}
+form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(1) {
+  display: none !important;
+}
+form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) {
+  padding: 0 !important;
+  max-width: unset !important;
+  flex: unset !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.flex-wrap.align-items-center {
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+}
+form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.flex-wrap.align-items-center .form-group {
+  margin: 0 !important;
+}
+
 /* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
 div.submitbtns {
   display: flex !important;
@@ -831,42 +905,33 @@ div.submitbtns {
   width: auto !important;
 }
 div.submitbtns button, div.submitbtns a {
-  padding: 0.75rem 2rem !important;
   background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
 }
-div.submitbtns button:hover, div.submitbtns a:hover {
+div.submitbtns button:hover, div.submitbtns button:active, div.submitbtns a:hover, div.submitbtns a:active {
   background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 table.quizattemptsummary a[title^=Просмотр] {
   background-color: hsl(260deg, 13%, 18%) !important;
-  color: hsl(260deg, 10%, 70%) !important;
-  padding: 0.5rem !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
 }
 table.quizattemptsummary a[title^=Просмотр]:hover, table.quizattemptsummary a[title^=Просмотр]:active {
   background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 /* CONFIRM TEST */
-body#page-mod-quiz-summary div.moodle-dialogue {
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  translate: -50% -50% !important;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-  height: -moz-fit-content !important;
-  height: fit-content !important;
-}
-body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap {
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap {
   width: -moz-fit-content !important;
   width: fit-content !important;
 }
-body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd {
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
   width: -moz-fit-content !important;
   width: fit-content !important;
 }
-body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd div.confirmation-dialogue {
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue {
   display: flex !important;
   flex-direction: column !important;
   width: -moz-fit-content !important;
@@ -874,7 +939,7 @@ body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-
   align-items: center !important;
   gap: 1rem !important;
 }
-body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd div.confirmation-dialogue div.confirmation-buttons {
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue .confirmation-buttons {
   display: flex !important;
   flex-direction: row-reverse !important;
   gap: 1rem !important;
@@ -883,7 +948,7 @@ body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-
   flex-wrap: nowrap !important;
   align-items: center !important;
 }
-body#page-mod-quiz-summary div.moodle-dialogue div.moodle-dialogue-wrap .moodle-dialogue-bd div.confirmation-dialogue div.confirmation-buttons input {
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue .confirmation-buttons input {
   width: -moz-fit-content !important;
   width: fit-content !important;
   padding: 0.75rem 2rem !important;

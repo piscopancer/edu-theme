@@ -6,20 +6,29 @@ $hightlight: hsla(260, 20%, 100%, 0.05);
 $text-primary: hsl(260, 10%, 70%);
 $text-secondary: hsl(260, 5%, 50%);
 
-$cell-red: hsl(265, 50%, 20%);
-$cell-yellow: hsl(270, 50%, 45%);
-$cell-green: hsl(275, 75%, 60%);
+$purple-0: hsl(265, 50%, 20%);
+$purple-1: hsl(270, 50%, 45%);
+$purple-2: hsl(275, 75%, 60%);
 
-@mixin useShadow {
+@mixin shadow {
   box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
 }
-@mixin useCard {
+@mixin card {
   background-color: $dark-1 !important;
   outline: 0.1rem solid $dark-2 !important;
   border-radius: 0.5rem !important;
   border: none !important;
 }
-@mixin useSmoothAppear($move: true) {
+@mixin importantButton {
+  background-color: $dark-2 !important;
+  border: 0.1rem solid $hightlight !important;
+  padding: 0.75rem 2rem !important;
+
+  &:hover, &:active {
+    background-color: $dark-3 !important;
+  }
+}
+@mixin smoothAppearAnim($move: true) {
   animation: smoothAppear 0.1s ease-in-out;
 
   @keyframes smoothAppear {
@@ -37,7 +46,7 @@ $cell-green: hsl(275, 75%, 60%);
     }
   }
 }
-@mixin usePulseAnim {
+@mixin pulseAnim {
   animation: pulse 1s infinite alternate ease-in-out;
 
   @keyframes pulse {
@@ -93,9 +102,9 @@ section.block_mycourses {
 }
 /* DROPDOWN MENUS */
 div.dropdown-menu, ul.dropdown-menu {
-  @include useCard;
-  @include useShadow;
-  @include useSmoothAppear;
+  @include card;
+  @include shadow;
+  @include smoothAppearAnim;
 
   li a {
     border-radius: 0.5rem !important;
@@ -120,9 +129,9 @@ div.dropdown-menu, ul.dropdown-menu {
   }
 }
 div.popover-region-container {
-  @include useCard;
-  @include useShadow;
-  @include useSmoothAppear;
+  @include card;
+  @include shadow;
+  @include smoothAppearAnim;
   background-color: $dark-0 !important;
   padding: 0.5rem !important;
 }
@@ -132,7 +141,7 @@ div.popover-region-toggle.nav-link {
   box-shadow: none !important;
 
   &:focus {
-    @include usePulseAnim;
+    @include pulseAnim;
   }
   &::after, &::before {
     display: none !important;
@@ -164,6 +173,11 @@ div.popover-region-toggle.nav-link {
         color: $text-secondary !important;
       }
     }
+    ul:nth-child(3) {
+      @media (max-width: 1140px) {
+        display: none !important;
+      }
+    }
   }
 }
 
@@ -185,7 +199,7 @@ div.popover-region-toggle.nav-link {
     justify-content: center !important;
     align-items: center !important;
     z-index: 1031 !important;
-    @include useSmoothAppear;
+    @include smoothAppearAnim;
   }
   /* MESSAGE APP AS POPUP ON DARK BACKGROUND*/
   & .message-app {
@@ -229,14 +243,18 @@ div.popover-region-toggle.nav-link {
   }
 }
 
-/* PROFILE BUTTON */
-a#action-menu-toggle-1 .userbutton .avatars {
-  margin-left: 1rem !important;  
+// PROFILE IN NAV
+.nav.usernav {
+  flex-wrap: nowrap !important;
+
+  a#action-menu-toggle-1 .userbutton .avatars {
+    margin-left: 1rem !important;  
+  }
 }
 // PARTICIPANTS
 div[data-table-region^="user-index-participants"] {
-  @include useCard;
-  @include useShadow;
+  @include card;
+  @include shadow;
   padding: 1rem !important;
 
   & .border-radius.bg-white {
@@ -265,7 +283,7 @@ button, a {
     text-decoration: none !important;
   }
   &:focus {
-    @include usePulseAnim;
+    @include pulseAnim;
   }
   &:disabled, &.page-link {
     background-color: transparent !important;
@@ -286,8 +304,8 @@ select {
   background-color: transparent !important;
 }
 .card {
-  @include useShadow;
-  @include useCard;
+  @include shadow;
+  @include card;
 }
 p, h1, h2, h3, h4, h5, h6, span, div {
   color: $text-secondary !important;
@@ -343,7 +361,9 @@ input {
       filter: brightness(120%) !important;  
     }
     &.btn-primary {
-      background-color: hsl(210, 100%, 40%) !important;
+      border: 0.1rem solid $hightlight !important;
+      padding: 0.75rem 2rem !important;
+      background-color: $purple-1 !important;
     }
     &.btn-secondary {
       color: $text-secondary;
@@ -368,6 +388,9 @@ textarea {
 /* PROFILE TREE / ABOUT */
 div.profile_tree {
 
+  a[href*="user/edit"] {
+    @include importantButton;
+  }
   & a {
     padding: 0.5rem 0.5rem !important;
   }
@@ -435,9 +458,9 @@ body#page-login-index {
 // POPOVER (CALENDER)
 
 div.popover {
-  @include useCard;
-  @include useShadow;
-  @include useSmoothAppear;  
+  @include card;
+  @include shadow;
+  @include smoothAppearAnim;  
   transition: transform 0s !important;
 
   div::after, div::before {
@@ -500,11 +523,11 @@ td.hasevent {
           background-color: transparent !important;
           // RED
           [style*="#FF3300"] {
-            background-color: $cell-red !important;
+            background-color: $purple-0 !important;
           }
           // YELLOW
           [style*="#F7FE2E"] {
-            background-color: $cell-red !important;
+            background-color: $purple-0 !important;
             position: relative !important;
             
             &::after {
@@ -516,7 +539,7 @@ td.hasevent {
               height: 15%;
               pointer-events: none;
               animation: yellowCell 2s infinite alternate ease-in-out;
-              background-color: $cell-yellow;
+              background-color: $purple-1;
               
               @keyframes yellowCell {
                 0% {
@@ -531,7 +554,7 @@ td.hasevent {
           // GREEN
           [style*="#33CC00"] {
             position: relative !important;
-            background-color: $cell-green !important;
+            background-color: $purple-2 !important;
             background-image: none !important;
           }
           [style*="up"] {
@@ -593,7 +616,7 @@ td.hasevent {
               padding: 0.25rem 0.5rem !important;
               background-color: $dark-2 !important;
               border-radius: 0.5rem !important;
-              @include useSmoothAppear(false);
+              @include smoothAppearAnim(false);
 
               &:hover {
                 background-color: $dark-3 !important;
@@ -623,7 +646,7 @@ td.hasevent {
 /* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */
 
 body:not(#page-login-index) div#region-main-box > section#region-main {
-  @include useShadow;
+  @include shadow;
   background-color: $dark-1 !important;
   outline: 0.1rem solid $dark-2 !important;
   border-radius: 0.5rem !important;
@@ -633,20 +656,34 @@ body:not(#page-login-index) div#region-main-box > section#region-main {
   } 
 }
 
-/* DIALOGUE / POPUP */
-div.yui3-widget.yui3-panel, div.moodle-dialogue, div.yui3-widget-modal, div.modal-dialog {
+// DIALOGUE / POPUP
+
+.yui3-widget.yui3-panel, .moodle-dialogue, .yui3-widget-modal, .modal-dialog {
+  @include card;
+  transition: transform 0s !important;
+  @include smoothAppearAnim;
+  @include shadow;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  translate: -50% -50% !important;
+  width: calc(100vw - 2rem) !important;
+  max-width: fit-content !important;
+  height: fit-content !important;
   background-color: $dark-1 !important;
   padding: 1rem !important;
-  border-radius: 0.5rem !important;
-  outline: 0.1rem solid $dark-2 !important;
+
+  .moodle-dialogue-bd {
+    overflow: auto !important;
+  }
 }
 
 
 // UPLOAD FILE FORM BLOCK
 
 div.filemanager {
-  @include useCard;
-  @include useShadow;
+  @include card;
+  @include shadow;
   padding: 1rem !important;
   display: flex !important;
   flex-flow: column !important;
@@ -658,7 +695,7 @@ div.filemanager {
     overflow: visible !important;
 
     .fm-empty-container {
-      @include useCard;
+      @include card;
       background-color: $dark-0 !important;
       position: relative !important;
       top: 0 !important;
@@ -680,7 +717,8 @@ div.filemanager {
           bottom: 0 !important;
           left: 0 !important;
           margin-block: 1rem !important;
-          
+          cursor: pointer !important;
+           
           @keyframes file {
             from {
               translate: 0 0;
@@ -709,12 +747,10 @@ div.filemanager {
 // UPLOAD FILE POPUP
 
 .moodle-dialogue.filepicker {
-  @include useShadow;
-  @include useSmoothAppear;
-  transition: transform 0s !important;
-  height: fit-content !important;
-  width: fit-content !important;
-
+  
+  @media (max-width: 768px) {
+    min-width: calc(100vw - 2rem) !important;
+  }
   div.fp-repo-items {
     padding: 0.5rem !important;
   
@@ -729,7 +765,7 @@ div.filemanager {
       input {
         width: 100% !important;
         padding: 1rem !important;
-        @include usePulseAnim;
+        @include pulseAnim;
 
         &::-webkit-file-upload-button {
           display: none !important;
@@ -764,25 +800,11 @@ div.submissionsummarytable table td {
     font-weight: bold !important;
   }
 }
-/* QUIZ */
-div.quizattempt button {
-  background-color: $dark-2 !important;
-  padding: 1rem 4rem !important;
-
-  &:hover {
-    background-color: $dark-3 !important;
-  }
-}
 /* JUMP TO ACTIVITY */
 
-/* SUBMIT */
+// SUBMIT / RESUBMIT
 div.submissionaction button {
-  background-color: $dark-2 !important;
-  padding: 0.75rem 2rem !important;
-
-  &:hover {
-    background-color: $dark-3 !important;
-  }
+  @include importantButton;
 }
 
 
@@ -792,12 +814,12 @@ div.submissionaction button {
 div.message-app {
   background-color: transparent !important;
   border-width: 0 !important;
-
+  
   .card {
     box-shadow: none !important;
     outline: none !important;
   }
-
+  
   & * {
     border-width: 0 !important;
   }
@@ -810,14 +832,14 @@ div.message-app {
     border-radius: 0.5rem !important;
     outline: 0.1rem solid $dark-2 !important;
     margin-top: 0.5rem !important;
-
+    
     & > h6 {
       margin-top: 1rem !important;
     }
   }
 }
 
-/* TESTS / ATTEMPTS / QUESTION BUTTONS / FINISH TEST */
+// QUIZ / TESTS / ATTEMPTS / QUESTION BUTTONS / FINISH TEST
 div.qn_buttons {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -830,7 +852,7 @@ a.qnbutton {
   background-color: $dark-0 !important;
   border-radius: 0.5rem !important;
   overflow: hidden !important;
-
+  
   &:hover {
     filter: brightness(120%) !important;
   }
@@ -844,6 +866,62 @@ a.qnbutton {
     outline: 0.1rem solid hsl(20, 100%, 40%) !important;
   }
 }
+div.quizattempt button {
+  @include importantButton;
+}
+// QUIZ TIME LIMITED / WARNING
+form#mod_quiz_preflight_form {
+  padding: 1rem !important;
+
+  fieldset[id=id_honestycheckheader] {
+    margin: 0 !important;
+
+    & > :nth-child(1) {
+      padding: 0 !important;
+    }
+  }
+  div[id=fitem_id_honestycheckmessage] {
+    margin: 0 !important;
+
+    // EMPTY BLOCK WTF???
+    & > div:nth-child(1) {
+      display: none !important;
+    }
+    & > div:nth-child(2) {
+      padding: 0 !important;
+      max-width: unset !important;
+      flex: unset !important;
+    }
+  }
+  div[id=fgroup_id_buttonar] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    padding: 0 !important;
+    margin-top: 2rem !important;
+
+    // EMPTY BLOCK WTF???
+    & > :nth-child(1) {
+      display: none !important;
+    }
+    // BUTTONS
+    & > :nth-child(2) {
+      padding: 0 !important;
+      max-width: unset !important;
+      flex: unset !important;
+      width: fit-content !important;
+
+      .d-flex.flex-wrap.align-items-center {
+        flex-wrap: nowrap !important;
+        gap: 0.5rem !important;
+  
+        .form-group {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
 /* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
 div.submitbtns {
   display: flex !important;
@@ -852,53 +930,37 @@ div.submitbtns {
   gap: 1rem !important;
   height: auto !important;
   width: auto !important;
-
-  button, a {
-    padding: 0.75rem 2rem !important;
-    background-color: $dark-2 !important;
   
-    &:hover {
-      background-color: $dark-3 !important;
-    }
+  button, a {
+    @include importantButton;
   }
 }
 table.quizattemptsummary {
     
   a[title^="Просмотр"] {
-    background-color: $dark-2 !important;
-    color: $text-primary !important;
-    padding: 0.5rem !important;
-
-    &:hover, &:active {
-      background-color: $dark-3 !important;
-    }
+    @include importantButton;
   }
 }
 /* CONFIRM TEST */
 body#page-mod-quiz-summary {
 
-  & div.moodle-dialogue {
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    translate: -50% -50% !important;
-    width: fit-content !important;
-    height: fit-content !important;
+  .moodle-dialogue {
     
-    & div.moodle-dialogue-wrap {
+    
+    .moodle-dialogue-wrap {
       width: fit-content !important;
 
-      & .moodle-dialogue-bd {
+      .moodle-dialogue-bd {
         width: fit-content !important;
         
-        & div.confirmation-dialogue {
+        .confirmation-dialogue {
           display: flex !important;
           flex-direction: column !important;
           width: fit-content !important;
           align-items: center !important;
           gap: 1rem !important;
       
-          & div.confirmation-buttons {
+          .confirmation-buttons {
             display: flex !important;
             flex-direction: row-reverse !important;
             gap: 1rem !important;
@@ -907,7 +969,7 @@ body#page-mod-quiz-summary {
             flex-wrap: nowrap !important;
             align-items: center !important;
         
-            & input {
+            input {
               width: fit-content !important;
               padding: 0.75rem 2rem !important;  
             }
