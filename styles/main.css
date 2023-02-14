@@ -281,6 +281,13 @@ button:focus, a:focus {
 button:disabled, button.page-link, a:disabled, a.page-link {
   background-color: transparent !important;
 }
+button i.icon.text-info, a i.icon.text-info {
+  color: hsl(270deg, 50%, 45%) !important;
+  margin: 0 !important;
+}
+button i.icon.text-info:hover, button i.icon.text-info:active, button i.icon.text-info:focus, a i.icon.text-info:hover, a i.icon.text-info:active, a i.icon.text-info:focus {
+  color: hsl(275deg, 75%, 60%) !important;
+}
 
 select {
   background-color: hsl(260deg, 13%, 10%) !important;
@@ -435,9 +442,14 @@ body#page-login-index section#region-main .card {
 }
 body#page-login-index button#loginbtn {
   background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
 }
-body#page-login-index button#loginbtn:hover {
+body#page-login-index button#loginbtn:hover, body#page-login-index button#loginbtn:active {
   background-color: hsl(260deg, 13%, 22%) !important;
+}
+body#page-login-index div.forgetpass a {
+  padding: 0.5rem !important;
 }
 
 div.popover {

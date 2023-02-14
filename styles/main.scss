@@ -288,6 +288,14 @@ button, a {
   &:disabled, &.page-link {
     background-color: transparent !important;
   }
+  i.icon.text-info {
+    color: $purple-1 !important;
+    margin: 0 !important;
+    
+    &:hover, &:active, &:focus {
+      color: $purple-2 !important;
+    }
+  }
 }
 select {
   background-color: $dark-0 !important;
@@ -447,11 +455,10 @@ body#page-login-index {
     }
   }
   button#loginbtn {
-    background-color: $dark-2 !important;
-  
-    &:hover {
-      background-color: $dark-3 !important;
-    }
+    @include importantButton;
+  }
+  div.forgetpass a {
+    padding: 0.5rem !important;
   }
 }
 
