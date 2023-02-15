@@ -28,6 +28,22 @@ $purple-2: hsl(275, 75%, 60%);
     background-color: $dark-3 !important;
   }
 }
+@mixin linkAnchor {
+  @include card;
+  padding: 0.2rem 0.4rem !important;
+  font-weight: bold !important;
+  color: $text-primary !important;
+
+  &:hover, &:focus, &:active {
+    filter: brightness(120%) !important;
+  }
+  &::before {
+    content: '🔗';
+    margin-right: 0.25rem;
+    height: 100%;
+    aspect-ratio: 1;
+  }
+}
 @mixin smoothAppearAnim($move: true) {
   animation: smoothAppear 0.1s ease-in-out;
 
@@ -79,20 +95,7 @@ $purple-2: hsl(275, 75%, 60%);
   }
   // LINKS
   a[href] {
-    @include card;
-    padding: 0.2rem 0.4rem !important;
-    font-weight: bold !important;
-    color: $text-primary !important;
-
-    &:hover, &:focus, &:active {
-      filter: brightness(120%) !important;
-    }
-    &::before {
-      content: '🔗';
-      margin-right: 0.25rem;
-      height: 100%;
-      aspect-ratio: 1;
-    }
+    @include linkAnchor;
   }
   // CODE
   pre {
@@ -481,8 +484,13 @@ textarea {
 /* PROFILE TREE / ABOUT */
 div.profile_tree {
 
-  a[href*="user/edit"] {
+  a[href*=user\/edit] {
     @include importantButton;
+  }
+  a[href*=mailto] {
+    @include linkAnchor;
+    display: flex !important;
+    margin-top: 1rem !important;
   }
   & a {
     padding: 0.5rem 0.5rem !important;
@@ -613,68 +621,106 @@ td.hasevent {
         & > tr > td {
           padding: 1rem !important;
           background-color: transparent !important;
-          // RED
-          [style*="#FF3300"] {
-            background-color: $purple-0 !important;
-          }
-          // YELLOW
-          [style*="#F7FE2E"] {
-            background-color: $purple-0 !important;
-            position: relative !important;
-            
-            &::after {
-              content: '';
-              position: absolute;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              height: 15%;
-              pointer-events: none;
-              animation: yellowCell 2s infinite alternate ease-in-out;
-              background-color: $purple-1;
-              
-              @keyframes yellowCell {
-                0% {
-                  filter: opacity(0.3);
-                }
-                100% {
-                  filter: opacity(1);
+
+          // EACH CELL
+          &.cell td[class*=cm] {
+
+            // RED
+            &[style*=\#FF3300] {
+              background-color: $purple-0 !important;
+              position: relative !important;
+  
+              // HOURGLASS 
+              &[style*=sandglass] {
+                position: relative !important;
+                background-image: none !important;
+  
+                &::after {
+                  content: '⏳';
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  translate: -50% -50%;
+                  pointer-events: none;
+                  animation: hourglass 4s infinite normal ease-in-out;
+
+                  @keyframes hourglass {
+                    0%, 25% {
+                      rotate: 0deg;
+                    }
+                    25%, 50% {
+                      rotate: 180deg;
+                    }
+                    50%, 75% {
+                      rotate: 180deg;
+                    }
+                    75%, 100% {
+                      rotate: 360deg;
+                    }
+                  }
                 }
               }
             }
-          }
-          // GREEN
-          [style*="#33CC00"] {
-            position: relative !important;
-            background-color: $purple-2 !important;
-            background-image: none !important;
-          }
-          [style*="up"] {
-            &::after {
-              content: '👍';
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              translate: -50% -50%;
-              pointer-events: none;
+            // YELLOW
+            &[style*=\#F7FE2E] {
+              background-color: $purple-0 !important;
+              position: relative !important;
+              
+              &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 15%;
+                pointer-events: none;
+                animation: yellowCell 2s infinite alternate ease-in-out;
+                background-color: $purple-1;
+                
+                @keyframes yellowCell {
+                  0% {
+                    filter: opacity(0.3);
+                  }
+                  100% {
+                    filter: opacity(1);
+                  }
+                }
+              }
             }
-          }
-          [style*="down"] {
-            &::after {
-              content: '👎';
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              translate: -50% -50%;
-              pointer-events: none;
+            // GREEN
+            &[style*=\#33CC00] {
+              position: relative !important;
+              background-color: $purple-2 !important;
+              background-image: none !important;
+  
+              &[style*=up\.png] {
+                &::after {
+                  content: '👍';
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  translate: -50% -50%;
+                  pointer-events: none;
+                }
+              }
+              &[style*=down\.png] {
+                &::after {
+                  content: '👎';
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  translate: -50% -50%;
+                  pointer-events: none;
+                }
+              }
             }
-          }
-          // GRAY / FORUMS
-          [style*="#CCCCCC"] {
-            background-color: $dark-2 !important;
-          }
-          a {
-            border-radius: 0 !important;
+            // GRAY / FORUMS
+            &[style*="#CCCCCC"] {
+              background-color: $dark-2 !important;
+            }
+            a {
+              border-radius: 0 !important;
+            }
           }
         }
         .progressbox {
@@ -888,15 +934,22 @@ div.filemanager {
 // GRADES
 div.submissionsummarytable table td {
   
-  /* NOT GRADED */
+  // NOT GRADED
   &.submissionnotgraded {
     color: $text-primary !important;
     font-weight: bold !important;
   }
-  /* GRADED */
+  // GRADED
   &.submissiongraded {
     color: hsl(80, 100%, 40%) !important;
     font-weight: bold !important;
+  }
+  // COMMENT
+  .comment-area {
+    @include card;
+    background-color: transparent !important;
+    padding: 0.5rem !important;
+    margin: 1rem 0 0 0 !important;
   }
 }
 /* JUMP TO ACTIVITY */

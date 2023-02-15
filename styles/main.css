@@ -476,13 +476,33 @@ textarea.bg-light {
 }
 
 /* PROFILE TREE / ABOUT */
-div.profile_tree a[href*="user/edit"] {
+div.profile_tree a[href*=user\/edit] {
   background-color: hsl(260deg, 13%, 18%) !important;
   border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-div.profile_tree a[href*="user/edit"]:hover, div.profile_tree a[href*="user/edit"]:active {
+div.profile_tree a[href*=user\/edit]:hover, div.profile_tree a[href*=user\/edit]:active {
   background-color: hsl(260deg, 13%, 22%) !important;
+}
+div.profile_tree a[href*=mailto] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  padding: 0.2rem 0.4rem !important;
+  font-weight: bold !important;
+  color: hsl(260deg, 10%, 70%) !important;
+  display: flex !important;
+  margin-top: 1rem !important;
+}
+div.profile_tree a[href*=mailto]:hover, div.profile_tree a[href*=mailto]:focus, div.profile_tree a[href*=mailto]:active {
+  filter: brightness(120%) !important;
+}
+div.profile_tree a[href*=mailto]::before {
+  content: "🔗";
+  margin-right: 0.25rem;
+  height: 100%;
+  aspect-ratio: 1;
 }
 div.profile_tree a {
   padding: 0.5rem 0.5rem !important;
@@ -611,14 +631,42 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   padding: 1rem !important;
   background-color: transparent !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#FF3300"] {
-  background-color: hsl(265deg, 50%, 20%) !important;
-}
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#F7FE2E"] {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#FF3300] {
   background-color: hsl(265deg, 50%, 20%) !important;
   position: relative !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#F7FE2E"]::after {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#FF3300][style*=sandglass] {
+  position: relative !important;
+  background-image: none !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#FF3300][style*=sandglass]::after {
+  content: "⏳";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+  animation: hourglass 4s infinite normal ease-in-out;
+}
+@keyframes hourglass {
+  0%, 25% {
+    rotate: 0deg;
+  }
+  25%, 50% {
+    rotate: 180deg;
+  }
+  50%, 75% {
+    rotate: 180deg;
+  }
+  75%, 100% {
+    rotate: 360deg;
+  }
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#F7FE2E] {
+  background-color: hsl(265deg, 50%, 20%) !important;
+  position: relative !important;
+}
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#F7FE2E]::after {
   content: "";
   position: absolute;
   left: 0;
@@ -637,12 +685,12 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
     filter: opacity(1);
   }
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#33CC00"] {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#33CC00] {
   position: relative !important;
   background-color: hsl(275deg, 75%, 60%) !important;
   background-image: none !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*=up]::after {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#33CC00][style*=up\.png]::after {
   content: "👍";
   position: absolute;
   top: 50%;
@@ -650,7 +698,7 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   translate: -50% -50%;
   pointer-events: none;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*=down]::after {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#33CC00][style*=down\.png]::after {
   content: "👎";
   position: absolute;
   top: 50%;
@@ -658,10 +706,10 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   translate: -50% -50%;
   pointer-events: none;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td [style*="#CCCCCC"] {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*="#CCCCCC"] {
   background-color: hsl(260deg, 13%, 18%) !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td a {
+.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm] a {
   border-radius: 0 !important;
 }
 .card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar {
@@ -922,10 +970,6 @@ div.filemanager .filemanager-container .fp-upload-form input, div.filemanager .f
   background-color: hsl(260deg, 13%, 22%) !important;
 }
 
-div.submissionsummarytable table td {
-  /* NOT GRADED */
-  /* GRADED */
-}
 div.submissionsummarytable table td.submissionnotgraded {
   color: hsl(260deg, 10%, 70%) !important;
   font-weight: bold !important;
@@ -933,6 +977,15 @@ div.submissionsummarytable table td.submissionnotgraded {
 div.submissionsummarytable table td.submissiongraded {
   color: hsl(80deg, 100%, 40%) !important;
   font-weight: bold !important;
+}
+div.submissionsummarytable table td .comment-area {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0.5rem !important;
+  margin: 1rem 0 0 0 !important;
 }
 
 /* JUMP TO ACTIVITY */
