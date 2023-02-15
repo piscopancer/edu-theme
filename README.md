@@ -41,7 +41,7 @@
 ## Задания
 <img src="https://imgur.com/Jm0Ivas.png" width="600">
 
-## Задание ожидает проверки (жёлтая клетка)
+## Задание ожидает проверки
 <img src="https://imgur.com/awchB9O.png" width="600">
 
 ## Всплывающие окна
@@ -50,6 +50,12 @@
 
 ## Тест
 <img src="https://imgur.com/GD53uzX.png" width="600">
+
+## Выбор одного варианта
+<img src="https://imgur.com/VNAhlfo.png" width="600">
+
+## Ответ с использованием синтаксиса markdown
+<img src="https://imgur.com/PWoW5hf.png" width="600">
 
 ## Прикрепление файла
 <img src="https://imgur.com/Sj383yu.png" width="600">

@@ -58,7 +58,53 @@ $purple-2: hsl(275, 75%, 60%);
     }
   }
 }
+@mixin prettyMarkdown {
+  * {
+    color: $text-secondary !important;
+  }
+  // HEADERS
+  h1, h2, h3 {
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    color: $text-primary !important;
 
+    &::after {
+      content: '';
+      margin-top: 0.25rem;
+      display: flex;
+      width: 100%;
+      height: 0.15rem;
+      background-color: $hightlight;
+    }
+  }
+  // LINKS
+  a[href] {
+    @include card;
+    padding: 0.2rem 0.4rem !important;
+    font-weight: bold !important;
+    color: $text-primary !important;
+
+    &:hover, &:focus, &:active {
+      filter: brightness(120%) !important;
+    }
+  }
+  // CODE
+  pre {
+    @include card;
+    background-color: $hightlight !important;
+    padding: 1rem !important;
+  }
+  // INNER EMBEDDED TABLES
+  table {
+    @include card;
+    background-color: $dark-0 !important;
+    margin-bottom: 1rem !important;
+
+    thead {
+      background-color: $hightlight !important;
+    }
+  }
+}
 body {
   background-color: $dark-0 !important;
 }
@@ -324,8 +370,8 @@ div#goto-top-link > a {
 }
 
 
-/* REPORTS IN PROFILE */
-table.generaltable:not(.course-box) {
+// TABLES
+table.generaltable:not(.course-box), .course-content table {
   background-color: $dark-0 !important;
   border-radius: 0.5rem !important;
 
@@ -343,7 +389,20 @@ table.generaltable:not(.course-box) {
       color: $text-secondary !important;
     }
   }
+  // MARKDOWN HTML TEXT ANSWER
+  div[class*=assignsubmission_onlinetext] {
+    @include card;
+    background-color: transparent !important;
+    padding: 1rem !important;
+    
+    div.no-overflow {
+      @include prettyMarkdown;
+      overflow: visible !important;
+      margin-top: 1rem !important;
+    }
+  }
 }
+
 
 
 /* INPUT / SEARCH / SUBMIT */
@@ -377,7 +436,6 @@ input {
       color: $text-secondary;
     }
   }
-
 }
 button.btn-submit {
   background-color: transparent !important;
@@ -385,6 +443,8 @@ button.btn-submit {
 textarea {
   background-color: $dark-0 !important;
   border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  color: $text-primary !important;
 
   &.bg-light {
     background-color: inherit !important;
@@ -661,6 +721,13 @@ body:not(#page-login-index) div#region-main-box > section#region-main {
   & span#maincontent {
     display: none !important;
   } 
+
+  .course-content {
+    .no-overflow {
+      overflow: visible !important;
+      @include prettyMarkdown;
+    }
+  }
 }
 
 // DIALOGUE / POPUP
@@ -846,7 +913,9 @@ div.message-app {
   }
 }
 
-// QUIZ / TESTS / ATTEMPTS / QUESTION BUTTONS / FINISH TEST
+// QUIZ / TESTS / ATTEMPTS / QUESTION STATUS BUTTONS / FINISH TEST
+
+// QUESTION STATUS BUTTONS 
 div.qn_buttons {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -929,6 +998,50 @@ form#mod_quiz_preflight_form {
     }
   }
 }
+// TEST 
+.multichoice {
+
+  .formulation {
+
+    .ablock {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1rem !important;
+
+      .answer {
+        @include card;
+        @include shadow;
+        overflow: hidden !important;
+
+        // EACH ANSWER OPTION
+        & > div {
+          margin: 0 !important;
+          
+          &:hover, &:active, &:focus {
+            background-color: $dark-2 !important;
+          }
+          &:has(input:checked) {
+            background-color: $dark-3 !important;
+            
+            div[data-region=answer-label] {
+              // TEXT INSIDE
+              * {
+                color: $text-primary !important;
+              }
+            }
+          }
+          input[type=radio] {
+            display: none !important;
+          }
+          div[data-region=answer-label] {
+            padding: 0.5rem 2rem !important;
+            cursor: pointer !important;
+          }
+        }
+      }
+    }
+  }
+}
 /* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
 div.submitbtns {
   display: flex !important;
@@ -986,3 +1099,5 @@ body#page-mod-quiz-summary {
     }
   }
 }
+
+

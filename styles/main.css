@@ -321,23 +321,81 @@ div#goto-top-link > a {
   background-color: hsl(260deg, 13%, 13%);
 }
 
-/* REPORTS IN PROFILE */
-table.generaltable:not(.course-box) {
+table.generaltable:not(.course-box), .course-content table {
   background-color: hsl(260deg, 13%, 10%) !important;
   border-radius: 0.5rem !important;
 }
-table.generaltable:not(.course-box) th, table.generaltable:not(.course-box) td {
+table.generaltable:not(.course-box) th, table.generaltable:not(.course-box) td, .course-content table th, .course-content table td {
   padding: 0.75rem !important;
 }
-table.generaltable:not(.course-box) * {
+table.generaltable:not(.course-box) *, .course-content table * {
   background-color: transparent !important;
   color: hsl(260deg, 5%, 50%) !important;
 }
-table.generaltable:not(.course-box) a {
+table.generaltable:not(.course-box) a, .course-content table a {
   color: hsl(260deg, 10%, 70%) !important;
 }
-table.generaltable:not(.course-box) a:hover {
+table.generaltable:not(.course-box) a:hover, .course-content table a:hover {
   color: hsl(260deg, 5%, 50%) !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext], .course-content table div[class*=assignsubmission_onlinetext] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 1rem !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow {
+  overflow: visible !important;
+  margin-top: 1rem !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow *, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow * {
+  color: hsl(260deg, 5%, 50%) !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3::after {
+  content: "";
+  margin-top: 0.25rem;
+  display: flex;
+  width: 100%;
+  height: 0.15rem;
+  background-color: hsla(260deg, 20%, 100%, 0.05);
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href], .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  padding: 0.2rem 0.4rem !important;
+  font-weight: bold !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active {
+  filter: brightness(120%) !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow pre, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow pre {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 1rem !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsl(260deg, 13%, 10%) !important;
+  margin-bottom: 1rem !important;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table thead, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table thead {
+  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
 }
 
 /* INPUT / SEARCH / SUBMIT */
@@ -378,6 +436,8 @@ button.btn-submit {
 textarea {
   background-color: hsl(260deg, 13%, 10%) !important;
   border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  color: hsl(260deg, 10%, 70%) !important;
 }
 textarea.bg-light {
   background-color: inherit !important;
@@ -637,6 +697,56 @@ body:not(#page-login-index) div#region-main-box > section#region-main {
 }
 body:not(#page-login-index) div#region-main-box > section#region-main span#maincontent {
   display: none !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow {
+  overflow: visible !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow * {
+  color: hsl(260deg, 5%, 50%) !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h1, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h2, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h3 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h1::after, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h2::after, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h3::after {
+  content: "";
+  margin-top: 0.25rem;
+  display: flex;
+  width: 100%;
+  height: 0.15rem;
+  background-color: hsla(260deg, 20%, 100%, 0.05);
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  padding: 0.2rem 0.4rem !important;
+  font-weight: bold !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:hover, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:focus, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:active {
+  filter: brightness(120%) !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow pre {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 1rem !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow table {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsl(260deg, 13%, 10%) !important;
+  margin-bottom: 1rem !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow table thead {
+  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
 }
 
 .yui3-widget.yui3-panel, .moodle-dialogue, .yui3-widget-modal, .modal-dialog {
@@ -905,6 +1015,39 @@ form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.
 }
 form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.flex-wrap.align-items-center .form-group {
   margin: 0 !important;
+}
+
+.multichoice .formulation .ablock {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+}
+.multichoice .formulation .ablock .answer {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  overflow: hidden !important;
+}
+.multichoice .formulation .ablock .answer > div {
+  margin: 0 !important;
+}
+.multichoice .formulation .ablock .answer > div:hover, .multichoice .formulation .ablock .answer > div:active, .multichoice .formulation .ablock .answer > div:focus {
+  background-color: hsl(260deg, 13%, 18%) !important;
+}
+.multichoice .formulation .ablock .answer > div:has(input:checked) {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+.multichoice .formulation .ablock .answer > div:has(input:checked) div[data-region=answer-label] * {
+  color: hsl(260deg, 10%, 70%) !important;
+}
+.multichoice .formulation .ablock .answer > div input[type=radio] {
+  display: none !important;
+}
+.multichoice .formulation .ablock .answer > div div[data-region=answer-label] {
+  padding: 0.5rem 2rem !important;
+  cursor: pointer !important;
 }
 
 /* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
