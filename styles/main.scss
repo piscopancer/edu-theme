@@ -372,10 +372,12 @@ button, a {
   }
 }
 select {
+  @include card;
   background-color: $dark-0 !important;
   padding: 0.5rem 2rem !important;
-  border-radius: 0.75rem !important;
+  border-radius: 0.5rem !important;
   box-shadow: none !important;
+  color: $text-primary !important;
 
   &:focus {
     outline: 0.2rem solid $hightlight !important;
@@ -436,10 +438,11 @@ table.generaltable:not(.course-box), .course-content table, table.preference-tab
 /* INPUT / SEARCH / SUBMIT */
 input {
   background-color: $dark-0 !important;
-  padding: 0.75rem 2rem !important;
+  padding: 0.75rem 1rem !important;
   border-radius: 0.5rem !important;
   box-shadow: none !important;
-  
+  color: $text-primary !important;
+
   &:focus {
     outline: 0.2rem solid $hightlight !important;
   }
@@ -459,9 +462,10 @@ input {
       border: 0.1rem solid $hightlight !important;
       padding: 0.75rem 2rem !important;
       background-color: $purple-1 !important;
+      color: white !important;
     }
     &.btn-secondary {
-      color: $text-secondary;
+      color: $text-secondary !important;
     }
   }
 }
@@ -994,13 +998,19 @@ div.message-app {
 // QUIZ / TESTS / ATTEMPTS / QUESTION STATUS BUTTONS / FINISH TEST
 
 // QUESTION STATUS BUTTONS 
+
 div.qn_buttons {
   display: flex !important;
   flex-wrap: wrap !important;
 }
-div.othernav a.endtestlink {
-  width: fit-content !important;
-  padding: 0.5rem !important;
+.othernav {
+  a {
+    width: fit-content !important;
+    padding: 0.5rem !important;
+  }
+  a.endtestlink, a.mod_quiz-next-nav {
+    @include importantButton;
+  }
 }
 a.qnbutton {
   background-color: $dark-0 !important;
@@ -1077,50 +1087,59 @@ form#mod_quiz_preflight_form {
   }
 }
 // TEST 
-.multichoice {
+.formulation {
 
-  .formulation {
+  .ablock {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
 
-    .ablock {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1rem !important;
+    .answer {
+      @include card;
+      @include shadow;
+      overflow: hidden !important;
 
-      .answer {
-        @include card;
-        @include shadow;
-        overflow: hidden !important;
-
-        // EACH ANSWER OPTION
-        & > div {
-          margin: 0 !important;
+      // EACH ANSWER OPTION
+      & > div {
+        margin: 0 !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        
+        &:hover, &:active, &:focus {
+          background-color: $dark-2 !important;
+        }
+        &:has(input:checked) {
+          background-color: $dark-3 !important;
           
-          &:hover, &:active, &:focus {
-            background-color: $dark-2 !important;
-          }
-          &:has(input:checked) {
-            background-color: $dark-3 !important;
-            
-            div[data-region=answer-label] {
-              // TEXT INSIDE
-              * {
-                color: $text-primary !important;
-              }
+          div[data-region=answer-label] {
+            // TEXT INSIDE
+            * {
+              color: $text-primary !important;
             }
           }
-          input[type=radio] {
-            display: none !important;
+          label {
+            color: $text-primary !important;
+            flex: 1 !important;
           }
-          div[data-region=answer-label] {
-            padding: 0.5rem 2rem !important;
-            cursor: pointer !important;
-          }
+        }
+        input[type=radio] {
+          display: none !important;
+        }
+        div[data-region=answer-label], label {
+          display: flex !important;
+          padding: 0.5rem 2rem !important;
+          cursor: pointer !important;
+          margin: 0 !important;
         }
       }
     }
   }
 }
-/* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
+
+
+// FINISH TEST / RETURN TO TEST / CONFIRM TEST / REVIEW TEST
+
 div.submitbtns {
   display: flex !important;
   flex-direction: row !important;
@@ -1139,6 +1158,27 @@ table.quizattemptsummary {
     @include importantButton;
   }
 }
+// TEST REVIEW / RESULTS
+form[action*=review] {
+
+  // CORRENT AND INCORRECT ICONS
+  i {
+    margin: 0.5rem !important;
+  }
+  table.answer {
+    td {
+      padding: 0.5rem 1rem !important;
+
+      &.correct {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 1rem !important;
+      }
+    }
+  }
+}
+
+
 /* CONFIRM TEST */
 body#page-mod-quiz-summary {
 

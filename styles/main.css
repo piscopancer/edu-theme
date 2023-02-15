@@ -315,10 +315,15 @@ button i.icon.text-info:hover, button i.icon.text-info:active, button i.icon.tex
 }
 
 select {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
   background-color: hsl(260deg, 13%, 10%) !important;
   padding: 0.5rem 2rem !important;
-  border-radius: 0.75rem !important;
+  border-radius: 0.5rem !important;
   box-shadow: none !important;
+  color: hsl(260deg, 10%, 70%) !important;
 }
 select:focus {
   outline: 0.2rem solid hsla(260deg, 20%, 100%, 0.05) !important;
@@ -432,9 +437,10 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
 /* INPUT / SEARCH / SUBMIT */
 input {
   background-color: hsl(260deg, 13%, 10%) !important;
-  padding: 0.75rem 2rem !important;
+  padding: 0.75rem 1rem !important;
   border-radius: 0.5rem !important;
   box-shadow: none !important;
+  color: hsl(260deg, 10%, 70%) !important;
 }
 input:focus {
   outline: 0.2rem solid hsla(260deg, 20%, 100%, 0.05) !important;
@@ -455,9 +461,10 @@ input.btn.btn-primary {
   border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
   background-color: hsl(270deg, 50%, 45%) !important;
+  color: white !important;
 }
 input.btn.btn-secondary {
-  color: hsl(260deg, 5%, 50%);
+  color: hsl(260deg, 5%, 50%) !important;
 }
 
 button.btn-submit {
@@ -1029,10 +1036,18 @@ div.qn_buttons {
   flex-wrap: wrap !important;
 }
 
-div.othernav a.endtestlink {
+.othernav a {
   width: -moz-fit-content !important;
   width: fit-content !important;
   padding: 0.5rem !important;
+}
+.othernav a.endtestlink, .othernav a.mod_quiz-next-nav {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+}
+.othernav a.endtestlink:hover, .othernav a.endtestlink:active, .othernav a.mod_quiz-next-nav:hover, .othernav a.mod_quiz-next-nav:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 
 a.qnbutton {
@@ -1107,12 +1122,12 @@ form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.
   margin: 0 !important;
 }
 
-.multichoice .formulation .ablock {
+.formulation .ablock {
   display: flex !important;
   flex-direction: column !important;
   gap: 1rem !important;
 }
-.multichoice .formulation .ablock .answer {
+.formulation .ablock .answer {
   background-color: hsl(260deg, 13%, 13%) !important;
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
@@ -1120,27 +1135,35 @@ form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.
   box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
   overflow: hidden !important;
 }
-.multichoice .formulation .ablock .answer > div {
+.formulation .ablock .answer > div {
   margin: 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
 }
-.multichoice .formulation .ablock .answer > div:hover, .multichoice .formulation .ablock .answer > div:active, .multichoice .formulation .ablock .answer > div:focus {
+.formulation .ablock .answer > div:hover, .formulation .ablock .answer > div:active, .formulation .ablock .answer > div:focus {
   background-color: hsl(260deg, 13%, 18%) !important;
 }
-.multichoice .formulation .ablock .answer > div:has(input:checked) {
+.formulation .ablock .answer > div:has(input:checked) {
   background-color: hsl(260deg, 13%, 22%) !important;
 }
-.multichoice .formulation .ablock .answer > div:has(input:checked) div[data-region=answer-label] * {
+.formulation .ablock .answer > div:has(input:checked) div[data-region=answer-label] * {
   color: hsl(260deg, 10%, 70%) !important;
 }
-.multichoice .formulation .ablock .answer > div input[type=radio] {
+.formulation .ablock .answer > div:has(input:checked) label {
+  color: hsl(260deg, 10%, 70%) !important;
+  flex: 1 !important;
+}
+.formulation .ablock .answer > div input[type=radio] {
   display: none !important;
 }
-.multichoice .formulation .ablock .answer > div div[data-region=answer-label] {
+.formulation .ablock .answer > div div[data-region=answer-label], .formulation .ablock .answer > div label {
+  display: flex !important;
   padding: 0.5rem 2rem !important;
   cursor: pointer !important;
+  margin: 0 !important;
 }
 
-/* FINISH TEST / RETURN TO TEST / CONFIRM TEST */
 div.submitbtns {
   display: flex !important;
   flex-direction: row !important;
@@ -1165,6 +1188,18 @@ table.quizattemptsummary a[title^=Просмотр] {
 }
 table.quizattemptsummary a[title^=Просмотр]:hover, table.quizattemptsummary a[title^=Просмотр]:active {
   background-color: hsl(260deg, 13%, 22%) !important;
+}
+
+form[action*=review] i {
+  margin: 0.5rem !important;
+}
+form[action*=review] table.answer td {
+  padding: 0.5rem 1rem !important;
+}
+form[action*=review] table.answer td.correct {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
 }
 
 /* CONFIRM TEST */
