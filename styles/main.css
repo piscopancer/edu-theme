@@ -166,6 +166,30 @@ div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::b
     display: none !important;
   }
 }
+#page-wrapper > nav.navbar.fixed-top .nav.usernav {
+  flex-wrap: nowrap !important;
+}
+#page-wrapper > nav.navbar.fixed-top .nav.usernav a#action-menu-toggle-1 .userbutton .avatars {
+  margin-left: 1rem !important;
+}
+#page-wrapper > nav.navbar.fixed-top .nav.usernav .count-container {
+  animation: pulse 1s infinite alternate ease-in-out;
+  background-color: hsl(275deg, 75%, 60%) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 1rem !important;
+  aspect-ratio: 1 !important;
+  text-align: center !important;
+  margin-left: 0.2rem !important;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /* POPUP MESSENGER / COMPACT MESSENGER */
 /* BACKGROUND */
@@ -233,13 +257,6 @@ div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::b
   left: 50% !important;
   translate: -50% -50% !important;
   color: hsl(260deg, 5%, 50%) !important;
-}
-
-.nav.usernav {
-  flex-wrap: nowrap !important;
-}
-.nav.usernav a#action-menu-toggle-1 .userbutton .avatars {
-  margin-left: 1rem !important;
 }
 
 div[data-table-region^=user-index-participants] {

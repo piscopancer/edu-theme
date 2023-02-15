@@ -237,6 +237,25 @@ div.popover-region-toggle.nav-link {
         display: none !important;
       }
     }
+    // PROFILE IN NAV
+    .nav.usernav {
+      flex-wrap: nowrap !important;
+
+      a#action-menu-toggle-1 .userbutton .avatars {
+        margin-left: 1rem !important;  
+      }
+      // NEW MESSAGES OR NOTIFICATIONS NUMBER
+      .count-container {
+        @include pulseAnim;
+        background-color: $purple-2 !important;
+        color: white !important;
+        border-radius: 50% !important;
+        width: 1rem !important;
+        aspect-ratio: 1 !important;
+        text-align: center !important;
+        margin-left: 0.2rem !important;
+      }
+    }
   }
 }
 
@@ -302,14 +321,7 @@ div.popover-region-toggle.nav-link {
   }
 }
 
-// PROFILE IN NAV
-.nav.usernav {
-  flex-wrap: nowrap !important;
 
-  a#action-menu-toggle-1 .userbutton .avatars {
-    margin-left: 1rem !important;  
-  }
-}
 // PARTICIPANTS
 div[data-table-region^="user-index-participants"] {
   @include card;
