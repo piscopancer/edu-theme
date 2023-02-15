@@ -49,9 +49,6 @@
 <img src="https://imgur.com/CkNrbCr.png" width="600">
 
 ## Тест
-<img src="https://imgur.com/GD53uzX.png" width="600">
-
-## Выбор одного варианта
 <img src="https://imgur.com/VNAhlfo.png" width="600">
 
 ## Ответ с использованием синтаксиса markdown
