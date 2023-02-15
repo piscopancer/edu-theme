@@ -36,6 +36,14 @@ footer#page-footer {
   -webkit-tap-highlight-color: transparent !important;
   transition: all 0.1s !important;
 }
+*::-moz-selection, *:active::-moz-selection, *:focus::-moz-selection {
+  background-color: hsl(270deg, 50%, 45%) !important;
+  color: white !important;
+}
+*::selection, *:active::selection, *:focus::selection {
+  background-color: hsl(270deg, 50%, 45%) !important;
+  color: white !important;
+}
 
 header#page-header {
   display: none !important;
@@ -73,7 +81,7 @@ div.dropdown-menu li a, ul.dropdown-menu li a {
   border-radius: 0.5rem !important;
   padding: 0.25rem !important;
 }
-div.dropdown-menu li a:hover, ul.dropdown-menu li a:hover {
+div.dropdown-menu li a:hover, div.dropdown-menu li a:hover i, div.dropdown-menu li a:hover span, ul.dropdown-menu li a:hover, ul.dropdown-menu li a:hover i, ul.dropdown-menu li a:hover span {
   color: hsl(260deg, 5%, 50%) !important;
   background-color: transparent !important;
 }
@@ -321,24 +329,24 @@ div#goto-top-link > a {
   background-color: hsl(260deg, 13%, 13%);
 }
 
-table.generaltable:not(.course-box), .course-content table {
+table.generaltable:not(.course-box), .course-content table, table.preference-table {
   background-color: hsl(260deg, 13%, 10%) !important;
   border-radius: 0.5rem !important;
 }
-table.generaltable:not(.course-box) th, table.generaltable:not(.course-box) td, .course-content table th, .course-content table td {
+table.generaltable:not(.course-box) th, table.generaltable:not(.course-box) td, .course-content table th, .course-content table td, table.preference-table th, table.preference-table td {
   padding: 0.75rem !important;
 }
-table.generaltable:not(.course-box) *, .course-content table * {
+table.generaltable:not(.course-box) *, .course-content table *, table.preference-table * {
   background-color: transparent !important;
   color: hsl(260deg, 5%, 50%) !important;
 }
-table.generaltable:not(.course-box) a, .course-content table a {
+table.generaltable:not(.course-box) a, .course-content table a, table.preference-table a {
   color: hsl(260deg, 10%, 70%) !important;
 }
-table.generaltable:not(.course-box) a:hover, .course-content table a:hover {
+table.generaltable:not(.course-box) a:hover, .course-content table a:hover, table.preference-table a:hover {
   color: hsl(260deg, 5%, 50%) !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext], .course-content table div[class*=assignsubmission_onlinetext] {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext], .course-content table div[class*=assignsubmission_onlinetext], table.preference-table div[class*=assignsubmission_onlinetext] {
   background-color: hsl(260deg, 13%, 13%) !important;
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
@@ -346,19 +354,19 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext], .co
   background-color: transparent !important;
   padding: 1rem !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow {
   overflow: visible !important;
   margin-top: 1rem !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow *, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow * {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow *, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow *, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow * {
   color: hsl(260deg, 5%, 50%) !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3 {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h1, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h2, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h3 {
   margin-top: 2.5rem !important;
   margin-bottom: 1rem !important;
   color: hsl(260deg, 10%, 70%) !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3::after {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3::after, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h3::after {
   content: "";
   margin-top: 0.25rem;
   display: flex;
@@ -366,7 +374,7 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
   height: 0.15rem;
   background-color: hsla(260deg, 20%, 100%, 0.05);
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href], .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href] {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href], .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href], table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href] {
   background-color: hsl(260deg, 13%, 13%) !important;
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
@@ -375,10 +383,16 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
   font-weight: bold !important;
   color: hsl(260deg, 10%, 70%) !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active {
   filter: brightness(120%) !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow pre, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow pre {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]::before, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]::before, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]::before {
+  content: "🔗";
+  margin-right: 0.25rem;
+  height: 100%;
+  aspect-ratio: 1;
+}
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow pre, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow pre, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow pre {
   background-color: hsl(260deg, 13%, 13%) !important;
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
@@ -386,7 +400,7 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
   background-color: hsla(260deg, 20%, 100%, 0.05) !important;
   padding: 1rem !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow table {
   background-color: hsl(260deg, 13%, 13%) !important;
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   border-radius: 0.5rem !important;
@@ -394,7 +408,7 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
   background-color: hsl(260deg, 13%, 10%) !important;
   margin-bottom: 1rem !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table thead, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table thead {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table thead, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table thead, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow table thead {
   background-color: hsla(260deg, 20%, 100%, 0.05) !important;
 }
 
@@ -728,6 +742,12 @@ body:not(#page-login-index) div#region-main-box > section#region-main .course-co
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:hover, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:focus, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:active {
   filter: brightness(120%) !important;
+}
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]::before {
+  content: "🔗";
+  margin-right: 0.25rem;
+  height: 100%;
+  aspect-ratio: 1;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow pre {
   background-color: hsl(260deg, 13%, 13%) !important;

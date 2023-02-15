@@ -87,6 +87,12 @@ $purple-2: hsl(275, 75%, 60%);
     &:hover, &:focus, &:active {
       filter: brightness(120%) !important;
     }
+    &::before {
+      content: '🔗';
+      margin-right: 0.25rem;
+      height: 100%;
+      aspect-ratio: 1;
+    }
   }
   // CODE
   pre {
@@ -135,6 +141,11 @@ footer#page-footer {
   outline: none !important;
   -webkit-tap-highlight-color: transparent !important; 
   transition: all 0.1s !important;
+
+  &::selection {
+    background-color: $purple-1 !important;
+    color: white !important;
+  }
 }
 header#page-header {
   display: none !important;
@@ -157,8 +168,10 @@ div.dropdown-menu, ul.dropdown-menu {
     padding: 0.25rem !important;
 
     &:hover {
-      color: $text-secondary !important;
-      background-color: transparent !important;
+      &, i, span {
+        color: $text-secondary !important;
+        background-color: transparent !important;
+      }
     }
   }
   .show {
@@ -371,7 +384,7 @@ div#goto-top-link > a {
 
 
 // TABLES
-table.generaltable:not(.course-box), .course-content table {
+table.generaltable:not(.course-box), .course-content table, table.preference-table {
   background-color: $dark-0 !important;
   border-radius: 0.5rem !important;
 
