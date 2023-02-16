@@ -1,6 +1,10 @@
-const rubik = 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap'
+//#region FONT
 
-const script = document.createElement('link')
-script.href = rubik
-script.rel = 'stylesheet'
-document.body.appendChild(script)
+// const rubik = 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap'
+
+// const fontLink = document.createElement('link')
+// fontLink.href = rubik
+// fontLink.rel = 'stylesheet'
+// document.head.appendChild(fontLink)
+
+//#endregion  
