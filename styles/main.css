@@ -118,6 +118,55 @@ section.block_html:has(a[href*=spravka]) .no-overflow h4 a::before {
   height: 100%;
   aspect-ratio: 1;
 }
+section.block_myteachers div:has(> img, > a) {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 0.25rem !important;
+  align-items: center !important;
+}
+section.block_myteachers div:has(> img, > a) * {
+  margin: 0 !important;
+}
+section.block_myteachers div:has(> img, > a) > img {
+  border-radius: 50% !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+section.block_myteachers div:has(> img, > a) > a {
+  padding: 0.25rem 0.5rem !important;
+}
+section.block_online_users ul > li {
+  display: flex !important;
+  gap: 0.25rem !important;
+  align-items: center !important;
+}
+section.block_online_users ul > li > .user {
+  display: flex !important;
+}
+section.block_online_users ul > li > .user > a {
+  padding: 0.25rem 0.5rem !important;
+}
+section.block_online_users ul > li > .message {
+  margin: 0 !important;
+}
+section.block_online_users ul > li > .message > a {
+  padding: 0.25rem !important;
+}
+section.block_online_users ul > li > .message > a:hover, section.block_online_users ul > li > .message > a:focus, section.block_online_users ul > li > .message > a:active {
+  background-color: transparent !important;
+}
+section.block_online_users ul > li > .message > a:hover > i::before, section.block_online_users ul > li > .message > a:focus > i::before, section.block_online_users ul > li > .message > a:active > i::before {
+  color: hsl(260deg, 5%, 50%) !important;
+}
+section.block_online_users ul > li > .message > a > i {
+  margin: 0 !important;
+}
+section.block_activity_modules ul li div {
+  display: flex !important;
+}
+section.block_activity_modules ul li div a {
+  padding: 0.25rem 0.5rem !important;
+}
 
 /* DROPDOWN MENUS */
 div.dropdown-menu, ul.dropdown-menu {
@@ -194,14 +243,19 @@ div.popover-region-toggle.nav-link:focus {
     opacity: 1;
   }
 }
+div.popover-region-toggle.nav-link:hover > i, div.popover-region-toggle.nav-link:focus > i, div.popover-region-toggle.nav-link:active > i {
+  color: hsl(260deg, 5%, 50%) !important;
+}
 div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::before {
   display: none !important;
+}
+div.popover-region-toggle.nav-link > i {
+  color: hsl(260deg, 10%, 70%) !important;
 }
 
 #page-wrapper {
   background: radial-gradient(70vw circle at -20vw -40vw, hsla(270deg, 100%, 70%, 0.6) 0%, transparent 100%), radial-gradient(60vw circle at 60vw -30vw, hsla(290deg, 100%, 70%, 0.2) 0%, transparent 100%);
   /* POPUP NAV LEFT / COMPACT NAVBAR */
-  /* NAVBAR */
 }
 #page-wrapper > #nav-drawer {
   background-color: hsl(260deg, 13%, 10%) !important;
@@ -212,8 +266,18 @@ div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::b
   background-color: transparent !important;
   position: relative !important;
   display: flex !important;
-  padding: 4rem 2rem 1rem 2rem;
+  align-items: center !important;
+  padding: 4rem 2rem 0 2rem;
   box-shadow: none;
+  max-height: initial !important;
+}
+#page-wrapper > nav.navbar.fixed-top button:has(i.fa-bars) {
+  display: flex !important;
+  align-items: center !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+#page-wrapper > nav.navbar.fixed-top button:has(i.fa-bars):hover {
+  color: hsl(260deg, 5%, 50%) !important;
 }
 #page-wrapper > nav.navbar.fixed-top a.navbar-brand, #page-wrapper > nav.navbar.fixed-top span.site-name, #page-wrapper > nav.navbar.fixed-top ul li a {
   color: hsl(260deg, 10%, 70%) !important;
@@ -221,6 +285,20 @@ div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::b
 #page-wrapper > nav.navbar.fixed-top a.navbar-brand:hover, #page-wrapper > nav.navbar.fixed-top a.navbar-brand:active, #page-wrapper > nav.navbar.fixed-top span.site-name:hover, #page-wrapper > nav.navbar.fixed-top span.site-name:active, #page-wrapper > nav.navbar.fixed-top ul li a:hover, #page-wrapper > nav.navbar.fixed-top ul li a:active {
   background-color: transparent !important;
   color: hsl(260deg, 5%, 50%) !important;
+}
+#page-wrapper > nav.navbar.fixed-top a.navbar-brand {
+  width: 1.75rem !important;
+  height: 1.75rem !important;
+  position: relative !important;
+  background-color: hsl(260deg, 10%, 70%) !important;
+  -webkit-mask: url("chrome-extension://__MSG_@@extension_id__/images/home.svg");
+          mask: url("chrome-extension://__MSG_@@extension_id__/images/home.svg");
+}
+#page-wrapper > nav.navbar.fixed-top a.navbar-brand:hover, #page-wrapper > nav.navbar.fixed-top a.navbar-brand:focus, #page-wrapper > nav.navbar.fixed-top a.navbar-brand:active {
+  background-color: hsl(260deg, 5%, 50%) !important;
+}
+#page-wrapper > nav.navbar.fixed-top a.navbar-brand > span {
+  display: none !important;
 }
 @media (max-width: 1140px) {
   #page-wrapper > nav.navbar.fixed-top ul:nth-child(3) {

@@ -1,20 +1,25 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "EDU PGU Dark",
   "description": "ЕДУ ПГУ | Тёмная тема",
   "version": "1.0",
   "icons": {
-    "128": "images/ICON.png"
+    "128": "/images/_project.png"
   },
-  "page_action": {
-    "default_icon": {
-      "128": "images/ICON.png"
+  "action": {
+    "icons": {
+      "128": "/images/_project.png"
     }
   },
   "content_scripts": [{
     "matches": ["https://edu.pgu.ru/*"],
     "run_at": "document_start",
-    "js": ["/index.js"],
     "css": ["/styles/main.css"]
-  }]
+  }],
+  "web_accessible_resources": [
+    {
+      "resources": [ "/images/*" ],
+      "matches": [ "https://edu.pgu.ru/*" ]
+    }
+  ]
 }

@@ -220,6 +220,74 @@ section {
     }
     
   }
+  // MY TEACHERS 
+  &.block_myteachers {
+    div:has(> img, > a) {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      gap: 0.25rem !important;
+      align-items: center !important;
+
+      * {
+        margin: 0 !important;
+      }
+      > img {
+        border-radius: 50% !important; 
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+
+      }
+      > a {
+        padding: 0.25rem 0.5rem !important;
+      }
+    }
+  }
+  // ONLINE USERS
+  &.block_online_users {
+    ul {
+      > li {
+        display: flex !important;
+        gap: 0.25rem !important;
+        align-items: center !important;
+
+        > .user {
+          display: flex !important;
+          
+          > a {
+            padding: 0.25rem 0.5rem !important;
+          }
+        }
+        > .message {
+          margin: 0 !important;
+
+          > a {
+            padding: 0.25rem !important;
+
+            &:hover, &:focus, &:active {
+              background-color: transparent !important;
+
+              > i::before {
+                color: $text-secondary !important;
+              }
+            }
+            > i {
+              margin: 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  // ACTIVITY / COUSE ELEMENTS
+  &.block_activity_modules {
+    ul li div {
+      display: flex !important;
+
+      a {
+        padding: 0.25rem 0.5rem !important;
+      }
+    }
+  }
 }
 /* DROPDOWN MENUS */
 div.dropdown-menu, ul.dropdown-menu {
@@ -266,8 +334,16 @@ div.popover-region-toggle.nav-link {
   &:focus {
     @include pulseAnim;
   }
+  &:hover, &:focus, &:active {
+    > i {
+      color: $text-secondary !important;
+    }
+  }
   &::after, &::before {
     display: none !important;
+  }
+  > i {
+    color: $text-primary !important;
   }
 }
 #page-wrapper {
@@ -275,18 +351,33 @@ div.popover-region-toggle.nav-link {
     radial-gradient(70vw circle at -20vw -40vw,hsla(270, 100%, 70%, 0.6) 0%, transparent 100%),
     radial-gradient(60vw circle at 60vw -30vw,hsla(290, 100%, 70%, 0.2) 0%, transparent 100%);
   /* POPUP NAV LEFT / COMPACT NAVBAR */
-  & > #nav-drawer {
+  > #nav-drawer {
     background-color: $dark-0 !important;
     top: 0 !important;
     bottom: 0 !important;
   }
-  /* NAVBAR */
-  & > nav.navbar.fixed-top {
+
+  // NAVBAR
+
+  > nav.navbar.fixed-top {
     background-color: transparent !important;
     position: relative !important;
     display: flex !important;
-    padding: 4rem 2rem 1rem 2rem;
+    align-items: center !important;
+    padding: 4rem 2rem 0 2rem;
     box-shadow: none;
+    max-height: initial !important;
+
+    // LEFT HAMBURGER
+    button:has(i.fa-bars) {
+      display: flex !important;
+      align-items: center !important;
+      color: $text-primary !important;
+      
+      &:hover {
+        color: $text-secondary !important;
+      }
+    }
 
     a.navbar-brand, span.site-name, ul li a {
       color: $text-primary !important;
@@ -294,6 +385,20 @@ div.popover-region-toggle.nav-link {
       &:hover, &:active {
         background-color: transparent !important;
         color: $text-secondary !important;
+      }
+    }
+    a.navbar-brand {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      position: relative !important;
+      background-color: $text-primary !important;
+      mask: url('chrome-extension://__MSG_@@extension_id__/images/home.svg');
+      
+      &:hover, &:focus, &:active {
+        background-color: $text-secondary !important;
+      }
+      > span {
+        display: none !important;
       }
     }
     ul:nth-child(3) {
