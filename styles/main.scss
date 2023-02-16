@@ -640,7 +640,11 @@ textarea {
   border-radius: 0.5rem !important;
   padding: 1rem !important;
   color: $text-primary !important;
-
+  box-shadow: none !important; // DESTROY NATIVE EDU OULINE 
+  
+  &:focus, &:active {
+    outline: 0.1rem solid $purple-1 !important;
+  }
   &.bg-light {
     background-color: inherit !important;
     border-color: inherit !important;
@@ -1332,6 +1336,16 @@ div.submissionaction button {
 
         &.received {
           background-color: $dark-2 !important;
+        }
+      }
+      // CONFIRM DIALOGUE ADD TO CONTACTS
+      [data-region=confirm-dialogue] {
+        @include card;
+        @include shadow;
+        @include smoothAppearAnim;
+
+        button {
+          @include importantButton;
         }
       }
     }

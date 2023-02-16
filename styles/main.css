@@ -612,6 +612,10 @@ textarea {
   border-radius: 0.5rem !important;
   padding: 1rem !important;
   color: hsl(260deg, 10%, 70%) !important;
+  box-shadow: none !important;
+}
+textarea:focus, textarea:active {
+  outline: 0.1rem solid hsl(270deg, 50%, 45%) !important;
 }
 textarea.bg-light {
   background-color: inherit !important;
@@ -1349,6 +1353,32 @@ div.submissionaction button:hover, div.submissionaction button:active {
 }
 .message-app [class*=body-container] [data-region=view-conversation] .message.received, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message.received {
   background-color: hsl(260deg, 13%, 18%) !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue], .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  animation: smoothAppear 0.1s ease-in-out;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button, .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:hover, .message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:active, .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:hover, .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
 }
 .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts], .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] {
   overflow: visible !important;
