@@ -364,7 +364,7 @@ div.popover-region-toggle.nav-link {
     position: relative !important;
     display: flex !important;
     align-items: center !important;
-    padding: 4rem 2rem 0 2rem;
+    padding: 3rem 2rem 0 2rem;
     box-shadow: none;
     max-height: initial !important;
 
@@ -450,13 +450,10 @@ div.popover-region-toggle.nav-link {
   }
   /* MESSAGE APP AS POPUP ON DARK BACKGROUND*/
   & .message-app {
-    background-color: $dark-1 !important;
-    border-radius: 0.5rem !important;
     height: 80% !important;
     width: 80% !important;
     max-width: 70vw !important;
     display: flex !important;
-    padding: 0.5rem !important;
   }
   & .closewidget {
     display: flex !important;
@@ -1205,23 +1202,198 @@ div.submissionaction button {
 /* MESSENGER */
 
 
-div.message-app {
-  background-color: transparent !important;
-  border-width: 0 !important;
+.message-app, .message-app.bg-light {
+  @include card;
+  @include shadow;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+  background-color: $dark-1 !important;
+  border: none !important;
+  padding: 1rem !important;
+
+  textarea {
+    @include card;
+    background-color: $dark-0 !important;
+    padding: 0.5rem !important;
+    flex: 1 !important;
+  }
+  button[data-action=send-message] {
+    margin: 0 !important;
+    margin-left: 0.5rem !important;
+    justify-self: center !important;
+    flex: 1 !important;
+  }
+  // TWO SIDES MESSENGER
+  .container-fluid {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    padding: 0 !important;
+    height: 100% !important;
+
+    > div:nth-child(1) {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 1rem !important;
+
+      > div {
+        padding: 0 !important;
+      }
+      // LEFT SIDE
+      > div:nth-child(1) {
+
+        > div:nth-child(1) {
+
+          display: flex !important;
+          flex-direction: column !important;
+          flex-wrap: nowrap !important;
+          gap: 1rem !important;
+        }
+      }
+      // RIGHT SIDE
+      > div:nth-child(2) {
+        display: flex !important;
+        flex: 1 !important;
+        gap: 0.5rem !important;
+      }
+    }
+  }
+  [class*=header-container] {
+
+    [data-region="view-overview"] {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      padding: 0 !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      
+      > div:nth-child(1) {
+        display: flex !important;
+        align-items: center !important;
+        flex: 1 !important;
+        gap: 0.5rem !important;
+
+        // SEARCH USER ICON
+        span {
+          display: flex !important;
+          align-items: center !important;
+        }
+      }
+      *:not(.hidden) {
+        display: inline-flex !important;
+        margin: 0 !important;
+      }
+      a[data-route="view-contacts"] {
+        @include importantButton;  
+        align-items: center !important;
+        gap: 0.25rem !important;
+      }
+    }
+  }
+  [class*=body-container] {
+    overflow: visible !important;
+    
+    [class*=view-overview-body] {
+      overflow: visible !important;
+
+      [id*=message-drawer-view-overview-container] {
+        @include card;
+        // @include shadow;
+        background-color: $dark-0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        overflow: visible !important;
+        padding: 0.5rem !important;
+    
+        .section.card {
+          background: none !important;
+          box-shadow: none !important;
+          outline: none !important;
+        }
+      }
+    }
+
+    // CHAT INSIDE MESSENGER
+    [data-region=view-conversation] {
+      padding: 0 !important;
   
-  .card {
-    box-shadow: none !important;
-    outline: none !important;
+      // PERSON IN CHAT IN HEADER
+      a[data-action=view-contact] {
+        padding: 0.5rem !important;
+      }
+      .message {
+        margin: 0 !important;
+        padding: 1rem !important;
+
+        &.received {
+          background-color: $dark-2 !important;
+        }
+      }
+    }
+    &.body-container:has([data-region=view-contacts]:not([aria-hidden=true])) {
+      [data-region=view-contacts] {
+        overflow: visible !important;
+        
+        > div:nth-child(1) {
+          @include card;
+          overflow: hidden !important;
+  
+          // CONTANTS AND REQUESTS BUTTONS
+          div:has(> ul) {
+            padding: 0 !important;
+            
+            > ul {
+              display: flex !important;
+              flex-wrap: nowrap !important;
+              margin: 0 !important;
+      
+              > li {
+                flex: 1 !important;
+      
+                > a {
+                  background-color: $dark-1 !important;
+                  border-radius: 0 !important;
+                  
+                  &:hover, &:focus, &:active {
+                    background-color: $dark-2 !important;
+                  }
+                }
+              }
+            }
+          }
+          // CONTANTS LIST
+          .tab-content {
+            background-color: $dark-0 !important; 
+    
+            // CONTANTS
+            .list-group[data-region=content-container] {
+      
+              > a {
+                border-radius: 0 !important;
+                padding: 0.75rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   
-  & * {
-    border-width: 0 !important;
+  
+  
+  *, *[class*=border] {
+    border: none !important;
   }
   & .bg-white {
     background-color: transparent !important;
   }
   /* EACH MESSAGE IN CHAT*/
-  & div.content-message-container > div {
+  & .content-message-container > div {
     background-color: $dark-0 !important;
     border-radius: 0.5rem !important;
     outline: 0.1rem solid $dark-2 !important;

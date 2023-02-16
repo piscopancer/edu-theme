@@ -267,7 +267,7 @@ div.popover-region-toggle.nav-link > i {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
-  padding: 4rem 2rem 0 2rem;
+  padding: 3rem 2rem 0 2rem;
   box-shadow: none;
   max-height: initial !important;
 }
@@ -362,13 +362,10 @@ div.popover-region-toggle.nav-link > i {
   }
 }
 [data-origin^=message-drawer-toggle] .message-app, [data-origin^=message-user-button] .message-app {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  border-radius: 0.5rem !important;
   height: 80% !important;
   width: 80% !important;
   max-width: 70vw !important;
   display: flex !important;
-  padding: 0.5rem !important;
 }
 [data-origin^=message-drawer-toggle] .closewidget, [data-origin^=message-user-button] .closewidget {
   display: flex !important;
@@ -1228,28 +1225,179 @@ div.submissionaction button:hover, div.submissionaction button:active {
 }
 
 /* MESSENGER */
-div.message-app {
-  background-color: transparent !important;
-  border-width: 0 !important;
+.message-app, .message-app.bg-light {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
+  border: none !important;
+  padding: 1rem !important;
   /* EACH MESSAGE IN CHAT*/
 }
-div.message-app .card {
+.message-app textarea, .message-app.bg-light textarea {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsl(260deg, 13%, 10%) !important;
+  padding: 0.5rem !important;
+  flex: 1 !important;
+}
+.message-app button[data-action=send-message], .message-app.bg-light button[data-action=send-message] {
+  margin: 0 !important;
+  margin-left: 0.5rem !important;
+  justify-self: center !important;
+  flex: 1 !important;
+}
+.message-app .container-fluid, .message-app.bg-light .container-fluid {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  padding: 0 !important;
+  height: 100% !important;
+}
+.message-app .container-fluid > div:nth-child(1), .message-app.bg-light .container-fluid > div:nth-child(1) {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
+}
+.message-app .container-fluid > div:nth-child(1) > div, .message-app.bg-light .container-fluid > div:nth-child(1) > div {
+  padding: 0 !important;
+}
+.message-app .container-fluid > div:nth-child(1) > div:nth-child(1) > div:nth-child(1), .message-app.bg-light .container-fluid > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
+}
+.message-app .container-fluid > div:nth-child(1) > div:nth-child(2), .message-app.bg-light .container-fluid > div:nth-child(1) > div:nth-child(2) {
+  display: flex !important;
+  flex: 1 !important;
+  gap: 0.5rem !important;
+}
+.message-app [class*=header-container] [data-region=view-overview], .message-app.bg-light [class*=header-container] [data-region=view-overview] {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  padding: 0 !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+.message-app [class*=header-container] [data-region=view-overview] > div:nth-child(1), .message-app.bg-light [class*=header-container] [data-region=view-overview] > div:nth-child(1) {
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 !important;
+  gap: 0.5rem !important;
+}
+.message-app [class*=header-container] [data-region=view-overview] > div:nth-child(1) span, .message-app.bg-light [class*=header-container] [data-region=view-overview] > div:nth-child(1) span {
+  display: flex !important;
+  align-items: center !important;
+}
+.message-app [class*=header-container] [data-region=view-overview] *:not(.hidden), .message-app.bg-light [class*=header-container] [data-region=view-overview] *:not(.hidden) {
+  display: inline-flex !important;
+  margin: 0 !important;
+}
+.message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts], .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+}
+.message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:hover, .message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:active, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:hover, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+.message-app [class*=body-container], .message-app.bg-light [class*=body-container] {
+  overflow: visible !important;
+}
+.message-app [class*=body-container] [class*=view-overview-body], .message-app.bg-light [class*=body-container] [class*=view-overview-body] {
+  overflow: visible !important;
+}
+.message-app [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container], .message-app.bg-light [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsl(260deg, 13%, 10%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  overflow: visible !important;
+  padding: 0.5rem !important;
+}
+.message-app [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container] .section.card, .message-app.bg-light [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container] .section.card {
+  background: none !important;
   box-shadow: none !important;
   outline: none !important;
 }
-div.message-app * {
-  border-width: 0 !important;
+.message-app [class*=body-container] [data-region=view-conversation], .message-app.bg-light [class*=body-container] [data-region=view-conversation] {
+  padding: 0 !important;
 }
-div.message-app .bg-white {
+.message-app [class*=body-container] [data-region=view-conversation] a[data-action=view-contact], .message-app.bg-light [class*=body-container] [data-region=view-conversation] a[data-action=view-contact] {
+  padding: 0.5rem !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .message, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message {
+  margin: 0 !important;
+  padding: 1rem !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .message.received, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message.received {
+  background-color: hsl(260deg, 13%, 18%) !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts], .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] {
+  overflow: visible !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1), .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul), .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) {
+  padding: 0 !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  margin: 0 !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li {
+  flex: 1 !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  border-radius: 0 !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:hover, .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:focus, .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:active, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:hover, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:focus, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:active {
+  background-color: hsl(260deg, 13%, 18%) !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content {
+  background-color: hsl(260deg, 13%, 10%) !important;
+}
+.message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content .list-group[data-region=content-container] > a, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content .list-group[data-region=content-container] > a {
+  border-radius: 0 !important;
+  padding: 0.75rem !important;
+}
+.message-app *, .message-app *[class*=border], .message-app.bg-light *, .message-app.bg-light *[class*=border] {
+  border: none !important;
+}
+.message-app .bg-white, .message-app.bg-light .bg-white {
   background-color: transparent !important;
 }
-div.message-app div.content-message-container > div {
+.message-app .content-message-container > div, .message-app.bg-light .content-message-container > div {
   background-color: hsl(260deg, 13%, 10%) !important;
   border-radius: 0.5rem !important;
   outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
   margin-top: 0.5rem !important;
 }
-div.message-app div.content-message-container > div > h6 {
+.message-app .content-message-container > div > h6, .message-app.bg-light .content-message-container > div > h6 {
   margin-top: 1rem !important;
 }
 
