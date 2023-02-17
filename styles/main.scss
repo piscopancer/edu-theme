@@ -450,9 +450,8 @@ div.popover-region-toggle.nav-link {
   }
   /* MESSAGE APP AS POPUP ON DARK BACKGROUND*/
   & .message-app {
-    height: 80% !important;
-    width: 80% !important;
-    max-width: 70vw !important;
+    height: calc(100% - 2rem) !important;
+    width: calc(80% - 2rem) !important;
     display: flex !important;
   }
   & .closewidget {
@@ -1335,7 +1334,11 @@ div.submissionaction button {
         padding: 1rem !important;
 
         &.received {
-          background-color: $dark-2 !important;
+          background-color: $dark-1 !important;
+
+          * {
+            color: $text-primary !important;
+          }
         }
       }
       // CONFIRM DIALOGUE ADD TO CONTACTS

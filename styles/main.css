@@ -362,9 +362,8 @@ div.popover-region-toggle.nav-link > i {
   }
 }
 [data-origin^=message-drawer-toggle] .message-app, [data-origin^=message-user-button] .message-app {
-  height: 80% !important;
-  width: 80% !important;
-  max-width: 70vw !important;
+  height: calc(100% - 2rem) !important;
+  width: calc(80% - 2rem) !important;
   display: flex !important;
 }
 [data-origin^=message-drawer-toggle] .closewidget, [data-origin^=message-user-button] .closewidget {
@@ -1352,7 +1351,10 @@ div.submissionaction button:hover, div.submissionaction button:active {
   padding: 1rem !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] .message.received, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message.received {
-  background-color: hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .message.received *, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message.received * {
+  color: hsl(260deg, 10%, 70%) !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue], .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] {
   background-color: hsl(260deg, 13%, 13%) !important;
