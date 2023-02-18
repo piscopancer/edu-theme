@@ -423,9 +423,9 @@ button, a {
   border-radius: 0.5rem !important;
   box-shadow: none !important;
 }
-button:hover, button:active, button:focus, a:hover, a:active, a:focus {
-  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+button:is(:hover, :active, :focus), a:is(:hover, :active, :focus) {
   text-decoration: none !important;
+  color: hsl(260deg, 5%, 50%) !important;
 }
 button:focus, a:focus {
   animation: pulse 1s infinite alternate ease-in-out;
@@ -483,7 +483,23 @@ p, h1, h2, h3, h4, h5, h6, span, div {
 }
 
 div#goto-top-link > a {
-  background-color: hsl(260deg, 13%, 13%);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-right: 1rem !important;
+  background-color: hsl(260deg, 13%, 13%) !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 50% !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 22%) !important;
+  opacity: 0.5 !important;
+  padding: 0 !important;
+}
+div#goto-top-link > a:is(:hover, :focus, :active) {
+  opacity: 1 !important;
+}
+div#goto-top-link > a > i {
+  margin: 0 !important;
 }
 
 table.generaltable:not(.course-box), .course-content table, table.preference-table {
@@ -621,141 +637,6 @@ textarea.bg-light {
   border-color: inherit !important;
 }
 
-.profile_tree a[href*=user\/edit] {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
-  padding: 0.75rem 2rem !important;
-}
-.profile_tree a[href*=user\/edit]:hover, .profile_tree a[href*=user\/edit]:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
-}
-.profile_tree a[href*=mailto] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
-  border-radius: 0.5rem !important;
-  border: none !important;
-  padding: 0.2rem 0.4rem !important;
-  font-weight: bold !important;
-  color: hsl(260deg, 10%, 70%) !important;
-  display: flex !important;
-  margin-top: 1rem !important;
-}
-.profile_tree a[href*=mailto]:hover, .profile_tree a[href*=mailto]:focus, .profile_tree a[href*=mailto]:active {
-  filter: brightness(120%) !important;
-}
-.profile_tree a[href*=mailto]::before {
-  content: "🔗";
-  margin-right: 0.25rem;
-  height: 100%;
-  aspect-ratio: 1;
-}
-.profile_tree a {
-  padding: 0.5rem 0.5rem !important;
-}
-.profile_tree ul {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.1rem !important;
-}
-.profile_tree ul.inline-list {
-  display: inline-flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-}
-.profile_tree ul li {
-  display: flex !important;
-}
-.profile_tree ul li span {
-  display: flex !important;
-}
-.profile_tree ul li span a:hover {
-  color: hsl(260deg, 10%, 70%) !important;
-}
-
-.userprofile .page-context-header {
-  display: inline-flex !important;
-  padding: 0 !important;
-  margin-bottom: 1rem !important;
-  gap: 1rem !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-}
-.userprofile .page-context-header .page-header-image {
-  margin: 0 !important;
-}
-.userprofile .page-context-header .page-header-image img.userpicture {
-  margin: 0 !important;
-}
-.userprofile .page-context-header .page-header-headings {
-  display: inline-flex !important;
-}
-.userprofile .page-context-header .page-header-headings > h2 {
-  margin: 0 !important;
-}
-.userprofile .page-context-header .header-button-group {
-  display: inline-flex !important;
-  flex-wrap: nowrap !important;
-  gap: 1rem !important;
-}
-.userprofile .page-context-header .header-button-group > a {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
-  padding: 0.75rem 2rem !important;
-}
-.userprofile .page-context-header .header-button-group > a:hover, .userprofile .page-context-header .header-button-group > a:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
-}
-.userprofile .profile_tree a[href*=user\/edit] {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
-  padding: 0.75rem 2rem !important;
-}
-.userprofile .profile_tree a[href*=user\/edit]:hover, .userprofile .profile_tree a[href*=user\/edit]:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
-}
-.userprofile .profile_tree a[href*=mailto] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
-  border-radius: 0.5rem !important;
-  border: none !important;
-  padding: 0.2rem 0.4rem !important;
-  font-weight: bold !important;
-  color: hsl(260deg, 10%, 70%) !important;
-  display: flex !important;
-  margin-top: 1rem !important;
-}
-.userprofile .profile_tree a[href*=mailto]:hover, .userprofile .profile_tree a[href*=mailto]:focus, .userprofile .profile_tree a[href*=mailto]:active {
-  filter: brightness(120%) !important;
-}
-.userprofile .profile_tree a[href*=mailto]::before {
-  content: "🔗";
-  margin-right: 0.25rem;
-  height: 100%;
-  aspect-ratio: 1;
-}
-.userprofile .profile_tree a {
-  padding: 0.5rem 0.5rem !important;
-}
-.userprofile .profile_tree ul {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.1rem !important;
-}
-.userprofile .profile_tree ul.inline-list {
-  display: inline-flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-}
-.userprofile .profile_tree ul li {
-  display: flex !important;
-}
-.userprofile .profile_tree ul li span {
-  display: flex !important;
-}
-.userprofile .profile_tree ul li span a:hover {
-  color: hsl(260deg, 10%, 70%) !important;
-}
-
 /* TEXT EDITOR */
 div.editor_atto_wrap {
   background-color: hsl(260deg, 13%, 10%) !important;
@@ -767,29 +648,6 @@ div.editor_atto_wrap {
 div.block-recentlyaccessedcourses div.one-row > div {
   overflow: hidden !important;
   border-radius: 0.5rem !important;
-}
-
-/* LOGIN */
-body#page-login-index section#region-main {
-  background: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-body#page-login-index section#region-main .card {
-  background: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-body#page-login-index button#loginbtn {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
-  padding: 0.75rem 2rem !important;
-}
-body#page-login-index button#loginbtn:hover, body#page-login-index button#loginbtn:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
-}
-body#page-login-index div.forgetpass a {
-  padding: 0.5rem !important;
 }
 
 div.popover {
@@ -839,14 +697,13 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   margin-top: 3rem !important;
   /* SUBJECT NAME */
 }
-.card-text.content > div:nth-child(n+4) > h3 {
+.card-text.content > div:nth-child(n+4) > h3 > a {
+  display: flex !important;
   padding: 0.5rem !important;
 }
-.card-text.content > div:nth-child(n+4) > h3:hover {
-  filter: brightness(120%);
-}
-.card-text.content > div:nth-child(n+4) > h3 > a:hover {
-  background-color: transparent !important;
+.card-text.content > div:nth-child(n+4) > h3 > a:is(:hover, :focus, :active) {
+  color: hsl(260deg, 10%, 70%) !important;
+  filter: brightness(120%) !important;
 }
 .card-text.content > div:nth-child(n+4) .course-box {
   overflow: hidden !important;
@@ -996,7 +853,80 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   aspect-ratio: 1 !important;
 }
 
-/* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */
+body#page-login-index section#region-main {
+  background: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+body#page-login-index section#region-main .card {
+  background: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+body#page-login-index button#loginbtn {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+}
+body#page-login-index button#loginbtn:hover, body#page-login-index button#loginbtn:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+body#page-login-index .forgetpass a {
+  padding: 0.5rem !important;
+}
+body#page-mod-assign-view #intro * {
+  color: hsl(260deg, 5%, 50%) !important;
+}
+body#page-mod-assign-view #intro h1, body#page-mod-assign-view #intro h2, body#page-mod-assign-view #intro h3 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+body#page-mod-assign-view #intro h1::after, body#page-mod-assign-view #intro h2::after, body#page-mod-assign-view #intro h3::after {
+  content: "";
+  margin-top: 0.25rem;
+  display: flex;
+  width: 100%;
+  height: 0.15rem;
+  background-color: hsla(260deg, 20%, 100%, 0.05);
+}
+body#page-mod-assign-view #intro a[href] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  padding: 0.2rem 0.4rem !important;
+  font-weight: bold !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+body#page-mod-assign-view #intro a[href]:hover, body#page-mod-assign-view #intro a[href]:focus, body#page-mod-assign-view #intro a[href]:active {
+  filter: brightness(120%) !important;
+}
+body#page-mod-assign-view #intro a[href]::before {
+  content: "🔗";
+  margin-right: 0.25rem;
+  height: 100%;
+  aspect-ratio: 1;
+}
+body#page-mod-assign-view #intro pre {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 1rem !important;
+}
+body#page-mod-assign-view #intro table {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: hsl(260deg, 13%, 10%) !important;
+  margin-bottom: 1rem !important;
+}
+body#page-mod-assign-view #intro table thead {
+  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+}
 body:not(#page-login-index) div#region-main-box > section#region-main {
   box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
   background-color: hsl(260deg, 13%, 13%) !important;
@@ -1061,6 +991,145 @@ body:not(#page-login-index) div#region-main-box > section#region-main .course-co
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow table thead {
   background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+}
+body#page-user-profile .userprofile .page-context-header {
+  display: inline-flex !important;
+  padding: 0 !important;
+  margin-bottom: 1rem !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+}
+body#page-user-profile .userprofile .page-context-header .page-header-image {
+  margin: 0 !important;
+}
+body#page-user-profile .userprofile .page-context-header .page-header-image img.userpicture {
+  margin: 0 !important;
+}
+body#page-user-profile .userprofile .page-context-header .page-header-headings {
+  display: inline-flex !important;
+}
+body#page-user-profile .userprofile .page-context-header .page-header-headings > h2 {
+  margin: 0 !important;
+}
+body#page-user-profile .userprofile .page-context-header .header-button-group {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
+}
+body#page-user-profile .userprofile .page-context-header .header-button-group > a {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+}
+body#page-user-profile .userprofile .page-context-header .header-button-group > a:hover, body#page-user-profile .userprofile .page-context-header .header-button-group > a:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+body#page-user-profile .userprofile .profile_tree a[href*=user\/edit] {
+  background-color: hsl(260deg, 13%, 18%) !important;
+  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  padding: 0.75rem 2rem !important;
+}
+body#page-user-profile .userprofile .profile_tree a[href*=user\/edit]:hover, body#page-user-profile .userprofile .profile_tree a[href*=user\/edit]:active {
+  background-color: hsl(260deg, 13%, 22%) !important;
+}
+body#page-user-profile .userprofile .profile_tree a[href*=mailto] {
+  background-color: hsl(260deg, 13%, 13%) !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  padding: 0.2rem 0.4rem !important;
+  font-weight: bold !important;
+  color: hsl(260deg, 10%, 70%) !important;
+  display: flex !important;
+  margin-top: 1rem !important;
+}
+body#page-user-profile .userprofile .profile_tree a[href*=mailto]:hover, body#page-user-profile .userprofile .profile_tree a[href*=mailto]:focus, body#page-user-profile .userprofile .profile_tree a[href*=mailto]:active {
+  filter: brightness(120%) !important;
+}
+body#page-user-profile .userprofile .profile_tree a[href*=mailto]::before {
+  content: "🔗";
+  margin-right: 0.25rem;
+  height: 100%;
+  aspect-ratio: 1;
+}
+body#page-user-profile .userprofile .profile_tree a {
+  padding: 0.5rem 0.5rem !important;
+}
+body#page-user-profile .userprofile .profile_tree ul {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.1rem !important;
+}
+body#page-user-profile .userprofile .profile_tree ul.inline-list {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+body#page-user-profile .userprofile .profile_tree ul li {
+  display: flex !important;
+}
+body#page-user-profile .userprofile .profile_tree ul li span {
+  display: flex !important;
+}
+body#page-user-preferences [role=main] .card {
+  display: flex !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body#page-user-preferences [role=main] .card .card-body:has(> h4, > div) {
+  display: flex !important;
+  flex-direction: column !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body#page-user-preferences [role=main] .card .card-body:has(> h4, > div) > div {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
+}
+@media (max-width: 768px) {
+  body#page-user-preferences [role=main] .card .card-body:has(> h4, > div) > div {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+body#page-user-preferences [role=main] .card .card-body:has(> h4, > div) > div > div {
+  display: flex !important;
+}
+body#page-user-preferences [role=main] .card .card-body:has(> h4, > div) > div > div > a {
+  white-space: nowrap !important;
+  padding: 0.5rem 1rem !important;
+}
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue {
+  display: flex !important;
+  flex-direction: column !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue .confirmation-buttons {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  gap: 1rem !important;
+  align-self: flex-end !important;
+  width: auto !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue .confirmation-buttons input {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding: 0.75rem 2rem !important;
 }
 
 .yui3-widget.yui3-panel, .moodle-dialogue, .yui3-widget-modal, .modal-dialog {
@@ -1150,6 +1219,12 @@ div.filemanager .filemanager-container .fm-empty-container .dndupload-message .d
     translate: 0 0.5rem;
     opacity: 0.5;
   }
+}
+div.filemanager .filemanager-container.dndupload-over .fm-empty-container, div.filemanager .card.dndupload-over .fm-empty-container {
+  outline: 0.1rem solid hsl(275deg, 75%, 60%) !important;
+}
+div.filemanager .filemanager-container .dndupload-target, div.filemanager .card .dndupload-target {
+  display: none !important;
 }
 div.filemanager .filemanager-container .fp-upload-form input, div.filemanager .filemanager-container .fp-upload-form div, div.filemanager .card .fp-upload-form input, div.filemanager .card .fp-upload-form div {
   background-color: hsl(260deg, 13%, 10%) !important;
@@ -1241,7 +1316,6 @@ div.submissionaction button:hover, div.submissionaction button:active {
   background-color: hsl(260deg, 13%, 13%) !important;
   border: none !important;
   padding: 1rem !important;
-  /* EACH MESSAGE IN CHAT*/
 }
 .message-app textarea, .message-app.bg-light textarea {
   background-color: hsl(260deg, 13%, 13%) !important;
@@ -1346,14 +1420,38 @@ div.submissionaction button:hover, div.submissionaction button:active {
 .message-app [class*=body-container] [data-region=view-conversation] a[data-action=view-contact], .message-app.bg-light [class*=body-container] [data-region=view-conversation] a[data-action=view-contact] {
   padding: 0.5rem !important;
 }
-.message-app [class*=body-container] [data-region=view-conversation] .message, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message {
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container {
+  padding: 0rem !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container], .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > h6, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > h6 {
+  margin-block: 1rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 9999px !important;
+  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div {
+  background-color: hsl(260deg, 13%, 10%) !important;
+  border-radius: 0.5rem !important;
+  align-self: stretch !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message {
   margin: 0 !important;
   padding: 1rem !important;
 }
-.message-app [class*=body-container] [data-region=view-conversation] .message.received, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message.received {
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message:is(:hover, :focus, :active), .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message:is(:hover, :focus, :active) {
+  filter: none !important;
+}
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received {
   background-color: hsl(260deg, 13%, 13%) !important;
 }
-.message-app [class*=body-container] [data-region=view-conversation] .message.received *, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .message.received * {
+.message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received *, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received * {
   color: hsl(260deg, 10%, 70%) !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue], .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] {
@@ -1422,15 +1520,6 @@ div.submissionaction button:hover, div.submissionaction button:active {
 }
 .message-app .bg-white, .message-app.bg-light .bg-white {
   background-color: transparent !important;
-}
-.message-app .content-message-container > div, .message-app.bg-light .content-message-container > div {
-  background-color: hsl(260deg, 13%, 10%) !important;
-  border-radius: 0.5rem !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
-  margin-top: 0.5rem !important;
-}
-.message-app .content-message-container > div > h6, .message-app.bg-light .content-message-container > div > h6 {
-  margin-top: 1rem !important;
 }
 
 div.qn_buttons {
@@ -1625,36 +1714,4 @@ form[action*=review] .form-inline > label span.answer {
 }
 form[action*=review] .form-inline > label span.answer input {
   width: 10rem !important;
-}
-
-/* CONFIRM TEST */
-body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap {
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-}
-body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-}
-body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue {
-  display: flex !important;
-  flex-direction: column !important;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-  align-items: center !important;
-  gap: 1rem !important;
-}
-body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue .confirmation-buttons {
-  display: flex !important;
-  flex-direction: row-reverse !important;
-  gap: 1rem !important;
-  align-self: flex-end !important;
-  width: auto !important;
-  flex-wrap: nowrap !important;
-  align-items: center !important;
-}
-body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialogue-bd .confirmation-dialogue .confirmation-buttons input {
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-  padding: 0.75rem 2rem !important;
 }/*# sourceMappingURL=main.css.map */

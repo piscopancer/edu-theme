@@ -514,9 +514,10 @@ button, a {
   border-radius: 0.5rem !important;
   box-shadow: none !important; // DESTROY NATIVE EDU OULINE 
 
-  &:hover, &:active, &:focus {
-    background-color: $hightlight !important;
+  &:is(:hover, :active, :focus) {
+    // background-color: $hightlight !important;
     text-decoration: none !important;
+    color: $text-secondary !important;
   }
   &:focus {
     @include pulseAnim;
@@ -557,8 +558,26 @@ p, h1, h2, h3, h4, h5, h6, span, div {
   color: $text-secondary !important;
   background-color: transparent !important;
 }
+//GO TO TOP BUTTON
 div#goto-top-link > a {
-  background-color: $dark-1;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-right: 1rem !important;
+  background-color: $dark-1 !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 50% !important;
+  outline: 0.1rem solid $dark-3 !important;
+  opacity: 0.5 !important;
+  padding: 0 !important;
+  
+  &:is(:hover, :focus, :active) {
+    opacity: 1 !important;
+  }
+  > i {
+    margin: 0 !important;
+  }
 }
 
 
@@ -653,113 +672,6 @@ textarea {
 
 // PROFILE TREE / ABOUT 
 
-.profile_tree {
-
-  a[href*=user\/edit] {
-    @include importantButton;
-  }
-  a[href*=mailto] {
-    @include linkAnchor;
-    display: flex !important;
-    margin-top: 1rem !important;
-  }
-  a {
-    padding: 0.5rem 0.5rem !important;
-  }
-  ul {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.1rem !important;
-    
-    &.inline-list {
-      display: inline-flex !important;
-      flex-direction: row !important;
-      flex-wrap: wrap !important;
-    }
-    li {
-      display: flex !important;
-
-      span {
-        display: flex !important;
-
-        a:hover {
-          color: $text-primary !important;
-        }
-      }
-    }
-  }
-}
-.userprofile {
-  
-  .page-context-header {
-    display: inline-flex !important;
-    padding: 0 !important;
-    margin-bottom: 1rem !important;
-    gap: 1rem !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    
-    .page-header-image {
-      margin: 0 !important;
-      
-      img.userpicture {
-        margin: 0 !important;
-      }
-    }
-    .page-header-headings {
-      display: inline-flex !important;
-      
-      & > h2 {
-        margin: 0 !important;
-      }
-    }
-    .header-button-group {
-      display: inline-flex !important;
-      flex-wrap: nowrap !important;
-      gap: 1rem !important;
-      
-      & > a {
-        @include importantButton; 
-      }
-    }
-  }
-  .profile_tree {
-    
-    a[href*=user\/edit] {
-      @include importantButton;
-    }
-    a[href*=mailto] {
-      @include linkAnchor;
-      display: flex !important;
-      margin-top: 1rem !important;
-    }
-    a {
-      padding: 0.5rem 0.5rem !important;
-    }
-    ul {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 0.1rem !important;
-      
-      &.inline-list {
-        display: inline-flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-      }
-      li {
-        display: flex !important;
-  
-        span {
-          display: flex !important;
-  
-          a:hover {
-            color: $text-primary !important;
-          }
-        }
-      }
-    }
-  }
-}
 
 /* TEXT EDITOR */
 div.editor_atto_wrap {
@@ -774,28 +686,6 @@ div.block-recentlyaccessedcourses div.one-row > div {
   border-radius: 0.5rem !important;
 }
 
-
-/* LOGIN */
-body#page-login-index {
-
-  section#region-main {
-    background: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    
-    .card {
-      background: none !important;
-      box-shadow: none !important;
-      outline: none !important;
-    }
-  }
-  button#loginbtn {
-    @include importantButton;
-  }
-  div.forgetpass a {
-    padding: 0.5rem !important;
-  }
-}
 
 // POPOVER (CALENDER)
 
@@ -833,22 +723,21 @@ td.hasevent {
 
 .card-text.content {
 
-  & > .customtitle, & > .legend-box {
+  > .customtitle, > .legend-box {
     display: none !important;
   }
   /* each subject */
-  & > div:nth-child(n+4) {
+  > div:nth-child(n+4) {
     margin-top: 3rem !important;
 
     /* SUBJECT NAME */
-    & > h3 {
+    > h3 > a {
+      display: flex !important;
       padding: 0.5rem !important;
 
-      &:hover {
-        filter: brightness(120%);
-      }
-      & > a:hover {
-        background-color: transparent !important;
+      &:is(:hover, :focus, :active) {
+        color: $text-primary !important;
+        filter: brightness(120%) !important;
       }
     }
     & .course-box {
@@ -1023,22 +912,189 @@ td.hasevent {
   
 }
 
-/* MAIN BLOCK / SUBJECTS / SUBJECT PAGE */
+// MAIN BLOCK / SUBJECTS / SUBJECT PAGE
 
-body:not(#page-login-index) div#region-main-box > section#region-main {
-  @include shadow;
-  background-color: $dark-1 !important;
-  outline: 0.1rem solid $dark-2 !important;
-  border-radius: 0.5rem !important;
+body {
+  
+  // LOGIN
+  &#page-login-index {
 
-  & span#maincontent {
-    display: none !important;
-  } 
-
-  .course-content {
-    .no-overflow {
-      overflow: visible !important;
+    section#region-main {
+      background: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+      
+      .card {
+        background: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+    }
+    button#loginbtn {
+      @include importantButton;
+    }
+    .forgetpass a {
+      padding: 0.5rem !important;
+    }
+  }
+  &#page-mod-assign-view {
+    #intro {
       @include prettyMarkdown;
+    }
+  }
+  &:not(#page-login-index) div#region-main-box > section#region-main {
+    @include shadow;
+    background-color: $dark-1 !important;
+    outline: 0.1rem solid $dark-2 !important;
+    border-radius: 0.5rem !important;
+  
+    span#maincontent {
+      display: none !important;
+    } 
+    .course-content {
+      .no-overflow {
+        overflow: visible !important;
+        @include prettyMarkdown;
+      }
+    }
+  }
+  // USER PROFILE / YOU OR SOMEBODY ELSE
+  &#page-user-profile {
+    .userprofile {
+  
+      //TOP PICTURE AND BUTTONS ADD TO CONTACTS AND WRITE A MESSAGE
+      .page-context-header {
+        display: inline-flex !important;
+        padding: 0 !important;
+        margin-bottom: 1rem !important;
+        gap: 1rem !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        
+        .page-header-image {
+          margin: 0 !important;
+          
+          img.userpicture {
+            margin: 0 !important;
+          }
+        }
+        .page-header-headings {
+          display: inline-flex !important;
+          
+          & > h2 {
+            margin: 0 !important;
+          }
+        }
+        .header-button-group {
+          display: inline-flex !important;
+          flex-wrap: nowrap !important;
+          gap: 1rem !important;
+          
+          & > a {
+            @include importantButton; 
+          }
+        }
+      }
+      .profile_tree {
+        
+        a[href*=user\/edit] {
+          @include importantButton;
+        }
+        a[href*=mailto] {
+          @include linkAnchor;
+          display: flex !important;
+          margin-top: 1rem !important;
+        }
+        a {
+          padding: 0.5rem 0.5rem !important;
+        }
+        ul {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 0.1rem !important;
+          
+          &.inline-list {
+            display: inline-flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+          }
+          li {
+            display: flex !important;
+      
+            span {
+              display: flex !important;
+            }
+          }
+        }
+      }
+    }    
+  }
+  // USER PREFERENCES
+  &#page-user-preferences {
+    [role=main] {
+      .card {
+        display: flex !important;
+        width: fit-content !important;
+  
+        .card-body:has(> h4, > div) {
+          display: flex !important;
+          flex-direction: column !important;
+          width: fit-content !important;
+    
+          > div {
+            width: fit-content !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            
+            @media (max-width: 768px) {
+              grid-template-columns: 1fr 1fr !important;
+            }
+            > div {
+              display: flex !important;
+    
+              > a {
+                white-space: nowrap !important;
+                padding: 0.5rem 1rem !important;
+              }
+            } 
+          }
+        }
+      }
+    }
+  }
+  // CONFIRM TEST
+  &#page-mod-quiz-summary {
+    .moodle-dialogue {
+      .moodle-dialogue-wrap {
+        width: fit-content !important;
+
+        .moodle-dialogue-bd {
+          width: fit-content !important;
+          
+          .confirmation-dialogue {
+            display: flex !important;
+            flex-direction: column !important;
+            width: fit-content !important;
+            align-items: center !important;
+            gap: 1rem !important;
+        
+            .confirmation-buttons {
+              display: flex !important;
+              flex-direction: row-reverse !important;
+              gap: 1rem !important;
+              align-self: flex-end  !important;
+              width: auto !important;
+              flex-wrap: nowrap !important;
+              align-items: center !important;
+          
+              input {
+                width: fit-content !important;
+                padding: 0.75rem 2rem !important;  
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -1090,7 +1146,7 @@ div.filemanager {
       bottom: 0 !important;
       left: 0 !important;
       padding: 1rem !important;
-  
+
       .dndupload-message {
         height: 30rem !important;
   
@@ -1118,6 +1174,13 @@ div.filemanager {
           }
         }
       }
+    }
+    // ON FILE DRAG AND DROP INTO THE BOX
+    &.dndupload-over .fm-empty-container {
+      outline: 0.1rem solid $purple-2 !important;
+    }
+    .dndupload-target {
+      display: none !important;
     }
     .fp-upload-form {
   
@@ -1329,18 +1392,51 @@ div.submissionaction button {
       a[data-action=view-contact] {
         padding: 0.5rem !important;
       }
-      .message {
-        margin: 0 !important;
-        padding: 1rem !important;
+      // MESSAGES CONTAINER
+      .content-message-container {
+        padding: 0rem !important;
+    
+        // EACH DAY IN CHAT
+        [data-region=day-container] {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
 
-        &.received {
-          background-color: $dark-1 !important;
+          // DATE
+          > h6 {
+            margin-block: 1rem !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 9999px !important;
+            outline: 0.1rem solid $dark-2 !important;
+            width: fit-content !important;
 
-          * {
-            color: $text-primary !important;
+          }
+          // MESSAGES DURING DAY
+          > div {
+            background-color: $dark-0 !important;
+            border-radius: 0.5rem !important;
+            align-self: stretch !important;
+
+            // EACH MESSAGE
+            .message {
+              margin: 0 !important;
+              padding: 1rem !important;
+
+              &:is(:hover, :focus, :active) {
+                filter: none !important;
+              }
+              &.received {
+                background-color: $dark-1 !important;
+      
+                * {
+                  color: $text-primary !important;
+                }
+              }
+            }
           }
         }
       }
+      
       // CONFIRM DIALOGUE ADD TO CONTACTS
       [data-region=confirm-dialogue] {
         @include card;
@@ -1352,6 +1448,7 @@ div.submissionaction button {
         }
       }
     }
+    // CONTACTS AND REQUESTS TAB
     &.body-container:has([data-region=view-contacts]:not([aria-hidden=true])) {
       [data-region=view-contacts] {
         overflow: visible !important;
@@ -1400,26 +1497,13 @@ div.submissionaction button {
       }
     }
   }
-  
-  
-  
   *, *[class*=border] {
     border: none !important;
   }
-  & .bg-white {
+  .bg-white {
     background-color: transparent !important;
   }
-  /* EACH MESSAGE IN CHAT*/
-  & .content-message-container > div {
-    background-color: $dark-0 !important;
-    border-radius: 0.5rem !important;
-    outline: 0.1rem solid $dark-2 !important;
-    margin-top: 0.5rem !important;
-    
-    & > h6 {
-      margin-top: 1rem !important;
-    }
-  }
+  
 }
 
 // QUIZ / TESTS / ATTEMPTS / QUESTION STATUS BUTTONS / FINISH TEST
@@ -1633,43 +1717,6 @@ form[action*=review] {
 }
 
 
-/* CONFIRM TEST */
-body#page-mod-quiz-summary {
 
-  .moodle-dialogue {
-    
-    
-    .moodle-dialogue-wrap {
-      width: fit-content !important;
-
-      .moodle-dialogue-bd {
-        width: fit-content !important;
-        
-        .confirmation-dialogue {
-          display: flex !important;
-          flex-direction: column !important;
-          width: fit-content !important;
-          align-items: center !important;
-          gap: 1rem !important;
-      
-          .confirmation-buttons {
-            display: flex !important;
-            flex-direction: row-reverse !important;
-            gap: 1rem !important;
-            align-self: flex-end  !important;
-            width: auto !important;
-            flex-wrap: nowrap !important;
-            align-items: center !important;
-        
-            input {
-              width: fit-content !important;
-              padding: 0.75rem 2rem !important;  
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
 
