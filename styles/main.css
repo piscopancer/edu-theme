@@ -1377,6 +1377,13 @@ div.submissionaction button:hover, div.submissionaction button:active {
   display: flex !important;
   align-items: center !important;
 }
+.message-app [class*=header-container] [data-region=view-overview] > div:nth-child(1) a[data-route=view-settings], .message-app.bg-light [class*=header-container] [data-region=view-overview] > div:nth-child(1) a[data-route=view-settings] {
+  width: 2rem !important;
+  height: 2rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 .message-app [class*=header-container] [data-region=view-overview] *:not(.hidden), .message-app.bg-light [class*=header-container] [data-region=view-overview] *:not(.hidden) {
   display: inline-flex !important;
   margin: 0 !important;
@@ -1390,6 +1397,36 @@ div.submissionaction button:hover, div.submissionaction button:active {
 }
 .message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:hover, .message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:active, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:hover, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:active {
   background-color: hsl(260deg, 13%, 22%) !important;
+}
+.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1), .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) {
+  display: flex !important;
+  gap: 1rem !important;
+}
+.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1), .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back], .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back] {
+  width: 2rem !important;
+  height: 2rem !important;
+  margin: 0 !important;
+  position: relative !important;
+}
+.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back] i, .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back] i {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  translate: -50% -50% !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  color: hsl(260deg, 10%, 70%) !important;
+}
+.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back]:is(:hover, :focus, :active) i, .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back]:is(:hover, :focus, :active) i {
+  color: hsl(260deg, 5%, 50%) !important;
+}
+.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-action=view-contact], .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-action=view-contact] {
+  padding: 0.5rem !important;
 }
 .message-app [class*=body-container], .message-app.bg-light [class*=body-container] {
   overflow: visible !important;
@@ -1416,9 +1453,6 @@ div.submissionaction button:hover, div.submissionaction button:active {
 }
 .message-app [class*=body-container] [data-region=view-conversation], .message-app.bg-light [class*=body-container] [data-region=view-conversation] {
   padding: 0 !important;
-}
-.message-app [class*=body-container] [data-region=view-conversation] a[data-action=view-contact], .message-app.bg-light [class*=body-container] [data-region=view-conversation] a[data-action=view-contact] {
-  padding: 0.5rem !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] .content-message-container, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container {
   padding: 0rem !important;

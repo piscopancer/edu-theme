@@ -1327,9 +1327,10 @@ div.submissionaction button {
       }
     }
   }
+  // CHAT HEADER
   [class*=header-container] {
 
-    [data-region="view-overview"] {
+    [data-region=view-overview] {
       display: flex !important;
       flex-direction: row !important;
       flex-wrap: wrap !important;
@@ -1348,6 +1349,14 @@ div.submissionaction button {
           display: flex !important;
           align-items: center !important;
         }
+        // MESSENGER SETTINGS BUTTON
+        a[data-route=view-settings] {
+          width: 2rem !important;
+          height: 2rem !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
       }
       *:not(.hidden) {
         display: inline-flex !important;
@@ -1357,6 +1366,47 @@ div.submissionaction button {
         @include importantButton;  
         align-items: center !important;
         gap: 0.25rem !important;
+      }
+    }
+    > [data-region=view-conversation] {
+      > [data-region=header-content] {
+        > div:nth-child(1) {
+          display: flex !important;
+          gap: 1rem !important;
+
+          // BUTTON BACK IN CHAT
+          > div:nth-child(1) {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+
+            a[data-route-back] {
+              width: 2rem !important;
+              height: 2rem !important;
+              margin: 0 !important;
+              position: relative !important;
+              
+              i {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                translate: -50% -50% !important;
+                width: 1rem !important;
+                height: 1rem !important;
+                color: $text-primary !important;
+              }
+              &:is(:hover, :focus, :active) {
+                i {
+                  color: $text-secondary !important;
+                }
+              }
+            }
+            // PERSON IN CHAT IN HEADER
+            a[data-action=view-contact] {
+              padding: 0.5rem !important;
+            }
+          }
+        }
       }
     }
   }
@@ -1387,11 +1437,7 @@ div.submissionaction button {
     // CHAT INSIDE MESSENGER
     [data-region=view-conversation] {
       padding: 0 !important;
-  
-      // PERSON IN CHAT IN HEADER
-      a[data-action=view-contact] {
-        padding: 0.5rem !important;
-      }
+
       // MESSAGES CONTAINER
       .content-message-container {
         padding: 0rem !important;
@@ -1436,7 +1482,6 @@ div.submissionaction button {
           }
         }
       }
-      
       // CONFIRM DIALOGUE ADD TO CONTACTS
       [data-region=confirm-dialogue] {
         @include card;
