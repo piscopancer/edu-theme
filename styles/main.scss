@@ -1401,9 +1401,14 @@ div.submissionaction button {
                 }
               }
             }
-            // PERSON IN CHAT IN HEADER
-            a[data-action=view-contact] {
-              padding: 0.5rem !important;
+          }
+          // PERSON IN CHAT IN HEADER
+          a[data-action=view-contact] {
+            padding: 0.5rem !important;
+
+            // START / FAVOURITE CONTACT
+            span[data-region=favourite-icon-container] {
+              color: $purple-2 !important;
             }
           }
         }
@@ -1418,7 +1423,6 @@ div.submissionaction button {
 
       [id*=message-drawer-view-overview-container] {
         @include card;
-        // @include shadow;
         background-color: $dark-0 !important;
         display: flex !important;
         flex-direction: column !important;
@@ -1430,6 +1434,16 @@ div.submissionaction button {
           background: none !important;
           box-shadow: none !important;
           outline: none !important;
+        }
+        // UNREAD MESSAGES COUNTER
+        span.badge[data-region*=unread-count] {
+          width: 1.25rem !important;
+          height: 1.25rem !important;
+          text-align: center !important;
+          line-height: normal !important;
+          border-radius: 50% !important;
+          background-color: $purple-1 !important;
+          color: $text-primary !important;
         }
       }
     }
@@ -1481,6 +1495,10 @@ div.submissionaction button {
             }
           }
         }
+      }
+      // WHITE BACKGROUND IN CHAT WHILE LOADING / DIALOGUE PLACEHOLDER IN CHAT
+      [data-region=content-placeholder] {
+        display: none !important;
       }
       // CONFIRM DIALOGUE ADD TO CONTACTS
       [data-region=confirm-dialogue] {
