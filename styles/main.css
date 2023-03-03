@@ -32,7 +32,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 body {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
 }
 
 /* APPLY FONT SO ICONS DO NOT BREAK */
@@ -52,7 +52,7 @@ footer#page-footer {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(260deg, 13%, 18%);
+  background-color: hsl(260, 10%, 18%);
   border-radius: 0.5rem;
 }
 
@@ -69,11 +69,11 @@ footer#page-footer {
   transition: all 0.1s !important;
 }
 *::-moz-selection, *:active::-moz-selection, *:focus::-moz-selection {
-  background-color: hsl(270deg, 50%, 45%) !important;
+  background-color: hsl(270, 50%, 45%) !important;
   color: white !important;
 }
 *::selection, *:active::selection, *:focus::selection {
-  background-color: hsl(270deg, 50%, 45%) !important;
+  background-color: hsl(270, 50%, 45%) !important;
   color: white !important;
 }
 
@@ -100,16 +100,16 @@ section.block_html:has(a[href*=spravka]) .no-overflow h4 {
   gap: 0.75rem !important;
 }
 section.block_html:has(a[href*=spravka]) .no-overflow h4 a {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   padding: 0.2rem 0.4rem !important;
   font-weight: bold !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
   font-size: 1rem !important;
 }
-section.block_html:has(a[href*=spravka]) .no-overflow h4 a:hover, section.block_html:has(a[href*=spravka]) .no-overflow h4 a:focus, section.block_html:has(a[href*=spravka]) .no-overflow h4 a:active {
+section.block_html:has(a[href*=spravka]) .no-overflow h4 a:is(:hover, :focus, :active) {
   filter: brightness(120%) !important;
 }
 section.block_html:has(a[href*=spravka]) .no-overflow h4 a::before {
@@ -156,7 +156,7 @@ section.block_online_users ul > li > .message > a:hover, section.block_online_us
   background-color: transparent !important;
 }
 section.block_online_users ul > li > .message > a:hover > i::before, section.block_online_users ul > li > .message > a:focus > i::before, section.block_online_users ul > li > .message > a:active > i::before {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 section.block_online_users ul > li > .message > a > i {
   margin: 0 !important;
@@ -170,11 +170,11 @@ section.block_activity_modules ul li div a {
 
 /* DROPDOWN MENUS */
 div.dropdown-menu, ul.dropdown-menu {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   animation: smoothAppear 0.1s ease-in-out;
 }
 @keyframes smoothAppear {
@@ -192,11 +192,11 @@ div.dropdown-menu li a, ul.dropdown-menu li a {
   padding: 0.25rem !important;
 }
 div.dropdown-menu li a:hover, div.dropdown-menu li a:hover i, div.dropdown-menu li a:hover span, ul.dropdown-menu li a:hover, ul.dropdown-menu li a:hover i, ul.dropdown-menu li a:hover span {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
   background-color: transparent !important;
 }
 div.dropdown-menu .show, ul.dropdown-menu .show {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   border-radius: 0.5rem !important;
   padding: 0.5rem !important;
 }
@@ -208,13 +208,13 @@ div.dropdown-menu a.dropdown-item:hover, div.dropdown-menu a.dropdown-item:activ
 }
 
 div.popover-region-container {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   animation: smoothAppear 0.1s ease-in-out;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   padding: 0.5rem !important;
 }
 @keyframes smoothAppear {
@@ -244,21 +244,21 @@ div.popover-region-toggle.nav-link:focus {
   }
 }
 div.popover-region-toggle.nav-link:hover > i, div.popover-region-toggle.nav-link:focus > i, div.popover-region-toggle.nav-link:active > i {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 div.popover-region-toggle.nav-link::after, div.popover-region-toggle.nav-link::before {
   display: none !important;
 }
 div.popover-region-toggle.nav-link > i {
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 
 #page-wrapper {
-  background: radial-gradient(70vw circle at -20vw -40vw, hsla(270deg, 100%, 70%, 0.6) 0%, transparent 100%), radial-gradient(60vw circle at 60vw -30vw, hsla(290deg, 100%, 70%, 0.2) 0%, transparent 100%);
+  background: radial-gradient(70vw circle at -20vw -40vw, hsla(270, 100%, 70%, 0.6) 0%, transparent 100%), radial-gradient(60vw circle at 60vw -30vw, hsla(290, 100%, 70%, 0.2) 0%, transparent 100%);
   /* POPUP NAV LEFT / COMPACT NAVBAR */
 }
 #page-wrapper > #nav-drawer {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   top: 0 !important;
   bottom: 0 !important;
 }
@@ -274,28 +274,28 @@ div.popover-region-toggle.nav-link > i {
 #page-wrapper > nav.navbar.fixed-top button:has(i.fa-bars) {
   display: flex !important;
   align-items: center !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 #page-wrapper > nav.navbar.fixed-top button:has(i.fa-bars):hover {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 #page-wrapper > nav.navbar.fixed-top a.navbar-brand, #page-wrapper > nav.navbar.fixed-top span.site-name, #page-wrapper > nav.navbar.fixed-top ul li a {
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 #page-wrapper > nav.navbar.fixed-top a.navbar-brand:hover, #page-wrapper > nav.navbar.fixed-top a.navbar-brand:active, #page-wrapper > nav.navbar.fixed-top span.site-name:hover, #page-wrapper > nav.navbar.fixed-top span.site-name:active, #page-wrapper > nav.navbar.fixed-top ul li a:hover, #page-wrapper > nav.navbar.fixed-top ul li a:active {
   background-color: transparent !important;
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 #page-wrapper > nav.navbar.fixed-top a.navbar-brand {
   width: 1.75rem !important;
   height: 1.75rem !important;
   position: relative !important;
-  background-color: hsl(260deg, 10%, 70%) !important;
+  background-color: hsl(260, 10%, 70%) !important;
   -webkit-mask: url("chrome-extension://__MSG_@@extension_id__/images/home.svg");
           mask: url("chrome-extension://__MSG_@@extension_id__/images/home.svg");
 }
 #page-wrapper > nav.navbar.fixed-top a.navbar-brand:hover, #page-wrapper > nav.navbar.fixed-top a.navbar-brand:focus, #page-wrapper > nav.navbar.fixed-top a.navbar-brand:active {
-  background-color: hsl(260deg, 5%, 50%) !important;
+  background-color: hsl(260, 5%, 50%) !important;
 }
 #page-wrapper > nav.navbar.fixed-top a.navbar-brand > span {
   display: none !important;
@@ -313,7 +313,7 @@ div.popover-region-toggle.nav-link > i {
 }
 #page-wrapper > nav.navbar.fixed-top .nav.usernav .count-container {
   animation: pulse 1s infinite alternate ease-in-out;
-  background-color: hsl(275deg, 75%, 60%) !important;
+  background-color: hsl(275, 75%, 60%) !important;
   color: white !important;
   border-radius: 50% !important;
   width: 1rem !important;
@@ -344,7 +344,7 @@ div.popover-region-toggle.nav-link > i {
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background-color: hsla(0deg, 0%, 0%, 0.5) !important;
+  background-color: hsla(0, 0%, 0%, 0.5) !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -391,20 +391,20 @@ div.popover-region-toggle.nav-link > i {
   top: 50% !important;
   left: 50% !important;
   translate: -50% -50% !important;
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 
 div[data-table-region^=user-index-participants] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   padding: 1rem !important;
 }
 div[data-table-region^=user-index-participants] .border-radius.bg-white {
   border: none !important;
-  background-color: hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   padding: 1rem !important;
 }
@@ -419,13 +419,13 @@ button.nav-link.float-sm-left.bg-gray:hover {
 
 button, a {
   background-color: transparent !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
   border-radius: 0.5rem !important;
   box-shadow: none !important;
 }
 button:is(:hover, :active, :focus), a:is(:hover, :active, :focus) {
   text-decoration: none !important;
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 button:focus, a:focus {
   animation: pulse 1s infinite alternate ease-in-out;
@@ -442,26 +442,26 @@ button:disabled, button.page-link, a:disabled, a.page-link {
   background-color: transparent !important;
 }
 button i.icon.text-info, a i.icon.text-info {
-  color: hsl(270deg, 50%, 45%) !important;
+  color: hsl(270, 50%, 45%) !important;
   margin: 0 !important;
 }
 button i.icon.text-info:hover, button i.icon.text-info:active, button i.icon.text-info:focus, a i.icon.text-info:hover, a i.icon.text-info:active, a i.icon.text-info:focus {
-  color: hsl(275deg, 75%, 60%) !important;
+  color: hsl(275, 75%, 60%) !important;
 }
 
 select {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   padding: 0.5rem 2rem !important;
   border-radius: 0.5rem !important;
   box-shadow: none !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 select:focus {
-  outline: 0.2rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  outline: 0.2rem solid hsla(260, 20%, 100%, 0.05) !important;
 }
 
 .aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance > a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance > a:focus {
@@ -470,15 +470,15 @@ select:focus {
 }
 
 .card {
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
 }
 
 p, h1, h2, h3, h4, h5, h6, span, div {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
   background-color: transparent !important;
 }
 
@@ -487,11 +487,11 @@ div#goto-top-link > a {
   justify-content: center !important;
   align-items: center !important;
   margin-right: 1rem !important;
-  background-color: hsl(260deg, 13%, 13%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
   width: 3rem !important;
   height: 3rem !important;
   border-radius: 50% !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 22%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 22%) !important;
   opacity: 0.5 !important;
   padding: 0 !important;
 }
@@ -503,7 +503,7 @@ div#goto-top-link > a > i {
 }
 
 table.generaltable:not(.course-box), .course-content table, table.preference-table {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   border-radius: 0.5rem !important;
 }
 table.generaltable:not(.course-box) th, table.generaltable:not(.course-box) td, .course-content table th, .course-content table td, table.preference-table th, table.preference-table td {
@@ -511,17 +511,17 @@ table.generaltable:not(.course-box) th, table.generaltable:not(.course-box) td, 
 }
 table.generaltable:not(.course-box) *, .course-content table *, table.preference-table * {
   background-color: transparent !important;
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 table.generaltable:not(.course-box) a, .course-content table a, table.preference-table a {
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 table.generaltable:not(.course-box) a:hover, .course-content table a:hover, table.preference-table a:hover {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext], .course-content table div[class*=assignsubmission_onlinetext], table.preference-table div[class*=assignsubmission_onlinetext] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   background-color: transparent !important;
@@ -532,12 +532,12 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
   margin-top: 1rem !important;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow *, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow *, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow * {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h1, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h2, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h3 {
   margin-top: 2.5rem !important;
   margin-bottom: 1rem !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow h3::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow h3::after, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h1::after, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h2::after, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow h3::after {
   content: "";
@@ -545,18 +545,18 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
   display: flex;
   width: 100%;
   height: 0.15rem;
-  background-color: hsla(260deg, 20%, 100%, 0.05);
+  background-color: hsla(260, 20%, 100%, 0.05);
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href], .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href], table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   padding: 0.2rem 0.4rem !important;
   font-weight: bold !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
-table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:hover, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:focus, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:active {
+table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:is(:hover, :focus, :active), .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:is(:hover, :focus, :active), table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]:is(:hover, :focus, :active) {
   filter: brightness(120%) !important;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow a[href]::before, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]::before, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow a[href]::before {
@@ -566,80 +566,83 @@ table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.
   aspect-ratio: 1;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow pre, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow pre, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow pre {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsla(260, 20%, 100%, 0.05) !important;
   padding: 1rem !important;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow table {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   margin-bottom: 1rem !important;
 }
 table.generaltable:not(.course-box) div[class*=assignsubmission_onlinetext] div.no-overflow table thead, .course-content table div[class*=assignsubmission_onlinetext] div.no-overflow table thead, table.preference-table div[class*=assignsubmission_onlinetext] div.no-overflow table thead {
-  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsla(260, 20%, 100%, 0.05) !important;
 }
 
 /* INPUT / SEARCH / SUBMIT */
 input {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   padding: 0.75rem 1rem !important;
   border-radius: 0.5rem !important;
   box-shadow: none !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 input:focus {
-  outline: 0.2rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  outline: 0.2rem solid hsla(260, 20%, 100%, 0.05) !important;
 }
 input.form-control {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
 }
-input.btn {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  padding: 0.75rem 2rem !important;
+
+button.btn, input.btn {
   border-radius: 0.5rem !important;
   font-weight: bold !important;
 }
-input.btn:hover {
+button.btn:hover, input.btn:hover {
   filter: brightness(120%) !important;
 }
-input.btn.btn-primary {
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+
+button.btn-primary, input.btn-primary {
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
-  background-color: hsl(270deg, 50%, 45%) !important;
+  background-color: hsl(270, 50%, 45%) !important;
   color: white !important;
 }
-input.btn.btn-secondary {
-  color: hsl(260deg, 5%, 50%) !important;
+
+button.btn-secondary, input.btn-secondary {
+  background-color: hsl(260, 10%, 18%) !important;
+  padding: 0.75rem 2rem !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 
 button.btn-submit {
   background-color: transparent !important;
 }
 
-textarea {
-  background-color: hsl(260deg, 13%, 10%) !important;
+textarea, #id_assignfeedbackcomments_editoreditable, #id_onlinetext_editoreditable {
+  background-color: hsl(260, 10%, 10%) !important;
   border-radius: 0.5rem !important;
   padding: 1rem !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
   box-shadow: none !important;
 }
-textarea:focus, textarea:active {
-  outline: 0.1rem solid hsl(270deg, 50%, 45%) !important;
+textarea:focus, textarea:active, #id_assignfeedbackcomments_editoreditable:focus, #id_assignfeedbackcomments_editoreditable:active, #id_onlinetext_editoreditable:focus, #id_onlinetext_editoreditable:active {
+  outline: 0.1rem solid hsl(270, 50%, 45%) !important;
 }
-textarea.bg-light {
+textarea.bg-light, #id_assignfeedbackcomments_editoreditable.bg-light, #id_onlinetext_editoreditable.bg-light {
   background-color: inherit !important;
   border-color: inherit !important;
 }
 
 /* TEXT EDITOR */
 div.editor_atto_wrap {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   padding: 0.5rem 0.5rem !important;
   border-radius: 0.5rem !important;
 }
@@ -651,11 +654,11 @@ div.block-recentlyaccessedcourses div.one-row > div {
 }
 
 div.popover {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   animation: smoothAppear 0.1s ease-in-out;
   transition: transform 0s !important;
 }
@@ -674,10 +677,10 @@ div.popover div::after, div.popover div::before {
 }
 
 td.hasevent {
-  background-color: hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 18%) !important;
 }
 td.hasevent:hover, td.hasevent:active, td.hasevent:focus {
-  background-color: hsl(260deg, 13%, 22%) !important;
+  background-color: hsl(260, 10%, 22%) !important;
 }
 td.hasevent a {
   border-radius: 0 !important;
@@ -686,46 +689,48 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   background-color: transparent !important;
 }
 
-/* TABLE OF SUBJECTS */
-.card-text.content {
-  /* each subject */
-}
 .card-text.content > .customtitle, .card-text.content > .legend-box {
   display: none !important;
 }
-.card-text.content > div:nth-child(n+4) {
+.card-text.content > div:has(table.course-box) {
   margin-top: 3rem !important;
-  /* SUBJECT NAME */
 }
-.card-text.content > div:nth-child(n+4) > h3 > a {
+.card-text.content > div:has(table.course-box) > h3 > a {
   display: flex !important;
   padding: 0.5rem !important;
 }
-.card-text.content > div:nth-child(n+4) > h3 > a:is(:hover, :focus, :active) {
-  color: hsl(260deg, 10%, 70%) !important;
+.card-text.content > div:has(table.course-box) > h3 > a:is(:hover, :focus, :active) {
+  color: hsl(260, 10%, 70%) !important;
   filter: brightness(120%) !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box {
+.card-text.content > div:has(table.course-box) .course-box {
   overflow: hidden !important;
   border-radius: 0.5rem !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody {
-  background-color: hsla(260deg, 10%, 10%, 0.8) !important;
+.card-text.content > div:has(table.course-box) .course-box > tbody {
+  background-color: hsla(260, 10%, 10%, 0.8) !important;
   width: auto !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td {
+.card-text.content > div:has(table.course-box) .course-box > tbody > tr > td {
   padding: 1rem !important;
   background-color: transparent !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#FF3300] {
-  background-color: hsl(265deg, 50%, 20%) !important;
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm {
+  border-style: solid !important;
+  border-color: hsl(0, 0%, 10%) !important;
+  border-width: 0.1rem !important;
+  opacity: 0.85 !important;
+  transition: translate 0.1s !important;
+}
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#FF3300] {
+  background-color: hsl(265, 50%, 20%) !important;
   position: relative !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#FF3300][style*=sandglass] {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#FF3300][style*=sandglass] {
   position: relative !important;
   background-image: none !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#FF3300][style*=sandglass]::after {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#FF3300][style*=sandglass]::after {
   content: "⏳";
   position: absolute;
   top: 50%;
@@ -748,11 +753,11 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
     rotate: 360deg;
   }
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#F7FE2E] {
-  background-color: hsl(265deg, 50%, 20%) !important;
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#F7FE2E] {
+  background-color: hsl(265, 50%, 20%) !important;
   position: relative !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#F7FE2E]::after {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#F7FE2E]::after {
   content: "";
   position: absolute;
   left: 0;
@@ -761,7 +766,7 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   height: 15%;
   pointer-events: none;
   animation: yellowCell 2s infinite alternate ease-in-out;
-  background-color: hsl(270deg, 50%, 45%);
+  background-color: hsl(270, 50%, 45%);
 }
 @keyframes yellowCell {
   0% {
@@ -771,12 +776,12 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
     filter: opacity(1);
   }
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#33CC00] {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#33CC00] {
   position: relative !important;
-  background-color: hsl(275deg, 75%, 60%) !important;
+  background-color: hsl(275, 75%, 60%) !important;
   background-image: none !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#33CC00][style*=up\.png]::after {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#33CC00][style*=up\.png]::after {
   content: "👍";
   position: absolute;
   top: 50%;
@@ -784,7 +789,7 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   translate: -50% -50%;
   pointer-events: none;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*=\#33CC00][style*=down\.png]::after {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#33CC00][style*=down\.png]::after {
   content: "👎";
   position: absolute;
   top: 50%;
@@ -792,39 +797,29 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   translate: -50% -50%;
   pointer-events: none;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm][style*="#CCCCCC"] {
-  background-color: hsl(260deg, 13%, 18%) !important;
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*="#CCCCCC"] {
+  background-color: hsl(260, 10%, 18%) !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody > tr > td.cell td[class*=cm] a {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm a {
   border-radius: 0 !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar {
-  /* CELL */
-}
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm {
-  border-style: solid !important;
-  border-color: hsl(0deg, 0%, 10%) !important;
-  border-width: 0.1rem !important;
-  opacity: 0.85 !important;
-  transition: translate 0.1s !important;
-}
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm:hover, .card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar td.cm:active {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm:is(:hover, :focus, :active) {
   translate: 0 -0.15rem !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .progressbar tbody tr span {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar tbody tr span {
   display: none;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .cminfobox {
   margin-top: 0.5rem !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent {
   display: flex !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
   height: -moz-fit-content !important;
   height: fit-content !important;
   padding: 0.25rem 0.5rem !important;
-  background-color: hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   animation: smoothAppear 0.1s ease-in-out;
 }
@@ -838,19 +833,92 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
     translate: 0 0;
   }
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent:hover {
-  background-color: hsl(260deg, 13%, 22%) !important;
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent:hover {
+  background-color: hsl(260, 10%, 22%) !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent a {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent a {
   font-size: 0.75rem !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent a:hover {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .cminfobox span.cminfoboxcontent a:hover {
   background-color: transparent !important;
 }
-.card-text.content > div:nth-child(n+4) .course-box > tbody .progressbox .cminfobox a.closeinfobox {
+.card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .cminfobox a.closeinfobox {
   text-align: center !important;
   height: 1.5rem !important;
   aspect-ratio: 1 !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .course-info a.course-name, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .course-info a.course-name {
+  text-decoration: none !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box {
+  padding: 0.5rem !important;
+  border-radius: 0.5rem !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  flex-wrap: nowrap !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(1), .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(1) {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.5rem !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(1) > :nth-child(1), .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(1) > :nth-child(1) {
+  margin-right: auto !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(1) a > img, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(1) a > img {
+  display: none !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(1) a[href*=delete], .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(1) a[href*=delete] {
+  color: hsl(260, 5%, 50%) !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(2) > .bar-frame, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(2) > .bar-frame {
+  background-color: hsl(265, 50%, 20%) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(2) > .bar-frame > .bar-fill, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(2) > .bar-frame > .bar-fill {
+  position: relative !important;
+  background-color: hsl(270, 50%, 45%) !important;
+  overflow: hidden !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(2) > .bar-frame > .bar-fill::after, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(2) > .bar-frame > .bar-fill::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(275, 75%, 60%);
+  filter: blur(1rem);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  animation: glare 5s infinite forwards linear;
+}
+@keyframes glare {
+  0% {
+    left: calc(0% - 5rem);
+  }
+  100% {
+    left: calc(100% + 5rem);
+  }
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(3), .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(3) {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.5rem !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(3) span > img, .card-text.content > div:has(table.course-box) .course-box:has(.group-box) .group-box > .group-completion-box > :nth-child(3) a[href*=message] > img, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(3) span > img, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) .group-box > .group-completion-box > :nth-child(3) a[href*=message] > img {
+  display: none !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) a:has(> img[src$=group]) > img, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) a:has(> img[src$=group]) > img {
+  display: none !important;
+}
+.card-text.content > div:has(table.course-box) .course-box:has(.group-box) a:has(> img[src$=user]) > img, .card-text.content > div:has(table.course-box) .course-box td:has(> :last-child:nth-child(4)) a:has(> img[src$=user]) > img {
+  display: none !important;
 }
 
 body#page-login-index section#region-main {
@@ -864,23 +932,24 @@ body#page-login-index section#region-main .card {
   outline: none !important;
 }
 body#page-login-index button#loginbtn {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
+  color: hsl(260, 10%, 70%) !important;
 }
-body#page-login-index button#loginbtn:hover, body#page-login-index button#loginbtn:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+body#page-login-index button#loginbtn:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 body#page-login-index .forgetpass a {
   padding: 0.5rem !important;
 }
 body#page-mod-assign-view #intro * {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 body#page-mod-assign-view #intro h1, body#page-mod-assign-view #intro h2, body#page-mod-assign-view #intro h3 {
   margin-top: 2.5rem !important;
   margin-bottom: 1rem !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 body#page-mod-assign-view #intro h1::after, body#page-mod-assign-view #intro h2::after, body#page-mod-assign-view #intro h3::after {
   content: "";
@@ -888,18 +957,18 @@ body#page-mod-assign-view #intro h1::after, body#page-mod-assign-view #intro h2:
   display: flex;
   width: 100%;
   height: 0.15rem;
-  background-color: hsla(260deg, 20%, 100%, 0.05);
+  background-color: hsla(260, 20%, 100%, 0.05);
 }
 body#page-mod-assign-view #intro a[href] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   padding: 0.2rem 0.4rem !important;
   font-weight: bold !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
-body#page-mod-assign-view #intro a[href]:hover, body#page-mod-assign-view #intro a[href]:focus, body#page-mod-assign-view #intro a[href]:active {
+body#page-mod-assign-view #intro a[href]:is(:hover, :focus, :active) {
   filter: brightness(120%) !important;
 }
 body#page-mod-assign-view #intro a[href]::before {
@@ -909,28 +978,28 @@ body#page-mod-assign-view #intro a[href]::before {
   aspect-ratio: 1;
 }
 body#page-mod-assign-view #intro pre {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsla(260, 20%, 100%, 0.05) !important;
   padding: 1rem !important;
 }
 body#page-mod-assign-view #intro table {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   margin-bottom: 1rem !important;
 }
 body#page-mod-assign-view #intro table thead {
-  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsla(260, 20%, 100%, 0.05) !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main {
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main span#maincontent {
@@ -940,12 +1009,12 @@ body:not(#page-login-index) div#region-main-box > section#region-main .course-co
   overflow: visible !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow * {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h1, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h2, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h3 {
   margin-top: 2.5rem !important;
   margin-bottom: 1rem !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h1::after, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h2::after, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow h3::after {
   content: "";
@@ -953,18 +1022,18 @@ body:not(#page-login-index) div#region-main-box > section#region-main .course-co
   display: flex;
   width: 100%;
   height: 0.15rem;
-  background-color: hsla(260deg, 20%, 100%, 0.05);
+  background-color: hsla(260, 20%, 100%, 0.05);
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   padding: 0.2rem 0.4rem !important;
   font-weight: bold !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
-body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:hover, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:focus, body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:active {
+body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]:is(:hover, :focus, :active) {
   filter: brightness(120%) !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow a[href]::before {
@@ -974,23 +1043,23 @@ body:not(#page-login-index) div#region-main-box > section#region-main .course-co
   aspect-ratio: 1;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow pre {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsla(260, 20%, 100%, 0.05) !important;
   padding: 1rem !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow table {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   margin-bottom: 1rem !important;
 }
 body:not(#page-login-index) div#region-main-box > section#region-main .course-content .no-overflow table thead {
-  background-color: hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsla(260, 20%, 100%, 0.05) !important;
 }
 body#page-user-profile .userprofile .page-context-header {
   display: inline-flex !important;
@@ -1018,33 +1087,33 @@ body#page-user-profile .userprofile .page-context-header .header-button-group {
   gap: 1rem !important;
 }
 body#page-user-profile .userprofile .page-context-header .header-button-group > a {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-body#page-user-profile .userprofile .page-context-header .header-button-group > a:hover, body#page-user-profile .userprofile .page-context-header .header-button-group > a:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+body#page-user-profile .userprofile .page-context-header .header-button-group > a:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 body#page-user-profile .userprofile .profile_tree a[href*=user\/edit] {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-body#page-user-profile .userprofile .profile_tree a[href*=user\/edit]:hover, body#page-user-profile .userprofile .profile_tree a[href*=user\/edit]:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+body#page-user-profile .userprofile .profile_tree a[href*=user\/edit]:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 body#page-user-profile .userprofile .profile_tree a[href*=mailto] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   padding: 0.2rem 0.4rem !important;
   font-weight: bold !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
   display: flex !important;
   margin-top: 1rem !important;
 }
-body#page-user-profile .userprofile .profile_tree a[href*=mailto]:hover, body#page-user-profile .userprofile .profile_tree a[href*=mailto]:focus, body#page-user-profile .userprofile .profile_tree a[href*=mailto]:active {
+body#page-user-profile .userprofile .profile_tree a[href*=mailto]:is(:hover, :focus, :active) {
   filter: brightness(120%) !important;
 }
 body#page-user-profile .userprofile .profile_tree a[href*=mailto]::before {
@@ -1131,15 +1200,310 @@ body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialog
   width: fit-content !important;
   padding: 0.75rem 2rem !important;
 }
+body#page-blocks-mygroups-overview .controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+body#page-blocks-mygroups-overview .controls > .pix-box {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.5rem !important;
+}
+body#page-blocks-mygroups-overview .controls > .pix-box > a {
+  padding: 0 !important;
+}
+body#page-blocks-mygroups-overview .controls > .pix-box > a > img {
+  display: none !important;
+}
+body#page-blocks-mygroups-overview .legend-box {
+  display: none !important;
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > a > img {
+  margin: 0 !important;
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: transparent !important;
+  display: flex !important;
+  margin-top: 0.5rem;
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) > a {
+  height: 2rem !important;
+  width: 2rem !important;
+  position: relative !important;
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) > a:is(:hover, :focus, :active)::after {
+  background-color: hsl(260, 5%, 50%);
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) > a > img, body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) > a > i {
+  display: none !important;
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) > a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 1rem;
+  height: 1rem;
+  background-color: hsl(260, 10%, 70%);
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) > a[href*=message]::after {
+  -webkit-mask: url("chrome-extension://__MSG_@@extension_id__/images/comment-solid.svg");
+          mask: url("chrome-extension://__MSG_@@extension_id__/images/comment-solid.svg");
+}
+body#page-blocks-mygroups-overview table#group-overview td.c0 > :nth-child(2) > a[href*=grade]::after {
+  -webkit-mask: url("chrome-extension://__MSG_@@extension_id__/images/table-solid.svg");
+          mask: url("chrome-extension://__MSG_@@extension_id__/images/table-solid.svg");
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox td {
+  padding: 0 !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td {
+  border-style: solid !important;
+  border-color: hsl(0, 0%, 10%) !important;
+  border-width: 0.1rem !important;
+  opacity: 0.85 !important;
+  transition: translate 0.1s !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#FF3300] {
+  background-color: hsl(265, 50%, 20%) !important;
+  position: relative !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#FF3300][style*=sandglass] {
+  position: relative !important;
+  background-image: none !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#FF3300][style*=sandglass]::after {
+  content: "⏳";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+  animation: hourglass 4s infinite normal ease-in-out;
+}
+@keyframes hourglass {
+  0%, 25% {
+    rotate: 0deg;
+  }
+  25%, 50% {
+    rotate: 180deg;
+  }
+  50%, 75% {
+    rotate: 180deg;
+  }
+  75%, 100% {
+    rotate: 360deg;
+  }
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#F7FE2E] {
+  background-color: hsl(265, 50%, 20%) !important;
+  position: relative !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#F7FE2E]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 15%;
+  pointer-events: none;
+  animation: yellowCell 2s infinite alternate ease-in-out;
+  background-color: hsl(270, 50%, 45%);
+}
+@keyframes yellowCell {
+  0% {
+    filter: opacity(0.3);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#33CC00] {
+  position: relative !important;
+  background-color: hsl(275, 75%, 60%) !important;
+  background-image: none !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#33CC00][style*=up\.png]::after {
+  content: "👍";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#33CC00][style*=down\.png]::after {
+  content: "👎";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*="#CCCCCC"] {
+  background-color: hsl(260, 10%, 18%) !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td a {
+  border-radius: 0 !important;
+}
+body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td:is(:hover, :focus, :active) {
+  translate: 0 -0.15rem !important;
+}
+body#page-mod-assign-grader #page {
+  height: 100% !important;
+}
+body#page-mod-assign-grader #page > #page-content {
+  height: 100% !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grading-navigation-panel] {
+  display: flex !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  position: relative !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grading-navigation-panel] .container-fluid {
+  padding: 0 !important;
+  display: flex !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  justify-content: center !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grading-navigation-panel] .container-fluid [data-region=grading-navigation] {
+  padding: 1rem !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  display: flex !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grading-navigation-panel] .container-fluid [data-region=grading-navigation] [data-region=user-info] {
+  display: flex !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grading-navigation-panel] .container-fluid [data-region=grading-navigation] [data-region=user-info] > h4 {
+  text-overflow: ellipsis !important;
+  margin: 0 !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grading-navigation-panel] .container-fluid [data-region=grading-navigation] [data-region=user-info] > h4 a em {
+  display: none !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grading-navigation-panel] .container-fluid [data-region=grading-navigation] [data-region=user-selector] ul.form-autocomplete-suggestions {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
+  animation: smoothAppear 0.1s ease-in-out;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-panel] {
+  position: relative !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  overflow-y: scroll !important;
+  flex-grow: 1 !important;
+  padding: 1rem !important;
+  width: auto !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-panel] [data-region=grade] {
+  padding: 0 !important;
+  max-width: 1024px !important;
+  align-self: center !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-panel] [data-region=grade] [id=fitem_id_grade] {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  padding: 1rem !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-panel] [data-region=grade] [id=fitem_id_currentgrade] {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  margin-top: 1rem !important;
+  background-color: transparent !important;
+  padding: 1rem !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-panel] [data-region=grade] [id=fitem_id_assignfeedbackcomments_editor] {
+  padding: 0 !important;
+  margin-top: 1rem !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-panel] [data-region=grade] [id=fitem_id_assignfeedbackcomments_editor].popout {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
+  animation: smoothAppear 0.1s ease-in-out;
+  padding: 1rem !important;
+}
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    translate: 0 -1rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-panel] [data-region=grade] [id=fitem_id_assignfeedbackcomments_editor] [data-fieldtype=editor] {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=review-panel] {
+  display: none !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-actions-panel] {
+  position: relative !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  padding-block: 0.5rem !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-actions-panel] .collapse-buttons {
+  display: none !important;
+}
+body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-actions-panel] form button[name=savechanges] {
+  margin-left: 1.5rem !important;
+}
 
 .yui3-widget.yui3-panel, .moodle-dialogue, .yui3-widget-modal, .modal-dialog {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   transition: transform 0s !important;
   animation: smoothAppear 0.1s ease-in-out;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
@@ -1149,7 +1513,7 @@ body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialog
   max-width: fit-content !important;
   height: -moz-fit-content !important;
   height: fit-content !important;
-  background-color: hsl(260deg, 13%, 13%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
   padding: 1rem !important;
 }
 @keyframes smoothAppear {
@@ -1167,11 +1531,11 @@ body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialog
 }
 
 div.filemanager {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   padding: 1rem !important;
   display: flex !important;
   flex-flow: column !important;
@@ -1183,11 +1547,11 @@ div.filemanager .filemanager-container, div.filemanager .card {
   overflow: visible !important;
 }
 div.filemanager .filemanager-container .fm-empty-container, div.filemanager .card .fm-empty-container {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   position: relative !important;
   top: 0 !important;
   right: 0 !important;
@@ -1221,13 +1585,13 @@ div.filemanager .filemanager-container .fm-empty-container .dndupload-message .d
   }
 }
 div.filemanager .filemanager-container.dndupload-over .fm-empty-container, div.filemanager .card.dndupload-over .fm-empty-container {
-  outline: 0.1rem solid hsl(275deg, 75%, 60%) !important;
+  outline: 0.1rem solid hsl(275, 75%, 60%) !important;
 }
 div.filemanager .filemanager-container .dndupload-target, div.filemanager .card .dndupload-target {
   display: none !important;
 }
 div.filemanager .filemanager-container .fp-upload-form input, div.filemanager .filemanager-container .fp-upload-form div, div.filemanager .card .fp-upload-form input, div.filemanager .card .fp-upload-form div {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   padding: 0.75rem 2rem !important;
   border-radius: 0.5rem !important;
 }
@@ -1267,24 +1631,24 @@ div.filemanager .filemanager-container .fp-upload-form input, div.filemanager .f
   cursor: pointer !important;
 }
 .moodle-dialogue.filepicker div.fp-repo-items .fp-upload-btn {
-  background-color: hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 18%) !important;
   padding: 0.75rem 2rem !important;
 }
 .moodle-dialogue.filepicker div.fp-repo-items .fp-upload-btn:hover {
-  background-color: hsl(260deg, 13%, 22%) !important;
+  background-color: hsl(260, 10%, 22%) !important;
 }
 
-div.submissionsummarytable table td.submissionnotgraded {
-  color: hsl(260deg, 10%, 70%) !important;
+.submissionsummarytable table .submissionnotgraded, .submissionstatustable .submissionnotgraded {
+  color: hsl(260, 10%, 70%) !important;
   font-weight: bold !important;
 }
-div.submissionsummarytable table td.submissiongraded {
-  color: hsl(80deg, 100%, 40%) !important;
+.submissionsummarytable table .submissiongraded, .submissionstatustable .submissiongraded {
+  color: hsl(80, 100%, 40%) !important;
   font-weight: bold !important;
 }
-div.submissionsummarytable table td .comment-area {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+.submissionsummarytable table .comment-area, .submissionstatustable .comment-area {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   background-color: transparent !important;
@@ -1294,35 +1658,45 @@ div.submissionsummarytable table td .comment-area {
 
 /* JUMP TO ACTIVITY */
 div.submissionaction button {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-div.submissionaction button:hover, div.submissionaction button:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+div.submissionaction button:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 
 /* MESSENGER */
 .message-app, .message-app.bg-light {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   display: flex !important;
   flex-direction: column !important;
   flex-wrap: nowrap !important;
   gap: 0.5rem !important;
-  background-color: hsl(260deg, 13%, 13%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
   border: none !important;
   padding: 1rem !important;
 }
+.message-app [data-region=contact-request-count]:not(.hidden), .message-app [data-region*=unread-count]:not(.hidden), .message-app.bg-light [data-region=contact-request-count]:not(.hidden), .message-app.bg-light [data-region*=unread-count]:not(.hidden) {
+  display: inline-block !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  text-align: center !important;
+  line-height: normal !important;
+  border-radius: 50% !important;
+  background-color: hsl(270, 50%, 45%) !important;
+  color: hsl(260, 10%, 70%) !important;
+}
 .message-app textarea, .message-app.bg-light textarea {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   padding: 0.5rem !important;
   flex: 1 !important;
 }
@@ -1389,18 +1763,21 @@ div.submissionaction button:hover, div.submissionaction button:active {
   margin: 0 !important;
 }
 .message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts], .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
   align-items: center !important;
   gap: 0.25rem !important;
 }
-.message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:hover, .message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:active, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:hover, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+.message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:is(:hover, :focus, :active), .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 .message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1), .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) {
   display: flex !important;
   gap: 1rem !important;
+}
+.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) span[data-region=favourite-icon-container], .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) span[data-region=favourite-icon-container] {
+  color: hsl(275, 75%, 60%) !important;
 }
 .message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1), .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) {
   display: flex !important;
@@ -1420,16 +1797,13 @@ div.submissionaction button:hover, div.submissionaction button:active {
   translate: -50% -50% !important;
   width: 1rem !important;
   height: 1rem !important;
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 .message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back]:is(:hover, :focus, :active) i, .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) > div:nth-child(1) a[data-route-back]:is(:hover, :focus, :active) i {
-  color: hsl(260deg, 5%, 50%) !important;
+  color: hsl(260, 5%, 50%) !important;
 }
 .message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) a[data-action=view-contact], .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) a[data-action=view-contact] {
   padding: 0.5rem !important;
-}
-.message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) a[data-action=view-contact] span[data-region=favourite-icon-container], .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) a[data-action=view-contact] span[data-region=favourite-icon-container] {
-  color: hsl(275deg, 75%, 60%) !important;
 }
 .message-app [class*=body-container], .message-app.bg-light [class*=body-container] {
   overflow: visible !important;
@@ -1438,11 +1812,11 @@ div.submissionaction button:hover, div.submissionaction button:active {
   overflow: visible !important;
 }
 .message-app [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container], .message-app.bg-light [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   display: flex !important;
   flex-direction: column !important;
   flex-wrap: nowrap !important;
@@ -1453,15 +1827,6 @@ div.submissionaction button:hover, div.submissionaction button:active {
   background: none !important;
   box-shadow: none !important;
   outline: none !important;
-}
-.message-app [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container] span.badge[data-region*=unread-count], .message-app.bg-light [class*=body-container] [class*=view-overview-body] [id*=message-drawer-view-overview-container] span.badge[data-region*=unread-count] {
-  width: 1.25rem !important;
-  height: 1.25rem !important;
-  text-align: center !important;
-  line-height: normal !important;
-  border-radius: 50% !important;
-  background-color: hsl(270deg, 50%, 45%) !important;
-  color: hsl(260deg, 10%, 70%) !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation], .message-app.bg-light [class*=body-container] [data-region=view-conversation] {
   padding: 0 !important;
@@ -1478,12 +1843,12 @@ div.submissionaction button:hover, div.submissionaction button:active {
   margin-block: 1rem !important;
   padding: 0.5rem 1rem !important;
   border-radius: 9999px !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   border-radius: 0.5rem !important;
   align-self: stretch !important;
 }
@@ -1495,20 +1860,20 @@ div.submissionaction button:hover, div.submissionaction button:active {
   filter: none !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received {
-  background-color: hsl(260deg, 13%, 13%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received *, .message-app.bg-light [class*=body-container] [data-region=view-conversation] .content-message-container [data-region=day-container] > div .message.received * {
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] [data-region=content-placeholder], .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=content-placeholder] {
   display: none !important;
 }
 .message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue], .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   animation: smoothAppear 0.1s ease-in-out;
 }
 @keyframes smoothAppear {
@@ -1522,19 +1887,19 @@ div.submissionaction button:hover, div.submissionaction button:active {
   }
 }
 .message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button, .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-.message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:hover, .message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:active, .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:hover, .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+.message-app [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:is(:hover, :focus, :active), .message-app.bg-light [class*=body-container] [data-region=view-conversation] [data-region=confirm-dialogue] button:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts], .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] {
   overflow: visible !important;
 }
 .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1), .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
   overflow: hidden !important;
@@ -1551,14 +1916,14 @@ div.submissionaction button:hover, div.submissionaction button:active {
   flex: 1 !important;
 }
 .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a {
-  background-color: hsl(260deg, 13%, 13%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
   border-radius: 0 !important;
 }
 .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:hover, .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:focus, .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:active, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:hover, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:focus, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) div:has(> ul) > ul > li > a:active {
-  background-color: hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 18%) !important;
 }
 .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
 }
 .message-app [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content .list-group[data-region=content-container] > a, .message-app.bg-light [class*=body-container].body-container:has([data-region=view-contacts]:not([aria-hidden=true])) [data-region=view-contacts] > div:nth-child(1) .tab-content .list-group[data-region=content-container] > a {
   border-radius: 0 !important;
@@ -1582,16 +1947,16 @@ div.qn_buttons {
   padding: 0.5rem !important;
 }
 .othernav a.endtestlink, .othernav a.mod_quiz-next-nav {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-.othernav a.endtestlink:hover, .othernav a.endtestlink:active, .othernav a.mod_quiz-next-nav:hover, .othernav a.mod_quiz-next-nav:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+.othernav a.endtestlink:is(:hover, :focus, :active), .othernav a.mod_quiz-next-nav:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 
 a.qnbutton {
-  background-color: hsl(260deg, 13%, 10%) !important;
+  background-color: hsl(260, 10%, 10%) !important;
   border-radius: 0.5rem !important;
   overflow: hidden !important;
 }
@@ -1599,22 +1964,22 @@ a.qnbutton:hover {
   filter: brightness(120%) !important;
 }
 a.qnbutton.thispage {
-  outline: 0.1rem solid hsl(260deg, 13%, 22%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 22%) !important;
 }
 a.qnbutton.answersaved {
-  background-color: hsl(260deg, 13%, 22%) !important;
+  background-color: hsl(260, 10%, 22%) !important;
 }
 a.qnbutton.incorrect {
-  outline: 0.1rem solid hsl(20deg, 100%, 40%) !important;
+  outline: 0.1rem solid hsl(20, 100%, 40%) !important;
 }
 
 div.quizattempt button {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-div.quizattempt button:hover, div.quizattempt button:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+div.quizattempt button:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 
 form#mod_quiz_preflight_form {
@@ -1668,11 +2033,11 @@ form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.
   gap: 1rem !important;
 }
 .formulation .ablock .answer {
-  background-color: hsl(260deg, 13%, 13%) !important;
-  outline: 0.1rem solid hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
   border-radius: 0.5rem !important;
   border: none !important;
-  box-shadow: 0px 0px 2rem hsla(0deg, 0%, 0%, 0.25) !important;
+  box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   overflow: hidden !important;
 }
 .formulation .ablock .answer > div {
@@ -1682,16 +2047,16 @@ form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.
   align-items: center !important;
 }
 .formulation .ablock .answer > div:hover, .formulation .ablock .answer > div:active, .formulation .ablock .answer > div:focus {
-  background-color: hsl(260deg, 13%, 18%) !important;
+  background-color: hsl(260, 10%, 18%) !important;
 }
 .formulation .ablock .answer > div:has(input:checked) {
-  background-color: hsl(260deg, 13%, 22%) !important;
+  background-color: hsl(260, 10%, 22%) !important;
 }
 .formulation .ablock .answer > div:has(input:checked) [data-region=answer-label] * {
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
 }
 .formulation .ablock .answer > div:has(input:checked) label {
-  color: hsl(260deg, 10%, 70%) !important;
+  color: hsl(260, 10%, 70%) !important;
   flex: 1 !important;
 }
 .formulation .ablock .answer > div input[type=radio] {
@@ -1717,21 +2082,21 @@ div.submitbtns {
   width: auto !important;
 }
 div.submitbtns button, div.submitbtns a {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-div.submitbtns button:hover, div.submitbtns button:active, div.submitbtns a:hover, div.submitbtns a:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+div.submitbtns button:is(:hover, :focus, :active), div.submitbtns a:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 
 table.quizattemptsummary a[title^=Просмотр] {
-  background-color: hsl(260deg, 13%, 18%) !important;
-  border: 0.1rem solid hsla(260deg, 20%, 100%, 0.05) !important;
+  background-color: hsl(260, 10%, 18%) !important;
+  border: 0.1rem solid hsla(260, 20%, 100%, 0.05) !important;
   padding: 0.75rem 2rem !important;
 }
-table.quizattemptsummary a[title^=Просмотр]:hover, table.quizattemptsummary a[title^=Просмотр]:active {
-  background-color: hsl(260deg, 13%, 22%) !important;
+table.quizattemptsummary a[title^=Просмотр]:is(:hover, :focus, :active) {
+  background-color: hsl(260, 10%, 22%) !important;
 }
 
 form[action*=review] i {

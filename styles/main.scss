@@ -35,10 +35,10 @@
 
 //#endregion
 
-$dark-0: hsl(260, 13%, 10%);
-$dark-1: hsl(260, 13%, 13%);
-$dark-2: hsl(260, 13%, 18%);
-$dark-3: hsl(260, 13%, 22%);
+$dark-0: hsl(260, 10%, 10%);
+$dark-1: hsl(260, 10%, 13%);
+$dark-2: hsl(260, 10%, 18%);
+$dark-3: hsl(260, 10%, 22%);
 $hightlight: hsla(260, 20%, 100%, 0.05);
 $text-primary: hsl(260, 10%, 70%);
 $text-secondary: hsl(260, 5%, 50%);
@@ -56,12 +56,119 @@ $purple-2: hsl(275, 75%, 60%);
   border-radius: 0.5rem !important;
   border: none !important;
 }
+@mixin cell {
+  // RED
+  &[style*=\#FF3300] {
+    background-color: $purple-0 !important;
+    position: relative !important;
+
+    // HOURGLASS 
+    &[style*=sandglass] {
+      position: relative !important;
+      background-image: none !important;
+
+      &::after {
+        content: '⏳';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        pointer-events: none;
+        animation: hourglass 4s infinite normal ease-in-out;
+
+        @keyframes hourglass {
+          0%, 25% {
+            rotate: 0deg;
+          }
+          25%, 50% {
+            rotate: 180deg;
+          }
+          50%, 75% {
+            rotate: 180deg;
+          }
+          75%, 100% {
+            rotate: 360deg;
+          }
+        }
+      }
+    }
+  }
+  // YELLOW
+  &[style*=\#F7FE2E] {
+    background-color: $purple-0 !important;
+    position: relative !important;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 15%;
+      pointer-events: none;
+      animation: yellowCell 2s infinite alternate ease-in-out;
+      background-color: $purple-1;
+      
+      @keyframes yellowCell {
+        0% {
+          filter: opacity(0.3);
+        }
+        100% {
+          filter: opacity(1);
+        }
+      }
+    }
+  }
+  // GREEN
+  &[style*=\#33CC00] {
+    position: relative !important;
+    background-color: $purple-2 !important;
+    background-image: none !important;
+
+    &[style*=up\.png] {
+      &::after {
+        content: '👍';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        pointer-events: none;
+      }
+    }
+    &[style*=down\.png] {
+      &::after {
+        content: '👎';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        pointer-events: none;
+      }
+    }
+  }
+  // GRAY / FORUMS
+  &[style*="#CCCCCC"] {
+    background-color: $dark-2 !important;
+  }
+  a {
+    border-radius: 0 !important;
+  }
+  border-style: solid !important;
+  border-color: hsl(0, 0%, 10%) !important;
+  border-width: 0.1rem !important;
+  opacity: 0.85 !important;
+  transition: translate 0.1s !important;
+
+  &:is(:hover, :focus, :active) {
+    translate: 0 -0.15rem !important;
+  }
+}
 @mixin importantButton {
   background-color: $dark-2 !important;
   border: 0.1rem solid $hightlight !important;
   padding: 0.75rem 2rem !important;
 
-  &:hover, &:active {
+  &:is(:hover, :focus, :active) {
     background-color: $dark-3 !important;
   }
 }
@@ -71,7 +178,7 @@ $purple-2: hsl(275, 75%, 60%);
   font-weight: bold !important;
   color: $text-primary !important;
 
-  &:hover, &:focus, &:active {
+  &:is(:hover, :focus, :active) {
     filter: brightness(120%) !important;
   }
   &::before {
@@ -222,7 +329,7 @@ section {
   }
   // MY TEACHERS 
   &.block_myteachers {
-    div:has(> img, > a) {
+    div:has(>img, >a) {
       display: flex !important;
       flex-wrap: nowrap !important;
       gap: 0.25rem !important;
@@ -231,13 +338,13 @@ section {
       * {
         margin: 0 !important;
       }
-      > img {
+      >img {
         border-radius: 50% !important; 
         width: 1.5rem !important;
         height: 1.5rem !important;
 
       }
-      > a {
+      >a {
         padding: 0.25rem 0.5rem !important;
       }
     }
@@ -245,32 +352,32 @@ section {
   // ONLINE USERS
   &.block_online_users {
     ul {
-      > li {
+      >li {
         display: flex !important;
         gap: 0.25rem !important;
         align-items: center !important;
 
-        > .user {
+        >.user {
           display: flex !important;
           
-          > a {
+          >a {
             padding: 0.25rem 0.5rem !important;
           }
         }
-        > .message {
+        >.message {
           margin: 0 !important;
 
-          > a {
+          >a {
             padding: 0.25rem !important;
 
             &:hover, &:focus, &:active {
               background-color: transparent !important;
 
-              > i::before {
+              >i::before {
                 color: $text-secondary !important;
               }
             }
-            > i {
+            >i {
               margin: 0 !important;
             }
           }
@@ -335,14 +442,14 @@ div.popover-region-toggle.nav-link {
     @include pulseAnim;
   }
   &:hover, &:focus, &:active {
-    > i {
+    >i {
       color: $text-secondary !important;
     }
   }
   &::after, &::before {
     display: none !important;
   }
-  > i {
+  >i {
     color: $text-primary !important;
   }
 }
@@ -351,7 +458,7 @@ div.popover-region-toggle.nav-link {
     radial-gradient(70vw circle at -20vw -40vw,hsla(270, 100%, 70%, 0.6) 0%, transparent 100%),
     radial-gradient(60vw circle at 60vw -30vw,hsla(290, 100%, 70%, 0.2) 0%, transparent 100%);
   /* POPUP NAV LEFT / COMPACT NAVBAR */
-  > #nav-drawer {
+  >#nav-drawer {
     background-color: $dark-0 !important;
     top: 0 !important;
     bottom: 0 !important;
@@ -359,7 +466,7 @@ div.popover-region-toggle.nav-link {
 
   // NAVBAR
 
-  > nav.navbar.fixed-top {
+  >nav.navbar.fixed-top {
     background-color: transparent !important;
     position: relative !important;
     display: flex !important;
@@ -397,7 +504,7 @@ div.popover-region-toggle.nav-link {
       &:hover, &:focus, &:active {
         background-color: $text-secondary !important;
       }
-      > span {
+      >span {
         display: none !important;
       }
     }
@@ -559,7 +666,7 @@ p, h1, h2, h3, h4, h5, h6, span, div {
   background-color: transparent !important;
 }
 //GO TO TOP BUTTON
-div#goto-top-link > a {
+div#goto-top-link >a {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -575,7 +682,7 @@ div#goto-top-link > a {
   &:is(:hover, :focus, :active) {
     opacity: 1 !important;
   }
-  > i {
+  >i {
     margin: 0 !important;
   }
 }
@@ -630,30 +737,31 @@ input {
   &.form-control {
     background-color: $dark-0 !important;
   }
-  &.btn {
-    background-color: $dark-2 !important;
-    padding: 0.75rem 2rem !important;
-    border-radius: 0.5rem !important;
-    font-weight: bold !important;
-
-    &:hover {
-      filter: brightness(120%) !important;  
-    }
-    &.btn-primary {
-      border: 0.1rem solid $hightlight !important;
-      padding: 0.75rem 2rem !important;
-      background-color: $purple-1 !important;
-      color: white !important;
-    }
-    &.btn-secondary {
-      color: $text-secondary !important;
-    }
+  
+}
+button.btn, input.btn {
+  border-radius: 0.5rem !important;
+  font-weight: bold !important;
+  
+  &:hover {
+    filter: brightness(120%) !important;  
   }
+}
+button.btn-primary, input.btn-primary {
+  border: 0.1rem solid $hightlight !important;
+  padding: 0.75rem 2rem !important;
+  background-color: $purple-1 !important;
+  color: white !important;
+}
+button.btn-secondary, input.btn-secondary {
+  background-color: $dark-2 !important;
+  padding: 0.75rem 2rem !important;
+  color: $text-secondary !important;
 }
 button.btn-submit {
   background-color: transparent !important;
 }
-textarea {
+textarea, #id_assignfeedbackcomments_editoreditable, #id_onlinetext_editoreditable {
   background-color: $dark-0 !important;
   border-radius: 0.5rem !important;
   padding: 1rem !important;
@@ -681,7 +789,7 @@ div.editor_atto_wrap {
 }
 
 /* RECENTLY ADDED COURSES */
-div.block-recentlyaccessedcourses div.one-row > div {
+div.block-recentlyaccessedcourses div.one-row >div {
   overflow: hidden !important;
   border-radius: 0.5rem !important;
 }
@@ -718,20 +826,19 @@ td.hasevent {
   }
 }
 
-/* TABLE OF SUBJECTS */
-
+// SUBJECTS AND COURSES TABLES
 
 .card-text.content {
 
-  > .customtitle, > .legend-box {
+  >.customtitle, >.legend-box {
     display: none !important;
   }
-  /* each subject */
-  > div:nth-child(n+4) {
+  // EACH SUBJECT OR COURSE
+  >div:has(table.course-box) {
     margin-top: 3rem !important;
 
-    /* SUBJECT NAME */
-    > h3 > a {
+    // SUBJECT NAME
+    >h3 >a {
       display: flex !important;
       padding: 0.5rem !important;
 
@@ -744,131 +851,21 @@ td.hasevent {
       overflow: hidden !important;
       border-radius: 0.5rem !important;
   
-      & > tbody {
+      & >tbody {
         background-color: hsla(260, 10%, 10%, 0.8) !important;
         width: auto !important;
     
         // CELLS BACKGROUND
-        & > tr > td {
+        & >tr >td {
           padding: 1rem !important;
           background-color: transparent !important;
-
-          // EACH CELL
-          &.cell td[class*=cm] {
-
-            // RED
-            &[style*=\#FF3300] {
-              background-color: $purple-0 !important;
-              position: relative !important;
-  
-              // HOURGLASS 
-              &[style*=sandglass] {
-                position: relative !important;
-                background-image: none !important;
-  
-                &::after {
-                  content: '⏳';
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  translate: -50% -50%;
-                  pointer-events: none;
-                  animation: hourglass 4s infinite normal ease-in-out;
-
-                  @keyframes hourglass {
-                    0%, 25% {
-                      rotate: 0deg;
-                    }
-                    25%, 50% {
-                      rotate: 180deg;
-                    }
-                    50%, 75% {
-                      rotate: 180deg;
-                    }
-                    75%, 100% {
-                      rotate: 360deg;
-                    }
-                  }
-                }
-              }
-            }
-            // YELLOW
-            &[style*=\#F7FE2E] {
-              background-color: $purple-0 !important;
-              position: relative !important;
-              
-              &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 15%;
-                pointer-events: none;
-                animation: yellowCell 2s infinite alternate ease-in-out;
-                background-color: $purple-1;
-                
-                @keyframes yellowCell {
-                  0% {
-                    filter: opacity(0.3);
-                  }
-                  100% {
-                    filter: opacity(1);
-                  }
-                }
-              }
-            }
-            // GREEN
-            &[style*=\#33CC00] {
-              position: relative !important;
-              background-color: $purple-2 !important;
-              background-image: none !important;
-  
-              &[style*=up\.png] {
-                &::after {
-                  content: '👍';
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  translate: -50% -50%;
-                  pointer-events: none;
-                }
-              }
-              &[style*=down\.png] {
-                &::after {
-                  content: '👎';
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  translate: -50% -50%;
-                  pointer-events: none;
-                }
-              }
-            }
-            // GRAY / FORUMS
-            &[style*="#CCCCCC"] {
-              background-color: $dark-2 !important;
-            }
-            a {
-              border-radius: 0 !important;
-            }
-          }
         }
         .progressbox {
-    
           .progressbar {
             
-            /* CELL */
+            // EACH CELL
             & td.cm {
-              border-style: solid !important;
-              border-color: hsl(0, 0%, 10%) !important;
-              border-width: 0.1rem !important;
-              opacity: 0.85 !important;
-              transition: translate 0.1s !important;
-
-              &:hover, &:active {
-                translate: 0 -0.15rem !important;
-              }
+              @include cell;
             }
             & tbody tr span {
               display: none;
@@ -907,6 +904,124 @@ td.hasevent {
           }
         }
       }
+
+      // TEACHER COURSE WITH STUDENTS GROUPS // OR WITHOUT GROUPS
+      &:has(.group-box), & td:has(>:last-child:nth-child(4)) {
+
+        // COURSE NAME
+        .course-info {
+          a.course-name {
+            text-decoration: none !important;
+          }
+        }
+        // EACH GROUP OF STUDENTS
+        .group-box {
+          padding: 0.5rem !important;
+          border-radius: 0.5rem !important;
+          outline: 0.1rem solid $dark-2 !important;
+
+          >.group-completion-box {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            flex-wrap: nowrap !important;
+
+            // TOP
+            >:nth-child(1) {
+              display: flex !important;
+              flex-direction: row !important;
+              gap: 0.5rem !important;
+
+              >{
+                padding: 0 !important;
+              }
+              // GROUP NAME
+              >:nth-child(1) {
+                margin-right: auto !important;
+              }
+              a {
+                >img {
+                  display: none !important;
+                }
+              }
+              a[href*=delete] {
+                color: $text-secondary !important;
+              }
+            }
+            // COMPLETION SLIDER // GROUP COMPLETED TASK SLIDER
+            >:nth-child(2) {
+              >.bar-frame {
+                background-color: $purple-0 !important;
+                border-radius: 0.5rem !important;
+                overflow: hidden !important;
+
+                >.bar-fill {
+                  position: relative !important;
+                  background-color: $purple-1 !important;
+                  overflow: hidden !important;
+
+                  &::after {
+                    $width: 5rem;
+                    content: '';
+                    position: absolute;
+                    background-color: $purple-2;
+                    filter: blur($width * 0.2);
+                    width: $width;
+                    height: $width;
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 50%;
+                    translate: -50% -50%;
+                    animation: glare 5s infinite forwards linear;
+
+                    @keyframes glare {
+                      0% {
+                        left: calc(0% - $width)
+                      }
+                      100% {
+                        left: calc(100% + $width)
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            // BOTTOM
+            >:nth-child(3) {
+              display: flex !important;
+              flex-direction: row !important;
+              gap: 0.5rem !important;
+
+              >{
+                padding: 0 !important;
+              }
+              // SEND MESSAGE TO GROUP
+              span, a[href*=message] { 
+                >img {
+                  display: none !important;
+                }
+              }
+            }
+          }
+        }
+        // BOTTOM
+        a {
+          // ADD GROUP 
+          &:has(>img[src$=group]) {
+
+            >img {
+              display: none !important;
+            }
+          }
+          // ADD SINGLE STUDENT
+          &:has(>img[src$=user]) {
+            
+            >img {
+              display: none !important;
+            }
+          }
+        }
+      }
     }
   }
   
@@ -932,6 +1047,7 @@ body {
     }
     button#loginbtn {
       @include importantButton;
+      color: $text-primary !important;
     }
     .forgetpass a {
       padding: 0.5rem !important;
@@ -942,7 +1058,7 @@ body {
       @include prettyMarkdown;
     }
   }
-  &:not(#page-login-index) div#region-main-box > section#region-main {
+  &:not(#page-login-index) div#region-main-box >section#region-main {
     @include shadow;
     background-color: $dark-1 !important;
     outline: 0.1rem solid $dark-2 !important;
@@ -981,7 +1097,7 @@ body {
         .page-header-headings {
           display: inline-flex !important;
           
-          & > h2 {
+          & >h2 {
             margin: 0 !important;
           }
         }
@@ -990,7 +1106,7 @@ body {
           flex-wrap: nowrap !important;
           gap: 1rem !important;
           
-          & > a {
+          & >a {
             @include importantButton; 
           }
         }
@@ -1036,12 +1152,12 @@ body {
         display: flex !important;
         width: fit-content !important;
   
-        .card-body:has(> h4, > div) {
+        .card-body:has(>h4, >div) {
           display: flex !important;
           flex-direction: column !important;
           width: fit-content !important;
     
-          > div {
+          >div {
             width: fit-content !important;
             display: grid !important;
             grid-template-columns: 1fr 1fr 1fr !important;
@@ -1049,10 +1165,10 @@ body {
             @media (max-width: 768px) {
               grid-template-columns: 1fr 1fr !important;
             }
-            > div {
+            >div {
               display: flex !important;
     
-              > a {
+              >a {
                 white-space: nowrap !important;
                 padding: 0.5rem 1rem !important;
               }
@@ -1092,6 +1208,226 @@ body {
                 padding: 0.75rem 2rem !important;  
               }
             }
+          }
+        }
+      }
+    }
+  }
+  // TEACHER STUDENTS GROUPS OVERVIEW // LIST OF STUDENTS IN A GROUP
+  &#page-blocks-mygroups-overview {
+    .controls {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+
+      >.pix-box {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0.5rem !important;
+
+        >a {
+          padding: 0 !important;
+          
+          >img {
+            display: none !important;
+          }
+        }
+      }
+    }
+    .legend-box {
+      display: none !important;
+    }
+    table#group-overview {
+      td.c0 {
+        // STUDENT PROFILE PICTURE 
+        >a {
+          >img {
+            margin: 0 !important;
+          }
+        }
+        // WRITE MESSAGE / GRADES
+        >:nth-child(2) {
+          @include card;
+          background-color: transparent !important;
+          display: flex !important;
+          margin-top: 0.5rem;
+
+          >a {
+            height: 2rem !important;
+            width: 2rem !important;
+            position: relative !important;
+
+            &:is(:hover, :focus, :active) {
+              &::after {
+                background-color: $text-secondary;
+              }
+            }
+            >img, >i {
+              display: none !important;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              translate: -50% -50%;
+              width: 1rem;
+              height: 1rem;
+              background-color: $text-primary;
+            }
+            &[href*=message] {
+              &::after {
+                mask: url('chrome-extension://__MSG_@@extension_id__/images/comment-solid.svg');
+              }
+            }
+            &[href*=grade] {
+              &::after {
+                mask: url('chrome-extension://__MSG_@@extension_id__/images/table-solid.svg');
+              }
+            }
+          }
+        }
+      }
+      .progressbox {
+
+        td {
+          padding: 0 !important;
+        }
+        tr:has(>td.cm) {
+          >td {
+            @include cell;
+          }
+        }
+      }
+    }
+  }
+  // TEACHER GRADING THE WORD OF A STUDENT
+  &#page-mod-assign-grader {
+    #page {
+      height: 100% !important;
+      
+      >#page-content {
+        height: 100% !important;
+        
+        >[role=main] {
+          display: flex !important;
+          flex-direction: column !important;
+          height: 100% !important;
+    
+          // TOP
+          [data-region=grading-navigation-panel] {
+            display: flex !important;
+            height: fit-content !important;
+            position: relative !important;
+      
+            .container-fluid {
+              padding: 0 !important;
+              display: flex !important;
+              height: fit-content !important;
+              justify-content: center !important;
+              
+              [data-region=grading-navigation] {
+                padding: 1rem !important;
+                background-color: $dark-1 !important;
+                display: flex !important;
+                height: fit-content !important;
+                align-items: center !important;
+                width: 100% !important;
+        
+                [data-region=user-info] {
+                  display: flex !important;
+                  height: fit-content !important;
+          
+                  >h4 {
+                    text-overflow: ellipsis !important;
+                    margin: 0 !important;
+      
+                    a {
+                      em {
+                        display: none !important;
+                      }
+                    }
+                  }
+                }
+                [data-region=user-selector] {
+                  ul.form-autocomplete-suggestions {
+                    @include card;
+                    @include shadow;
+                    @include smoothAppearAnim;
+                  }
+                }
+              }
+            }
+      
+          }
+          // MAIN
+          [data-region=grade-panel] {
+            position: relative !important;
+            top: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            overflow-y: scroll !important;
+            flex-grow: 1 !important;
+            padding: 1rem !important;
+            width: auto !important;
+            
+            [data-region=grade] {
+              padding: 0 !important;
+              max-width: 1024px !important;
+              align-self: center !important;
+
+              // TEACHER GRADE INPUT
+              [id=fitem_id_grade] {
+                @include card;
+                padding: 1rem !important;
+              }
+              [id=fitem_id_currentgrade] {
+                @include card;
+                margin-top: 1rem !important;
+                background-color: transparent !important;
+                padding: 1rem !important;
+              }
+              [id=fitem_id_assignfeedbackcomments_editor] {
+                padding: 0 !important;
+                margin-top: 1rem !important;
+                
+                // WHEN OPENED FULL
+                &.popout {
+                  @include card;
+                  @include shadow;
+                  @include smoothAppearAnim;
+                  padding: 1rem !important;
+                }
+                [data-fieldtype=editor] {
+                  @include card;
+                  background-color: transparent !important;
+                }
+              }
+            }
+          }
+          // REVIEW CANVAS / USELESS / DESTROY
+          [data-region=review-panel] {
+            display: none !important;
+          }
+          // BOTTOM
+          [data-region=grade-actions-panel] {
+            position: relative !important;
+            height: fit-content !important;
+            background-color: $dark-1 !important;
+            padding-block: 0.5rem !important;
+
+            // ALIGN BUTTONS
+            .collapse-buttons {
+              display: none !important;
+            }
+            form {
+
+              button[name=savechanges] {
+                margin-left: 1.5rem !important;
+              }
+            }
+
           }
         }
       }
@@ -1237,15 +1573,15 @@ div.filemanager {
 }
 
 // GRADES
-div.submissionsummarytable table td {
+.submissionsummarytable table, .submissionstatustable {
   
   // NOT GRADED
-  &.submissionnotgraded {
+  .submissionnotgraded {
     color: $text-primary !important;
     font-weight: bold !important;
   }
   // GRADED
-  &.submissiongraded {
+  .submissiongraded {
     color: hsl(80, 100%, 40%) !important;
     font-weight: bold !important;
   }
@@ -1279,6 +1615,17 @@ div.submissionaction button {
   border: none !important;
   padding: 1rem !important;
 
+  // BADGES / NEW MESSAGES COUNT / REQUESTES
+  [data-region=contact-request-count]:not(.hidden), [data-region*=unread-count]:not(.hidden) {
+    display: inline-block !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    text-align: center !important;
+    line-height: normal !important;
+    border-radius: 50% !important;
+    background-color: $purple-1 !important;
+    color: $text-primary !important;
+  }
   textarea {
     @include card;
     background-color: $dark-0 !important;
@@ -1299,19 +1646,19 @@ div.submissionaction button {
     padding: 0 !important;
     height: 100% !important;
 
-    > div:nth-child(1) {
+    >div:nth-child(1) {
       display: flex !important;
       flex-direction: row !important;
       flex-wrap: nowrap !important;
       gap: 1rem !important;
 
-      > div {
+      >div {
         padding: 0 !important;
       }
       // LEFT SIDE
-      > div:nth-child(1) {
+      >div:nth-child(1) {
 
-        > div:nth-child(1) {
+        >div:nth-child(1) {
 
           display: flex !important;
           flex-direction: column !important;
@@ -1320,7 +1667,7 @@ div.submissionaction button {
         }
       }
       // RIGHT SIDE
-      > div:nth-child(2) {
+      >div:nth-child(2) {
         display: flex !important;
         flex: 1 !important;
         gap: 0.5rem !important;
@@ -1338,7 +1685,7 @@ div.submissionaction button {
       align-items: center !important;
       gap: 0.5rem !important;
       
-      > div:nth-child(1) {
+      >div:nth-child(1) {
         display: flex !important;
         align-items: center !important;
         flex: 1 !important;
@@ -1362,20 +1709,25 @@ div.submissionaction button {
         display: inline-flex !important;
         margin: 0 !important;
       }
-      a[data-route="view-contacts"] {
+      a[data-route=view-contacts] {
         @include importantButton;  
         align-items: center !important;
         gap: 0.25rem !important;
       }
     }
-    > [data-region=view-conversation] {
-      > [data-region=header-content] {
-        > div:nth-child(1) {
+    >[data-region=view-conversation] {
+      >[data-region=header-content] {
+        
+        >div:nth-child(1) {
           display: flex !important;
           gap: 1rem !important;
-
+          
+          // START / FAVOURITE CONTACT
+          span[data-region=favourite-icon-container] {
+            color: $purple-2 !important;
+          }
           // BUTTON BACK IN CHAT
-          > div:nth-child(1) {
+          >div:nth-child(1) {
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
@@ -1406,10 +1758,6 @@ div.submissionaction button {
           a[data-action=view-contact] {
             padding: 0.5rem !important;
 
-            // START / FAVOURITE CONTACT
-            span[data-region=favourite-icon-container] {
-              color: $purple-2 !important;
-            }
           }
         }
       }
@@ -1435,16 +1783,16 @@ div.submissionaction button {
           box-shadow: none !important;
           outline: none !important;
         }
-        // UNREAD MESSAGES COUNTER
-        span.badge[data-region*=unread-count] {
-          width: 1.25rem !important;
-          height: 1.25rem !important;
-          text-align: center !important;
-          line-height: normal !important;
-          border-radius: 50% !important;
-          background-color: $purple-1 !important;
-          color: $text-primary !important;
-        }
+        // // UNREAD MESSAGES COUNTER
+        // span.badge[data-region*=unread-count] {
+        //   width: 1.25rem !important;
+        //   height: 1.25rem !important;
+        //   text-align: center !important;
+        //   line-height: normal !important;
+        //   border-radius: 50% !important;
+        //   background-color: $purple-1 !important;
+        //   color: $text-primary !important;
+        // }
       }
     }
 
@@ -1463,7 +1811,7 @@ div.submissionaction button {
           align-items: center !important;
 
           // DATE
-          > h6 {
+          >h6 {
             margin-block: 1rem !important;
             padding: 0.5rem 1rem !important;
             border-radius: 9999px !important;
@@ -1472,7 +1820,7 @@ div.submissionaction button {
 
           }
           // MESSAGES DURING DAY
-          > div {
+          >div {
             background-color: $dark-0 !important;
             border-radius: 0.5rem !important;
             align-self: stretch !important;
@@ -1516,23 +1864,23 @@ div.submissionaction button {
       [data-region=view-contacts] {
         overflow: visible !important;
         
-        > div:nth-child(1) {
+        >div:nth-child(1) {
           @include card;
           overflow: hidden !important;
   
           // CONTANTS AND REQUESTS BUTTONS
-          div:has(> ul) {
+          div:has(>ul) {
             padding: 0 !important;
             
-            > ul {
+            >ul {
               display: flex !important;
               flex-wrap: nowrap !important;
               margin: 0 !important;
       
-              > li {
+              >li {
                 flex: 1 !important;
       
-                > a {
+                >a {
                   background-color: $dark-1 !important;
                   border-radius: 0 !important;
                   
@@ -1550,7 +1898,7 @@ div.submissionaction button {
             // CONTANTS
             .list-group[data-region=content-container] {
       
-              > a {
+              >a {
                 border-radius: 0 !important;
                 padding: 0.75rem !important;
               }
@@ -1614,7 +1962,7 @@ form#mod_quiz_preflight_form {
   fieldset[id=id_honestycheckheader] {
     margin: 0 !important;
 
-    & > :nth-child(1) {
+    & >:nth-child(1) {
       padding: 0 !important;
     }
   }
@@ -1622,10 +1970,10 @@ form#mod_quiz_preflight_form {
     margin: 0 !important;
 
     // EMPTY BLOCK WTF???
-    & > div:nth-child(1) {
+    & >div:nth-child(1) {
       display: none !important;
     }
-    & > div:nth-child(2) {
+    & >div:nth-child(2) {
       padding: 0 !important;
       max-width: unset !important;
       flex: unset !important;
@@ -1639,11 +1987,11 @@ form#mod_quiz_preflight_form {
     margin-top: 2rem !important;
 
     // EMPTY BLOCK WTF???
-    & > :nth-child(1) {
+    & >:nth-child(1) {
       display: none !important;
     }
     // BUTTONS
-    & > :nth-child(2) {
+    & >:nth-child(2) {
       padding: 0 !important;
       max-width: unset !important;
       flex: unset !important;
@@ -1674,7 +2022,7 @@ form#mod_quiz_preflight_form {
       overflow: hidden !important;
 
       // EACH ANSWER OPTION
-      & > div {
+      & >div {
         margin: 0 !important;
         display: flex !important;
         flex-wrap: nowrap !important;
@@ -1763,7 +2111,7 @@ form[action*=review] {
   .form-inline {
     align-items: flex-start !important;
  
-    & > label {
+    & >label {
       display: inline-flex !important;
       gap: 1rem !important;
 
