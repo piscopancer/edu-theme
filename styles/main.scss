@@ -697,7 +697,14 @@ div#goto-top-link >a {
 table.generaltable:not(.course-box), .course-content table, table.preference-table {
   background-color: $dark-0 !important;
   border-radius: 0.5rem !important;
+  overflow: hidden !important;
 
+  >tbody {
+
+    tr:nth-child(odd) {
+      background-color: hsla(0, 0%, 0%, 0.15) !important;
+    }
+  }
   & th, & td {
     padding: 0.75rem !important;
   }
@@ -712,23 +719,22 @@ table.generaltable:not(.course-box), .course-content table, table.preference-tab
       color: $text-secondary !important;
     }
   }
-  // MARKDOWN HTML TEXT ANSWER
-  div[class*=assignsubmission_onlinetext] {
-    @include card;
-    background-color: transparent !important;
-    padding: 1rem !important;
-    
-    div.no-overflow {
-      @include prettyMarkdown;
-      overflow: visible !important;
-      margin-top: 1rem !important;
-    }
+}
+
+// MARKDOWN HTML TEXT ANSWER
+[class*=assignsubmission_onlinetext]:has(>.no-overflow) {
+  @include card;
+  background-color: transparent !important;
+  padding: 1rem !important;
+  
+  >.no-overflow {
+    @include prettyMarkdown;
+    overflow: visible !important;
+    margin-top: 1rem !important;
   }
 }
 
-
-
-/* INPUT / SEARCH / SUBMIT */
+// INPUT / SEARCH / SUBMIT
 input {
   background-color: $dark-0 !important;
   padding: 0.75rem 1rem !important;
@@ -1388,6 +1394,15 @@ body {
               max-width: 1024px !important;
               align-self: center !important;
 
+              // STUDENT ANSWER
+              >.submissionstatustable {
+                >.assignsubmission {
+                  margin-top: 1rem !important;
+                }
+                >.latesubmission {
+                  color: crimson!important;
+                }
+              }
               // TEACHER GRADE INPUT
               [id=fitem_id_grade] {
                 @include card;
