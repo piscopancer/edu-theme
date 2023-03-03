@@ -1863,7 +1863,7 @@ div.submissionaction button:is(:hover, :focus, :active) {
 .message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:is(:hover, :focus, :active), .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:is(:hover, :focus, :active) {
   background-color: hsl(260, 10%, 22%) !important;
 }
-.message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] > span.badge, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] > span.badge {
+.message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] > span.badge:not(.hidden), .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] > span.badge:not(.hidden) {
   display: inline-block !important;
   margin-left: 0.5rem !important;
 }
