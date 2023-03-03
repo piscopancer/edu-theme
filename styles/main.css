@@ -308,7 +308,10 @@ div.popover-region-toggle.nav-link > i {
 #page-wrapper > nav.navbar.fixed-top .nav.usernav {
   flex-wrap: nowrap !important;
 }
-#page-wrapper > nav.navbar.fixed-top .nav.usernav a#action-menu-toggle-1 .userbutton .avatars {
+#page-wrapper > nav.navbar.fixed-top .nav.usernav a#action-menu-toggle-1 .userbutton > .usertext {
+  color: hsl(260, 10%, 70%) !important;
+}
+#page-wrapper > nav.navbar.fixed-top .nav.usernav a#action-menu-toggle-1 .userbutton > .avatars {
   margin-left: 1rem !important;
 }
 #page-wrapper > nav.navbar.fixed-top .nav.usernav .count-container {
@@ -1354,6 +1357,11 @@ body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td
 body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td:is(:hover, :focus, :active) {
   translate: 0 -0.15rem !important;
 }
+body#page-blocks-mygroups-overview table#group-overview td.c3 {
+  font-weight: bold !important;
+  font-size: 1rem !important;
+  padding-inline: 2rem !important;
+}
 body#page-mod-assign-grader #page {
   height: 100% !important;
 }
@@ -1494,6 +1502,89 @@ body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=gra
 }
 body#page-mod-assign-grader #page > #page-content > [role=main] [data-region=grade-actions-panel] form button[name=savechanges] {
   margin-left: 1.5rem !important;
+}
+body section.block_mygroups div:has(> .course-group-box) {
+  display: flex !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > .title {
+  display: none !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > .course-group-box {
+  background-color: hsl(260, 10%, 13%) !important;
+  outline: 0.1rem solid hsl(260, 10%, 18%) !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  background-color: transparent !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  padding: 0.5rem !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > .course-group-box > * {
+  margin: 0 !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > .course-group-box > .group-completeness {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > .course-group-box > .group-completeness > .completeness-value {
+  width: 4rem !important;
+  text-align: center !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > .course-group-box > .group-completeness > .group-completion-bar-box {
+  margin: 0 !important;
+  flex-grow: 1 !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > div:has(> a) {
+  display: inline-flex !important;
+  margin: 0 !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > div:has(> a) > a {
+  margin: 0 !important;
+}
+body section.block_mygroups div:has(> .course-group-box) > div:has(> a) > a > img {
+  display: none !important;
+}
+
+.bar-frame {
+  background-color: hsl(265, 50%, 20%) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+.bar-frame > .bar-fill {
+  position: relative !important;
+  background-color: hsl(270, 50%, 45%) !important;
+  overflow: hidden !important;
+}
+.bar-frame > .bar-fill::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(275, 75%, 60%);
+  filter: blur(1rem);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  animation: glare 5s infinite forwards linear;
+}
+@keyframes glare {
+  0% {
+    left: calc(0% - 5rem);
+  }
+  100% {
+    left: calc(100% + 5rem);
+  }
 }
 
 .yui3-widget.yui3-panel, .moodle-dialogue, .yui3-widget-modal, .modal-dialog {
@@ -1771,6 +1862,10 @@ div.submissionaction button:is(:hover, :focus, :active) {
 }
 .message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:is(:hover, :focus, :active), .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts]:is(:hover, :focus, :active) {
   background-color: hsl(260, 10%, 22%) !important;
+}
+.message-app [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] > span.badge, .message-app.bg-light [class*=header-container] [data-region=view-overview] a[data-route=view-contacts] > span.badge {
+  display: inline-block !important;
+  margin-left: 0.5rem !important;
 }
 .message-app [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1), .message-app.bg-light [class*=header-container] > [data-region=view-conversation] > [data-region=header-content] > div:nth-child(1) {
   display: flex !important;
