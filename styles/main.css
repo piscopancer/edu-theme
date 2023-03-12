@@ -763,6 +763,7 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
 .card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#F7FE2E] {
   background-color: hsl(265, 50%, 20%) !important;
   position: relative !important;
+  overflow: hidden !important;
 }
 .card-text.content > div:has(table.course-box) .course-box > tbody .progressbox .progressbar td.cm[style*=\#F7FE2E]::after {
   content: "";
@@ -770,7 +771,7 @@ td.hasevent a:hover, td.hasevent a:active, td.hasevent a:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 15%;
+  height: 20%;
   pointer-events: none;
   animation: yellowCell 2s infinite alternate ease-in-out;
   background-color: hsl(270, 50%, 45%);
@@ -1207,6 +1208,17 @@ body#page-mod-quiz-summary .moodle-dialogue .moodle-dialogue-wrap .moodle-dialog
   width: fit-content !important;
   padding: 0.75rem 2rem !important;
 }
+body#page-mod-quiz-review [id*=question] .answer td.control {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+body#page-mod-quiz-review [id*=question] .answer td.control > * {
+  margin: 0 !important;
+}
+body#page-mod-quiz-review [id*=question] .history {
+  border: none !important;
+}
 body#page-blocks-mygroups-overview .controls {
   display: flex !important;
   align-items: center !important;
@@ -1311,6 +1323,7 @@ body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td
 body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#F7FE2E] {
   background-color: hsl(265, 50%, 20%) !important;
   position: relative !important;
+  overflow: hidden !important;
 }
 body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td.cm) > td[style*=\#F7FE2E]::after {
   content: "";
@@ -1318,7 +1331,7 @@ body#page-blocks-mygroups-overview table#group-overview .progressbox tr:has(> td
   left: 0;
   right: 0;
   bottom: 0;
-  height: 15%;
+  height: 20%;
   pointer-events: none;
   animation: yellowCell 2s infinite alternate ease-in-out;
   background-color: hsl(270, 50%, 45%);
@@ -2145,6 +2158,21 @@ form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.
   box-shadow: 0px 0px 2rem hsla(0, 0%, 0%, 0.25) !important;
   overflow: hidden !important;
 }
+.formulation .ablock .answer > tbody > tr:first-child > td {
+  padding-top: 1rem !important;
+}
+.formulation .ablock .answer > tbody > tr:last-child > td {
+  padding-bottom: 1rem !important;
+}
+.formulation .ablock .answer > tbody > tr > td {
+  padding: 0.5rem 1rem !important;
+}
+.formulation .ablock .answer > tbody > tr > td p {
+  margin: 0 !important;
+}
+.formulation .ablock .answer input[type=radio], .formulation .ablock .answer input[type=checkbox] {
+  display: none !important;
+}
 .formulation .ablock .answer > div {
   margin: 0 !important;
   display: flex !important;
@@ -2163,9 +2191,6 @@ form#mod_quiz_preflight_form div[id=fgroup_id_buttonar] > :nth-child(2) .d-flex.
 .formulation .ablock .answer > div:has(input:checked) label {
   color: hsl(260, 10%, 70%) !important;
   flex: 1 !important;
-}
-.formulation .ablock .answer > div input[type=radio] {
-  display: none !important;
 }
 .formulation .ablock .answer > div div[data-region=answer-label], .formulation .ablock .answer > div label {
   display: flex !important;

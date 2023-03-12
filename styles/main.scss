@@ -97,6 +97,7 @@ $purple-2: hsl(275, 75%, 60%);
   &[style*=\#F7FE2E] {
     background-color: $purple-0 !important;
     position: relative !important;
+    overflow: hidden !important;
     
     &::after {
       content: '';
@@ -104,7 +105,7 @@ $purple-2: hsl(275, 75%, 60%);
       left: 0;
       right: 0;
       bottom: 0;
-      height: 15%;
+      height: 20%;
       pointer-events: none;
       animation: yellowCell 2s infinite alternate ease-in-out;
       background-color: $purple-1;
@@ -1224,6 +1225,25 @@ body {
       }
     }
   }
+  //TEACHER REVIEWS STDENTS TEST / WORK
+  &#page-mod-quiz-review {
+    [id*=question] {
+      .answer {
+        td.control {
+          display: flex !important;
+          align-items: center !important;
+          gap: 1rem !important;
+
+          >* {
+            margin: 0 !important;
+          }
+        }
+      }
+      .history {
+        border: none !important;
+      }
+    }
+  }
   // TEACHER STUDENTS GROUPS OVERVIEW // LIST OF STUDENTS IN A GROUP
   &#page-blocks-mygroups-overview {
     .controls {
@@ -2140,11 +2160,40 @@ form#mod_quiz_preflight_form {
     flex-direction: column !important;
     gap: 1rem !important;
 
+    // ANSWER IN TEST
     .answer {
       @include card;
       @include shadow;
       overflow: hidden !important;
-
+       
+      // IF TABLE
+      >tbody {
+        >tr {
+          &:first-child {
+           
+            >td {
+              padding-top: 1rem !important;
+            }
+          }
+          &:last-child {
+           
+            >td {
+              padding-bottom: 1rem !important;
+            }
+          }
+          >td {
+            padding: 0.5rem 1rem !important;
+    
+            p {
+              margin: 0 !important;
+            }
+          }
+        }
+      }
+      // CHECKBOX / RADIO BUTTON LEFTSIDE ANSWER
+      input[type=radio], input[type=checkbox] {
+        display: none !important;
+      }
       // EACH ANSWER OPTION
       & >div {
         margin: 0 !important;
@@ -2158,7 +2207,9 @@ form#mod_quiz_preflight_form {
         &:has(input:checked) {
           background-color: $dark-3 !important;
           
+          // ANSWER TEXT 
           [data-region=answer-label] {
+
             // TEXT INSIDE
             * {
               color: $text-primary !important;
@@ -2169,9 +2220,7 @@ form#mod_quiz_preflight_form {
             flex: 1 !important;
           }
         }
-        input[type=radio] {
-          display: none !important;
-        }
+        
         div[data-region=answer-label], label {
           display: flex !important;
           align-items: center !important;
